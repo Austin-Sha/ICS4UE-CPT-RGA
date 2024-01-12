@@ -106,7 +106,7 @@ public class tictactoe implements ActionListener{
 			mainFrame.repaint();
 		}else if(event.getSource() == LightButton){
 			mainPanel.repaint();
-			
+			setupPanel.repaint();
 			themesPanel.repaint();
 			
 			mainPanel.blnlight = false;
@@ -148,8 +148,9 @@ public class tictactoe implements ActionListener{
 			themesPanel.blnStartrek = false;
 			themesPanel.blnStartrekbg = false;
 		}else if(event.getSource() == DarkButton){
-			themesPanel.repaint();
 			mainPanel.repaint();
+			setupPanel.repaint();
+			themesPanel.repaint();
 			
 			mainPanel.blnlight = false;
 			mainPanel.blnlightbg = false;
@@ -163,25 +164,69 @@ public class tictactoe implements ActionListener{
 			mainPanel.blnneonbg = false;
 			mainPanel.blnStartrek = false;
 			mainPanel.blnStartrekbg = false;
+			
+			setupPanel.blnlight = false;
+			setupPanel.blnlightbg = false;
+			setupPanel.blndark = false;
+			setupPanel.blndarkbg = true;
+			setupPanel.blnchristmas = false;
+			setupPanel.blnchristmasbg = false;
+			setupPanel.blnhalloween = false;
+			setupPanel.blnhalloweenbg = false;
+			setupPanel.blnneon = false;
+			setupPanel.blnneonbg = false;
+			setupPanel.blnStartrek = false;
+			setupPanel.blnStartrekbg = false;
+			
 			themesPanel.blnlight = false;
 			themesPanel.blnlightbg = false;
 			themesPanel.blndark = true;
+			themesPanel.blndarkbg = true;
+			themesPanel.blnchristmas = false;
+			themesPanel.blnchristmasbg = false;
+			themesPanel.blnhalloween = false;
+			themesPanel.blnhalloweenbg = false;
+			themesPanel.blnneon = false;
+			themesPanel.blnneonbg = false;
+			themesPanel.blnStartrek = false;
+			themesPanel.blnStartrekbg = false;
 		}else if(event.getSource() == ChristmasButton){
-			themesPanel.repaint();
 			mainPanel.repaint();
+			setupPanel.repaint();
+			themesPanel.repaint();
 			
 			mainPanel.blnlight = false;
+			mainPanel.blnlightbg = false;
 			mainPanel.blndark = false;
 			mainPanel.blndarkbg = false;
 			mainPanel.blnchristmas = false;
 			mainPanel.blnchristmasbg = true;
+			mainPanel.blnhalloween = false;
+			mainPanel.blnhalloweenbg = false;
+			mainPanel.blnneon = false;
+			mainPanel.blnneonbg = false;
+			mainPanel.blnStartrek = false;
+			mainPanel.blnStartrekbg = false;
+			
+			setupPanel.blnlight = false;
+			setupPanel.blnlightbg = false;
+			setupPanel.blndark = false;
+			setupPanel.blndarkbg = true;
+			setupPanel.blnchristmas = false;
+			setupPanel.blnchristmasbg = false;
+			setupPanel.blnhalloween = false;
+			setupPanel.blnhalloweenbg = false;
+			setupPanel.blnneon = false;
+			setupPanel.blnneonbg = false;
+			setupPanel.blnStartrek = false;
+			setupPanel.blnStartrekbg = false;
 			
 			themesPanel.blnlight = false;
 			themesPanel.blnlightbg = false;
-			themesPanel.blndark = false;
-			themesPanel.blndarkbg = false;
-			themesPanel.blnchristmas = true;
-			themesPanel.blnchristmasbg = true;
+			themesPanel.blndark = true;
+			themesPanel.blndarkbg = true;
+			themesPanel.blnchristmas = false;
+			themesPanel.blnchristmasbg = false;
 			themesPanel.blnhalloween = false;
 			themesPanel.blnhalloweenbg = false;
 			themesPanel.blnneon = false;
