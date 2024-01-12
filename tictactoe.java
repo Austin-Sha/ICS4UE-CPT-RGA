@@ -211,9 +211,9 @@ public class tictactoe implements ActionListener{
 			setupPanel.blnlight = false;
 			setupPanel.blnlightbg = false;
 			setupPanel.blndark = false;
-			setupPanel.blndarkbg = true;
+			setupPanel.blndarkbg = false;
 			setupPanel.blnchristmas = false;
-			setupPanel.blnchristmasbg = false;
+			setupPanel.blnchristmasbg = true;
 			setupPanel.blnhalloween = false;
 			setupPanel.blnhalloweenbg = false;
 			setupPanel.blnneon = false;
@@ -223,10 +223,10 @@ public class tictactoe implements ActionListener{
 			
 			themesPanel.blnlight = false;
 			themesPanel.blnlightbg = false;
-			themesPanel.blndark = true;
-			themesPanel.blndarkbg = true;
-			themesPanel.blnchristmas = false;
-			themesPanel.blnchristmasbg = false;
+			themesPanel.blndark = false;
+			themesPanel.blndarkbg = false;
+			themesPanel.blnchristmas = true;
+			themesPanel.blnchristmasbg = true;
 			themesPanel.blnhalloween = false;
 			themesPanel.blnhalloweenbg = false;
 			themesPanel.blnneon = false;
