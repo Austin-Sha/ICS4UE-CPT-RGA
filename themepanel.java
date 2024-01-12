@@ -61,7 +61,7 @@ public class themepanel extends JPanel{
 			g.drawImage(lightboard, 0,0, null);
 			g.drawImage(lightx,200,200,null);
 			g.drawImage(lighto,0,0,null);
-		}else if(blnlight == true && blnlightbg == false){
+		}else if(blnlight == false && blnlightbg == true){
 			g.drawImage(lightbg,0,0, null);
 		}else if(blndark == true){
 			g.drawImage(darkbg,0,0,null);
@@ -84,6 +84,13 @@ public class themepanel extends JPanel{
 			g.drawImage(halloweenx,0,0, null);
 		}else if(blnhalloween == false && blnhalloweenbg == true){
 			g.drawImage(halloweenbg,0,0, null);
+		}else if(blnneon == true && blnneonbg == true){
+			g.drawImage(neonbg,0,0, null);
+			g.drawImage(neonboard,0,0, null);
+			g.drawImage(neono,0,400, null);
+			g.drawImage(neonx,200,200, null);
+		}else if(blnneon == false && blnneonbg == true){
+			g.drawImage(neonbg,0,0, null);
 		}
 		
 		
