@@ -77,17 +77,17 @@ public class themepanel extends JPanel{
 			g.drawImage(christmasx,200,200, null);
 		}else if(blnchristmas == false && blnchristmasbg == true){
 			g.drawImage(christmasbg,0,0, null);
-		}else if(blnhalloween == true && blnchristmasbg == true){
+		}else if(blnhalloween == true && blnhalloweenbg == true){
 			g.drawImage(halloweenbg,0,0, null);
 			g.drawImage(halloweenboard,0,0, null);
-			g.drawImage(halloweeno,0,0, null);
-			g.drawImage(halloweenx,0,0, null);
+			g.drawImage(halloweeno,200,400, null);
+			g.drawImage(halloweenx,200,200, null);
 		}else if(blnhalloween == false && blnhalloweenbg == true){
 			g.drawImage(halloweenbg,0,0, null);
 		}else if(blnneon == true && blnneonbg == true){
 			g.drawImage(neonbg,0,0, null);
 			g.drawImage(neonboard,0,0, null);
-			g.drawImage(neono,0,400, null);
+			g.drawImage(neono,400,400, null);
 			g.drawImage(neonx,200,200, null);
 		}else if(blnneon == false && blnneonbg == true){
 			g.drawImage(neonbg,0,0, null);
@@ -125,6 +125,10 @@ public class themepanel extends JPanel{
 			halloweeno = ImageIO.read(new File("halloweeno.png"));
 			halloweenx = ImageIO.read(new File("halloweenx.png"));
 			
+			neonboard = ImageIO.read(new File("Neonboard.jpg"));
+			neonbg = ImageIO.read(new File("Neonbg.jpg"));
+			neono = ImageIO.read(new File("Neono.png"));
+			neonx = ImageIO.read(new File("Neonx.png"));
 			
 		}catch(IOException e){
 			System.out.println("Unable to load image");

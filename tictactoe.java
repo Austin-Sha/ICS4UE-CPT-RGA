@@ -135,6 +135,19 @@ public class tictactoe implements ActionListener{
 			setupPanel.blnStartrek = false;
 			setupPanel.blnStartrekbg = false;
 			
+			quicksetupPanel.blnlight = false;
+			quicksetupPanel.blnlightbg = true;
+			quicksetupPanel.blndark = false;
+			quicksetupPanel.blndarkbg = false;
+			quicksetupPanel.blnchristmas = false;
+			quicksetupPanel.blnchristmasbg = false;
+			quicksetupPanel.blnhalloween = false;
+			quicksetupPanel.blnhalloweenbg = false;
+			quicksetupPanel.blnneon = false;
+			quicksetupPanel.blnneonbg = false;
+			quicksetupPanel.blnStartrek = false;
+			quicksetupPanel.blnStartrekbg = false;
+			
 			themesPanel.blnlight = true;
 			themesPanel.blnlightbg = true;
 			themesPanel.blndark = false;
@@ -177,6 +190,19 @@ public class tictactoe implements ActionListener{
 			setupPanel.blnneonbg = false;
 			setupPanel.blnStartrek = false;
 			setupPanel.blnStartrekbg = false;
+			
+			quicksetupPanel.blnlight = false;
+			quicksetupPanel.blnlightbg = false;
+			quicksetupPanel.blndark = false;
+			quicksetupPanel.blndarkbg = true;
+			quicksetupPanel.blnchristmas = false;
+			quicksetupPanel.blnchristmasbg = false;
+			quicksetupPanel.blnhalloween = false;
+			quicksetupPanel.blnhalloweenbg = false;
+			quicksetupPanel.blnneon = false;
+			quicksetupPanel.blnneonbg = false;
+			quicksetupPanel.blnStartrek = false;
+			quicksetupPanel.blnStartrekbg = false;
 			
 			themesPanel.blnlight = false;
 			themesPanel.blnlightbg = false;
@@ -221,6 +247,19 @@ public class tictactoe implements ActionListener{
 			setupPanel.blnStartrek = false;
 			setupPanel.blnStartrekbg = false;
 			
+			quicksetupPanel.blnlight = false;
+			quicksetupPanel.blnlightbg = false;
+			quicksetupPanel.blndark = false;
+			quicksetupPanel.blndarkbg = false;
+			quicksetupPanel.blnchristmas = false;
+			quicksetupPanel.blnchristmasbg = true;
+			quicksetupPanel.blnhalloween = false;
+			quicksetupPanel.blnhalloweenbg = false;
+			quicksetupPanel.blnneon = false;
+			quicksetupPanel.blnneonbg = false;
+			quicksetupPanel.blnStartrek = false;
+			quicksetupPanel.blnStartrekbg = false;
+			
 			themesPanel.blnlight = false;
 			themesPanel.blnlightbg = false;
 			themesPanel.blndark = false;
@@ -234,6 +273,118 @@ public class tictactoe implements ActionListener{
 			themesPanel.blnStartrek = false;
 			themesPanel.blnStartrekbg = false;
 			
+		}else if(event.getSource() == HalloweenButton){
+			mainPanel.repaint();
+			setupPanel.repaint();
+			themesPanel.repaint();
+			
+			mainPanel.blnlight = false;
+			mainPanel.blnlightbg = false;
+			mainPanel.blndark = false;
+			mainPanel.blndarkbg = false;
+			mainPanel.blnchristmas = false;
+			mainPanel.blnchristmasbg = false;
+			mainPanel.blnhalloween = false;
+			mainPanel.blnhalloweenbg = true;
+			mainPanel.blnneon = false;
+			mainPanel.blnneonbg = false;
+			mainPanel.blnStartrek = false;
+			mainPanel.blnStartrekbg = false;
+			
+			setupPanel.blnlight = false;
+			setupPanel.blnlightbg = false;
+			setupPanel.blndark = false;
+			setupPanel.blndarkbg = false;
+			setupPanel.blnchristmas = false;
+			setupPanel.blnchristmasbg = false;
+			setupPanel.blnhalloween = false;
+			setupPanel.blnhalloweenbg = true;
+			setupPanel.blnneon = false;
+			setupPanel.blnneonbg = false;
+			setupPanel.blnStartrek = false;
+			setupPanel.blnStartrekbg = false;
+			
+			quicksetupPanel.blnlight = false;
+			quicksetupPanel.blnlightbg = false;
+			quicksetupPanel.blndark = false;
+			quicksetupPanel.blndarkbg = false;
+			quicksetupPanel.blnchristmas = false;
+			quicksetupPanel.blnchristmasbg = false;
+			quicksetupPanel.blnhalloween = false;
+			quicksetupPanel.blnhalloweenbg = true;
+			quicksetupPanel.blnneon = false;
+			quicksetupPanel.blnneonbg = false;
+			quicksetupPanel.blnStartrek = false;
+			quicksetupPanel.blnStartrekbg = false;
+			
+			themesPanel.blnlight = false;
+			themesPanel.blnlightbg = false;
+			themesPanel.blndark = false;
+			themesPanel.blndarkbg = false;
+			themesPanel.blnchristmas = false;
+			themesPanel.blnchristmasbg = false;
+			themesPanel.blnhalloween = true;
+			themesPanel.blnhalloweenbg = true;
+			themesPanel.blnneon = false;
+			themesPanel.blnneonbg = false;
+			themesPanel.blnStartrek = false;
+			themesPanel.blnStartrekbg = false;
+		}else if(event.getSource() == NeonButton){
+			mainPanel.repaint();
+			setupPanel.repaint();
+			themesPanel.repaint();
+			
+			mainPanel.blnlight = false;
+			mainPanel.blnlightbg = false;
+			mainPanel.blndark = false;
+			mainPanel.blndarkbg = false;
+			mainPanel.blnchristmas = false;
+			mainPanel.blnchristmasbg = false;
+			mainPanel.blnhalloween = false;
+			mainPanel.blnhalloweenbg = false;
+			mainPanel.blnneon = false;
+			mainPanel.blnneonbg = true;
+			mainPanel.blnStartrek = false;
+			mainPanel.blnStartrekbg = false;
+			
+			setupPanel.blnlight = false;
+			setupPanel.blnlightbg = false;
+			setupPanel.blndark = false;
+			setupPanel.blndarkbg = false;
+			setupPanel.blnchristmas = false;
+			setupPanel.blnchristmasbg = false;
+			setupPanel.blnhalloween = false;
+			setupPanel.blnhalloweenbg = false;
+			setupPanel.blnneon = false;
+			setupPanel.blnneonbg = true;
+			setupPanel.blnStartrek = false;
+			setupPanel.blnStartrekbg = false;
+			
+			quicksetupPanel.blnlight = false;
+			quicksetupPanel.blnlightbg = false;
+			quicksetupPanel.blndark = false;
+			quicksetupPanel.blndarkbg = false;
+			quicksetupPanel.blnchristmas = false;
+			quicksetupPanel.blnchristmasbg = false;
+			quicksetupPanel.blnhalloween = false;
+			quicksetupPanel.blnhalloweenbg = false;
+			quicksetupPanel.blnneon = false;
+			quicksetupPanel.blnneonbg = true;
+			quicksetupPanel.blnStartrek = false;
+			quicksetupPanel.blnStartrekbg = false;
+			
+			themesPanel.blnlight = false;
+			themesPanel.blnlightbg = false;
+			themesPanel.blndark = false;
+			themesPanel.blndarkbg = false;
+			themesPanel.blnchristmas = false;
+			themesPanel.blnchristmasbg = false;
+			themesPanel.blnhalloween = false;
+			themesPanel.blnhalloweenbg = false;
+			themesPanel.blnneon = true;
+			themesPanel.blnneonbg = true;
+			themesPanel.blnStartrek = false;
+			themesPanel.blnStartrekbg = false;
 		}
 		
 		if(event.getSource() == sendField){
