@@ -57,12 +57,13 @@ public class themepanel extends JPanel{
 	// Methods
 	public void paintComponent(Graphics g){
 		if(blnlight == true && blnlightbg == true){
-			g.drawImage(lightbg,30,30,null);
+			g.drawImage(lightbg,0,0,null);
 			g.drawImage(lightboard, 0,0, null);
 			g.drawImage(lightx,200,200,null);
 			g.drawImage(lighto,0,0,null);
 		}else if(blnlight == false && blnlightbg == true){
 			g.drawImage(lightbg,0,0, null);
+			g.drawImage(lightboard, 0,0, null);
 		}else if(blndark == true){
 			g.drawImage(darkbg,0,0,null);
 			g.drawImage(darkboard,0,0,null);

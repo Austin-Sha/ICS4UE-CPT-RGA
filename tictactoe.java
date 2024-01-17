@@ -8,10 +8,17 @@ import java.awt.image.*;
 import javax.swing.JSlider.*;
 import java.util.*;
 
-public class tictactoe implements ActionListener{
+public class tictactoe implements ActionListener,MouseListener{
 	// Properties
 	JFrame mainFrame = new JFrame("Tic Tac Toe!");
 	
+	//GAMEPLAY
+	int [][] game = new int[3][3];
+	int player1;
+	int player2;
+	
+	
+
 	// Panels
 	themepanel mainPanel = new themepanel();
 	themepanel setupPanel = new themepanel();
@@ -62,7 +69,46 @@ public class tictactoe implements ActionListener{
 	//
 	
 	// Methods
-	
+	public void mousePressed(MouseEvent e) {
+		
+	 }
+ 
+	 public void mouseReleased(MouseEvent e) {
+		
+	 }
+ 
+	 public void mouseEntered(MouseEvent e) {
+		
+	 }
+ 
+	 public void mouseExited(MouseEvent e) {
+		
+	 }
+ 
+	 public void mouseClicked(MouseEvent e) {
+		// if(<e.getX()< && <e.getY()<){
+		// 	ssm.sendText("#:0:0:send");
+		// }else if(<e.getX()< && <e.getY()<){
+		// 	ssm.sendText("#:1:0:send");
+		// }else if(<e.getX()< && <e.getY()<){
+		// 	ssm.sendText("#:2:0:send");
+		// }else if(<e.getX()< && <e.getY()<){
+		// 	ssm.sendText("#:0:1:send");
+		// }else if(<e.getX()< && <e.getY()<){
+		// 	ssm.sendText("#:0:2:send");
+		// }else if(<e.getX()< && <e.getY()<){
+		// 	ssm.sendText("#:1:1:send");
+		// }else if(<e.getX()< && <e.getY()<){
+		// 	ssm.sendText("#:1:2:send");
+		// }else if(<e.getX()< && <e.getY()<){
+		// 	ssm.sendText("#:2:1:send");
+		// }else if(<e.getX()< && <e.getY()<){
+		// 	ssm.sendText("#:2:2:send");
+		// }else{
+			
+		// }
+		
+ 	 }
 	public void actionPerformed(ActionEvent event){
 		if(event.getSource() == standardButton){
 			mainFrame.setContentPane(setupPanel);
@@ -386,14 +432,16 @@ public class tictactoe implements ActionListener{
 			themesPanel.blnStartrek = false;
 			themesPanel.blnStartrekbg = false;
 		}
-		
-		if(event.getSource() == sendField){
+
+			if(event.getSource() == sendField){
 			System.out.println("Send: "+sendField.getText());
 			ssm.sendText(nameField.getText() + ":" + sendField.getText());
 			chatArea.append("You: " + sendField.getText() + "\n");
-			sendField.setText("");			
+			sendField.setText("");
 		}else if(event.getSource() == hostButton){
 			System.out.println("Start socket in server mode");
+			player1 = 1;
+			player2 = 2;
 			hostButton.setEnabled(false);
 			joinButton.setEnabled(false);
 			ssm = new SuperSocketMaster(Integer.parseInt(portField.getText()), this);
@@ -403,6 +451,8 @@ public class tictactoe implements ActionListener{
 			System.out.println(nameField.getText());
 		}else if(event.getSource() == joinButton){
 			System.out.println("Start socket in client mode");
+			player1 = 2;
+			player2 = 1;
 			hostButton.setEnabled(false);
 			joinButton.setEnabled(false);
 			ssm = new SuperSocketMaster(ipField.getText(),Integer.parseInt(portField.getText()), this);
@@ -410,16 +460,28 @@ public class tictactoe implements ActionListener{
 		}else if(event.getSource() == ssm){
 			
 			String[] strChat = ssm.readText().split(":");
-			
+			if(strChat[0] != "#"){
 			try{
 				chatArea.append(strChat[0] + ": "+ strChat[1] + "\n");
 			}catch(IndexOutOfBoundsException e){
-				System.out.println("uwu :3      "+strChat[0]);
+				System.out.println("uwu :3 ur code cwashed"+strChat[0]);
 			}
+		}else{
+			try{
+			if(game[Integer.parseInt(strChat[1])][Integer.parseInt(strChat[2])] == 0){
+				if(strChat[3].equals("sent")){
+					game[Integer.parseInt(strChat[1])][Integer.parseInt(strChat[2])] = player2;
+					ssm.sendText(strChat[0]+":"+strChat[1]+":"+strChat[2]+":"+"recieved");
+				}else if(strChat[3].equals("recieved")){
+					game[Integer.parseInt(strChat[1])][Integer.parseInt(strChat[2])] = player1;
+				}
+			}
+		}catch(IndexOutOfBoundsException e){
+			System.out.println("uwu :3 ur code cwashed"+strChat[0]);
 		}
-		
-		
-		
+		}
+		}
+	
 	}
 	
 	// Constructor
@@ -456,7 +518,6 @@ public class tictactoe implements ActionListener{
 		
 		backButton3.setSize(100,50);
 		backButton3.setLocation(600,600);
-		
 		
 		themesPanel.add(backButton3);
 		themesPanel.add(LightButton);
@@ -504,6 +565,8 @@ public class tictactoe implements ActionListener{
 		themeButton.addActionListener(this);
 		helpButton.addActionListener(this);
 		aboutButton.addActionListener(this);
+
+		mainPanel.addMouseListener(this);
 		mainPanel.add(standardButton);
 		mainPanel.add(quickButton);
 		mainPanel.add(themeButton);
