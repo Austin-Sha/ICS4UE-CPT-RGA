@@ -8,16 +8,14 @@ import java.awt.image.*;
 import javax.swing.JSlider.*;
 import java.util.*;
 
-public class tictactoe implements ActionListener,MouseListener{
+public class tictactoe implements ActionListener, MouseListener {
 	// Properties
 	JFrame mainFrame = new JFrame("Tic Tac Toe!");
-	
-	//GAMEPLAY
-	int [][] game = new int[3][3];
+
+	// GAMEPLAY
+	int[][] game = new int[3][3];
 	int player1;
 	int player2;
-	
-	
 
 	// Panels
 	themepanel mainPanel = new themepanel();
@@ -26,7 +24,7 @@ public class tictactoe implements ActionListener,MouseListener{
 	themepanel themesPanel = new themepanel();
 	JPanel helpPanel = new JPanel();
 	abtPanel aboutPanel = new abtPanel();
-	
+
 	// Labels
 	JLabel test = new JLabel("test");
 
@@ -41,7 +39,7 @@ public class tictactoe implements ActionListener,MouseListener{
 	JButton backButton3 = new JButton("Back");
 	JButton backButton4 = new JButton("Back");
 	JButton backButton5 = new JButton("Back");
-	
+
 	// Themes JButton
 	JButton LightButton = new JButton("Light Mode");
 	JButton DarkButton = new JButton("Dark Mode");
@@ -49,7 +47,7 @@ public class tictactoe implements ActionListener,MouseListener{
 	JButton HalloweenButton = new JButton("Halloween");
 	JButton NeonButton = new JButton("Neon");
 	JButton StarTrekButton = new JButton("Star Trek");
-	
+
 	// Chat setup
 	JTextField nameField = new JTextField();
 
@@ -57,106 +55,107 @@ public class tictactoe implements ActionListener,MouseListener{
 	JButton joinButton = new JButton("Join");
 	JTextField sendField = new JTextField();
 	JTextField ipField = new JTextField();
-	
+
 	JTextArea chatArea = new JTextArea();
 	JTextField portField = new JTextField();
-	
+
 	JScrollPane thescroll = new JScrollPane(chatArea);
-	
+
 	SuperSocketMaster ssm = null;
-	
+
 	// Methods
 	public void mousePressed(MouseEvent e) {
-		
-	 }
- 
-	 public void mouseReleased(MouseEvent e) {
-		
-	 }
- 
-	 public void mouseEntered(MouseEvent e) {
-		
-	 }
- 
-	 public void mouseExited(MouseEvent e) {
-		
-	 }
- 
-	 public void mouseClicked(MouseEvent e) {
+
+	}
+
+	public void mouseReleased(MouseEvent e) {
+
+	}
+
+	public void mouseEntered(MouseEvent e) {
+
+	}
+
+	public void mouseExited(MouseEvent e) {
+
+	}
+
+	public void mouseClicked(MouseEvent e) {
 		// if(<e.getX()< && <e.getY()<){
-		// 	ssm.sendText("#:0:0:send");
+		// ssm.sendText("#:0:0:send");
 		// }else if(<e.getX()< && <e.getY()<){
-		// 	ssm.sendText("#:1:0:send");
+		// ssm.sendText("#:1:0:send");
 		// }else if(<e.getX()< && <e.getY()<){
-		// 	ssm.sendText("#:2:0:send");
+		// ssm.sendText("#:2:0:send");
 		// }else if(<e.getX()< && <e.getY()<){
-		// 	ssm.sendText("#:0:1:send");
+		// ssm.sendText("#:0:1:send");
 		// }else if(<e.getX()< && <e.getY()<){
-		// 	ssm.sendText("#:0:2:send");
+		// ssm.sendText("#:0:2:send");
 		// }else if(<e.getX()< && <e.getY()<){
-		// 	ssm.sendText("#:1:1:send");
+		// ssm.sendText("#:1:1:send");
 		// }else if(<e.getX()< && <e.getY()<){
-		// 	ssm.sendText("#:1:2:send");
+		// ssm.sendText("#:1:2:send");
 		// }else if(<e.getX()< && <e.getY()<){
-		// 	ssm.sendText("#:2:1:send");
+		// ssm.sendText("#:2:1:send");
 		// }else if(<e.getX()< && <e.getY()<){
-		// 	ssm.sendText("#:2:2:send");
+		// ssm.sendText("#:2:2:send");
 		// }else{
-			
+
 		// }
-		
- 	 }
-	public void actionPerformed(ActionEvent event){
+
+	}
+
+	public void actionPerformed(ActionEvent event) {
 		// Button for entering and exiting panels
-		if(event.getSource() == standardButton){
+		if (event.getSource() == standardButton) {
 			mainFrame.setContentPane(setupPanel);
 			mainFrame.pack();
 			mainFrame.repaint();
-		}else if(event.getSource() == backButton){
+		} else if (event.getSource() == backButton) {
 			mainFrame.setContentPane(mainPanel);
 			mainFrame.pack();
 			mainFrame.repaint();
-		}else if(event.getSource() == quickButton){
+		} else if (event.getSource() == quickButton) {
 			mainFrame.setContentPane(quicksetupPanel);
 			mainFrame.pack();
 			mainFrame.repaint();
-		}else if(event.getSource() == backButton2){
+		} else if (event.getSource() == backButton2) {
 			mainFrame.setContentPane(mainPanel);
 			mainFrame.pack();
 			mainFrame.repaint();
-		}else if(event.getSource() == themeButton){
+		} else if (event.getSource() == themeButton) {
 			mainFrame.setContentPane(themesPanel);
 			mainFrame.pack();
 			mainFrame.repaint();
-		}else if(event.getSource() == backButton3){
+		} else if (event.getSource() == backButton3) {
 			mainFrame.setContentPane(mainPanel);
 			mainFrame.pack();
 			mainFrame.repaint();
-		}else if(event.getSource() == helpButton){
+		} else if (event.getSource() == helpButton) {
 			mainFrame.setContentPane(helpPanel);
 			mainFrame.pack();
 			mainFrame.repaint();
-		}else if(event.getSource() == backButton4){
+		} else if (event.getSource() == backButton4) {
 			mainFrame.setContentPane(mainPanel);
 			mainFrame.pack();
 			mainFrame.repaint();
-		}else if(event.getSource() == aboutButton){
+		} else if (event.getSource() == aboutButton) {
 			mainFrame.setContentPane(aboutPanel);
 			mainFrame.pack();
 			mainFrame.repaint();
-		}else if(event.getSource() == backButton5){
+		} else if (event.getSource() == backButton5) {
 			mainFrame.setContentPane(mainPanel);
 			mainFrame.pack();
 			mainFrame.repaint();
-			
-		// End of panel buttons	
-		}else if(event.getSource() == LightButton){
+
+			// End of panel buttons
+		} else if (event.getSource() == LightButton) {
 			// Theme buttons
-			
+
 			mainPanel.repaint();
 			setupPanel.repaint();
 			themesPanel.repaint();
-			
+
 			mainPanel.blnlight = false;
 			mainPanel.blnlightbg = true;
 			mainPanel.blndark = false;
@@ -169,7 +168,7 @@ public class tictactoe implements ActionListener,MouseListener{
 			mainPanel.blnneonbg = false;
 			mainPanel.blnStartrek = false;
 			mainPanel.blnStartrekbg = false;
-			
+
 			setupPanel.blnlight = false;
 			setupPanel.blnlightbg = true;
 			setupPanel.blndark = false;
@@ -182,7 +181,7 @@ public class tictactoe implements ActionListener,MouseListener{
 			setupPanel.blnneonbg = false;
 			setupPanel.blnStartrek = false;
 			setupPanel.blnStartrekbg = false;
-			
+
 			quicksetupPanel.blnlight = false;
 			quicksetupPanel.blnlightbg = true;
 			quicksetupPanel.blndark = false;
@@ -195,7 +194,7 @@ public class tictactoe implements ActionListener,MouseListener{
 			quicksetupPanel.blnneonbg = false;
 			quicksetupPanel.blnStartrek = false;
 			quicksetupPanel.blnStartrekbg = false;
-			
+
 			themesPanel.blnlight = true;
 			themesPanel.blnlightbg = true;
 			themesPanel.blndark = false;
@@ -208,11 +207,11 @@ public class tictactoe implements ActionListener,MouseListener{
 			themesPanel.blnneonbg = false;
 			themesPanel.blnStartrek = false;
 			themesPanel.blnStartrekbg = false;
-		}else if(event.getSource() == DarkButton){
+		} else if (event.getSource() == DarkButton) {
 			mainPanel.repaint();
 			setupPanel.repaint();
 			themesPanel.repaint();
-			
+
 			mainPanel.blnlight = false;
 			mainPanel.blnlightbg = false;
 			mainPanel.blndark = false;
@@ -225,7 +224,7 @@ public class tictactoe implements ActionListener,MouseListener{
 			mainPanel.blnneonbg = false;
 			mainPanel.blnStartrek = false;
 			mainPanel.blnStartrekbg = false;
-			
+
 			setupPanel.blnlight = false;
 			setupPanel.blnlightbg = false;
 			setupPanel.blndark = false;
@@ -238,7 +237,7 @@ public class tictactoe implements ActionListener,MouseListener{
 			setupPanel.blnneonbg = false;
 			setupPanel.blnStartrek = false;
 			setupPanel.blnStartrekbg = false;
-			
+
 			quicksetupPanel.blnlight = false;
 			quicksetupPanel.blnlightbg = false;
 			quicksetupPanel.blndark = false;
@@ -251,7 +250,7 @@ public class tictactoe implements ActionListener,MouseListener{
 			quicksetupPanel.blnneonbg = false;
 			quicksetupPanel.blnStartrek = false;
 			quicksetupPanel.blnStartrekbg = false;
-			
+
 			themesPanel.blnlight = false;
 			themesPanel.blnlightbg = false;
 			themesPanel.blndark = true;
@@ -264,11 +263,11 @@ public class tictactoe implements ActionListener,MouseListener{
 			themesPanel.blnneonbg = false;
 			themesPanel.blnStartrek = false;
 			themesPanel.blnStartrekbg = false;
-		}else if(event.getSource() == ChristmasButton){
+		} else if (event.getSource() == ChristmasButton) {
 			mainPanel.repaint();
 			setupPanel.repaint();
 			themesPanel.repaint();
-			
+
 			mainPanel.blnlight = false;
 			mainPanel.blnlightbg = false;
 			mainPanel.blndark = false;
@@ -281,7 +280,7 @@ public class tictactoe implements ActionListener,MouseListener{
 			mainPanel.blnneonbg = false;
 			mainPanel.blnStartrek = false;
 			mainPanel.blnStartrekbg = false;
-			
+
 			setupPanel.blnlight = false;
 			setupPanel.blnlightbg = false;
 			setupPanel.blndark = false;
@@ -294,7 +293,7 @@ public class tictactoe implements ActionListener,MouseListener{
 			setupPanel.blnneonbg = false;
 			setupPanel.blnStartrek = false;
 			setupPanel.blnStartrekbg = false;
-			
+
 			quicksetupPanel.blnlight = false;
 			quicksetupPanel.blnlightbg = false;
 			quicksetupPanel.blndark = false;
@@ -307,7 +306,7 @@ public class tictactoe implements ActionListener,MouseListener{
 			quicksetupPanel.blnneonbg = false;
 			quicksetupPanel.blnStartrek = false;
 			quicksetupPanel.blnStartrekbg = false;
-			
+
 			themesPanel.blnlight = false;
 			themesPanel.blnlightbg = false;
 			themesPanel.blndark = false;
@@ -320,12 +319,12 @@ public class tictactoe implements ActionListener,MouseListener{
 			themesPanel.blnneonbg = false;
 			themesPanel.blnStartrek = false;
 			themesPanel.blnStartrekbg = false;
-			
-		}else if(event.getSource() == HalloweenButton){
+
+		} else if (event.getSource() == HalloweenButton) {
 			mainPanel.repaint();
 			setupPanel.repaint();
 			themesPanel.repaint();
-			
+
 			mainPanel.blnlight = false;
 			mainPanel.blnlightbg = false;
 			mainPanel.blndark = false;
@@ -338,7 +337,7 @@ public class tictactoe implements ActionListener,MouseListener{
 			mainPanel.blnneonbg = false;
 			mainPanel.blnStartrek = false;
 			mainPanel.blnStartrekbg = false;
-			
+
 			setupPanel.blnlight = false;
 			setupPanel.blnlightbg = false;
 			setupPanel.blndark = false;
@@ -351,7 +350,7 @@ public class tictactoe implements ActionListener,MouseListener{
 			setupPanel.blnneonbg = false;
 			setupPanel.blnStartrek = false;
 			setupPanel.blnStartrekbg = false;
-			
+
 			quicksetupPanel.blnlight = false;
 			quicksetupPanel.blnlightbg = false;
 			quicksetupPanel.blndark = false;
@@ -364,7 +363,7 @@ public class tictactoe implements ActionListener,MouseListener{
 			quicksetupPanel.blnneonbg = false;
 			quicksetupPanel.blnStartrek = false;
 			quicksetupPanel.blnStartrekbg = false;
-			
+
 			themesPanel.blnlight = false;
 			themesPanel.blnlightbg = false;
 			themesPanel.blndark = false;
@@ -377,11 +376,11 @@ public class tictactoe implements ActionListener,MouseListener{
 			themesPanel.blnneonbg = false;
 			themesPanel.blnStartrek = false;
 			themesPanel.blnStartrekbg = false;
-		}else if(event.getSource() == NeonButton){
+		} else if (event.getSource() == NeonButton) {
 			mainPanel.repaint();
 			setupPanel.repaint();
 			themesPanel.repaint();
-			
+
 			mainPanel.blnlight = false;
 			mainPanel.blnlightbg = false;
 			mainPanel.blndark = false;
@@ -394,7 +393,7 @@ public class tictactoe implements ActionListener,MouseListener{
 			mainPanel.blnneonbg = true;
 			mainPanel.blnStartrek = false;
 			mainPanel.blnStartrekbg = false;
-			
+
 			setupPanel.blnlight = false;
 			setupPanel.blnlightbg = false;
 			setupPanel.blndark = false;
@@ -407,7 +406,7 @@ public class tictactoe implements ActionListener,MouseListener{
 			setupPanel.blnneonbg = true;
 			setupPanel.blnStartrek = false;
 			setupPanel.blnStartrekbg = false;
-			
+
 			quicksetupPanel.blnlight = false;
 			quicksetupPanel.blnlightbg = false;
 			quicksetupPanel.blndark = false;
@@ -420,7 +419,7 @@ public class tictactoe implements ActionListener,MouseListener{
 			quicksetupPanel.blnneonbg = true;
 			quicksetupPanel.blnStartrek = false;
 			quicksetupPanel.blnStartrekbg = false;
-			
+
 			themesPanel.blnlight = false;
 			themesPanel.blnlightbg = false;
 			themesPanel.blndark = false;
@@ -433,16 +432,16 @@ public class tictactoe implements ActionListener,MouseListener{
 			themesPanel.blnneonbg = true;
 			themesPanel.blnStartrek = false;
 			themesPanel.blnStartrekbg = false;
-			
-			// End of themes	
+
+			// End of themes
 		}
 		// Networking setup
-		if(event.getSource() == sendField){
-			System.out.println("Send: "+sendField.getText());
+		if (event.getSource() == sendField) {
+			System.out.println("Send: " + sendField.getText());
 			ssm.sendText(nameField.getText() + ":" + sendField.getText());
 			chatArea.append("You: " + sendField.getText() + "\n");
 			sendField.setText("");
-		}else if(event.getSource() == hostButton){
+		} else if (event.getSource() == hostButton) {
 			System.out.println("Start socket in server mode");
 			player1 = 1;
 			player2 = 2;
@@ -451,78 +450,76 @@ public class tictactoe implements ActionListener,MouseListener{
 			ssm = new SuperSocketMaster(Integer.parseInt(portField.getText()), this);
 			ssm.connect();
 			ipField.setText(ssm.getMyAddress());
-			
+
 			System.out.println(nameField.getText());
-		}else if(event.getSource() == joinButton){
+		} else if (event.getSource() == joinButton) {
 			System.out.println("Start socket in client mode");
 			player1 = 2;
 			player2 = 1;
 			hostButton.setEnabled(false);
 			joinButton.setEnabled(false);
-			ssm = new SuperSocketMaster(ipField.getText(),Integer.parseInt(portField.getText()), this);
+			ssm = new SuperSocketMaster(ipField.getText(), Integer.parseInt(portField.getText()), this);
 			ssm.connect();
-		}else if(event.getSource() == ssm){
-			
+		} else if (event.getSource() == ssm) {
+
 			String[] strChat = ssm.readText().split(":");
-			if(strChat[0] != "#"){
-			try{
-				chatArea.append(strChat[0] + ": "+ strChat[1] + "\n");
-			}catch(IndexOutOfBoundsException e){
-				System.out.println("uwu :3 ur code cwashed"+strChat[0]);
-			}
-		}else{
-			try{
-			if(game[Integer.parseInt(strChat[1])][Integer.parseInt(strChat[2])] == 0){
-				if(strChat[3].equals("sent")){
-					game[Integer.parseInt(strChat[1])][Integer.parseInt(strChat[2])] = player2;
-					ssm.sendText(strChat[0]+":"+strChat[1]+":"+strChat[2]+":"+"recieved");
-				}else if(strChat[3].equals("recieved")){
-					game[Integer.parseInt(strChat[1])][Integer.parseInt(strChat[2])] = player1;
+			if (strChat[0] != "#") {
+				try {
+					chatArea.append(strChat[0] + ": " + strChat[1] + "\n");
+				} catch (IndexOutOfBoundsException e) {
+					System.out.println("uwu :3 ur code cwashed" + strChat[0]);
+				}
+			} else {
+				try {
+					if (game[Integer.parseInt(strChat[1])][Integer.parseInt(strChat[2])] == 0) {
+						if (strChat[3].equals("sent")) {
+							game[Integer.parseInt(strChat[1])][Integer.parseInt(strChat[2])] = player2;
+							ssm.sendText(strChat[0] + ":" + strChat[1] + ":" + strChat[2] + ":" + "recieved");
+						} else if (strChat[3].equals("recieved")) {
+							game[Integer.parseInt(strChat[1])][Integer.parseInt(strChat[2])] = player1;
+						}
+					}
+				} catch (IndexOutOfBoundsException e) {
+					System.out.println("uwu :3 ur code cwashed" + strChat[0]);
 				}
 			}
-		}catch(IndexOutOfBoundsException e){
-			System.out.println("uwu :3 ur code cwashed"+strChat[0]);
 		}
-		}
-		}
-	
 	}
-	
+
 	// Constructor
-	tictactoe(){
-		
+	tictactoe() {
 		setupPanel.setLayout(null);
-		setupPanel.setPreferredSize(new Dimension(1280,720));
-		backButton.setSize(100,50);
-		backButton.setLocation(600,600);
+		setupPanel.setPreferredSize(new Dimension(1280, 720));
+		backButton.setSize(100, 50);
+		backButton.setLocation(600, 600);
 		setupPanel.add(backButton);
 		backButton.addActionListener(this);
-		
+
 		quicksetupPanel.setLayout(null);
-		quicksetupPanel.setPreferredSize(new Dimension(1280,720));
-		backButton2.setSize(100,50);
-		backButton2.setLocation(600,600);
+		quicksetupPanel.setPreferredSize(new Dimension(1280, 720));
+		backButton2.setSize(100, 50);
+		backButton2.setLocation(600, 600);
 		quicksetupPanel.add(backButton2);
 		backButton2.addActionListener(this);
-		
+
 		themesPanel.setLayout(null);
-		themesPanel.setPreferredSize(new Dimension(1280,720));
-		LightButton.setSize(300,75);
-		LightButton.setLocation(850,75);
-		DarkButton.setSize(300,75);
-		DarkButton.setLocation(850,150);
-		ChristmasButton.setSize(300,75);
-		ChristmasButton.setLocation(850,225);
-		HalloweenButton.setSize(300,75);
-		HalloweenButton.setLocation(850,300);
-		NeonButton.setSize(300,75);
-		NeonButton.setLocation(850,375);
-		StarTrekButton.setSize(300,75);
-		StarTrekButton.setLocation(850,450);
-		
-		backButton3.setSize(100,50);
-		backButton3.setLocation(600,600);
-		
+		themesPanel.setPreferredSize(new Dimension(1280, 720));
+		LightButton.setSize(300, 75);
+		LightButton.setLocation(850, 75);
+		DarkButton.setSize(300, 75);
+		DarkButton.setLocation(850, 150);
+		ChristmasButton.setSize(300, 75);
+		ChristmasButton.setLocation(850, 225);
+		HalloweenButton.setSize(300, 75);
+		HalloweenButton.setLocation(850, 300);
+		NeonButton.setSize(300, 75);
+		NeonButton.setLocation(850, 375);
+		StarTrekButton.setSize(300, 75);
+		StarTrekButton.setLocation(850, 450);
+
+		backButton3.setSize(100, 50);
+		backButton3.setLocation(600, 600);
+
 		themesPanel.add(backButton3);
 		themesPanel.add(LightButton);
 		themesPanel.add(DarkButton);
@@ -537,33 +534,33 @@ public class tictactoe implements ActionListener,MouseListener{
 		HalloweenButton.addActionListener(this);
 		NeonButton.addActionListener(this);
 		StarTrekButton.addActionListener(this);
-		
+
 		helpPanel.setLayout(null);
-		helpPanel.setPreferredSize(new Dimension(1280,720));
-		backButton4.setSize(100,50);
-		backButton4.setLocation(600,600);
+		helpPanel.setPreferredSize(new Dimension(1280, 720));
+		backButton4.setSize(100, 50);
+		backButton4.setLocation(600, 600);
 		helpPanel.add(backButton4);
 		backButton4.addActionListener(this);
-		
+
 		aboutPanel.setLayout(null);
-		aboutPanel.setPreferredSize(new Dimension(1280,720));
-		backButton5.setSize(100,50);
-		backButton5.setLocation(590,610);
+		aboutPanel.setPreferredSize(new Dimension(1280, 720));
+		backButton5.setSize(100, 50);
+		backButton5.setLocation(590, 610);
 		aboutPanel.add(backButton5);
 		backButton5.addActionListener(this);
-		
+
 		mainPanel.setLayout(null);
-		mainPanel.setPreferredSize(new Dimension(1280,720));
-		standardButton.setSize(300,75);
-		standardButton.setLocation(850,175);
-		quickButton.setSize(300,75);
-		quickButton.setLocation(850,250);
-		themeButton.setSize(300,75);
-		themeButton.setLocation(850,325);
-		helpButton.setSize(300,75);
-		helpButton.setLocation(850,400);
-		aboutButton.setSize(300,75);
-		aboutButton.setLocation(850,475);
+		mainPanel.setPreferredSize(new Dimension(1280, 720));
+		standardButton.setSize(300, 75);
+		standardButton.setLocation(850, 175);
+		quickButton.setSize(300, 75);
+		quickButton.setLocation(850, 250);
+		themeButton.setSize(300, 75);
+		themeButton.setLocation(850, 325);
+		helpButton.setSize(300, 75);
+		helpButton.setLocation(850, 400);
+		aboutButton.setSize(300, 75);
+		aboutButton.setLocation(850, 475);
 		standardButton.addActionListener(this);
 		quickButton.addActionListener(this);
 		themeButton.addActionListener(this);
@@ -576,29 +573,29 @@ public class tictactoe implements ActionListener,MouseListener{
 		mainPanel.add(themeButton);
 		mainPanel.add(helpButton);
 		mainPanel.add(aboutButton);
-		
-		nameField.setSize(200,50);
-		nameField.setLocation(950,80);
-		
-		thescroll.setSize(400,400);
-		thescroll.setLocation(850,50);
-		
-		sendField.setSize(400,50);
-		sendField.setLocation(850,450);
+
+		nameField.setSize(200, 50);
+		nameField.setLocation(950, 80);
+
+		thescroll.setSize(400, 400);
+		thescroll.setLocation(850, 50);
+
+		sendField.setSize(400, 50);
+		sendField.setLocation(850, 450);
 		sendField.addActionListener(this);
-		
-		ipField.setSize(200,50);
-		ipField.setLocation(850,500);
-	
-		portField.setSize(200,50);
-		portField.setLocation(1050,500);
-		
-		hostButton.setSize(200,50);
-		hostButton.setLocation(850,550);
+
+		ipField.setSize(200, 50);
+		ipField.setLocation(850, 500);
+
+		portField.setSize(200, 50);
+		portField.setLocation(1050, 500);
+
+		hostButton.setSize(200, 50);
+		hostButton.setLocation(850, 550);
 		hostButton.addActionListener(this);
 
-		joinButton.setSize(200,50);
-		joinButton.setLocation(1050,550);
+		joinButton.setSize(200, 50);
+		joinButton.setLocation(1050, 550);
 		joinButton.addActionListener(this);
 
 		mainPanel.add(nameField);
@@ -608,7 +605,7 @@ public class tictactoe implements ActionListener,MouseListener{
 		setupPanel.add(portField);
 		setupPanel.add(hostButton);
 		setupPanel.add(joinButton);
-		
+
 		mainFrame.setContentPane(mainPanel);
 		mainFrame.pack();
 		mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -617,9 +614,8 @@ public class tictactoe implements ActionListener,MouseListener{
 	}
 
 	// Main Method
-	public static void main(String[] args){
+	public static void main(String[] args) {
 		new tictactoe();
 	}
-
 
 }
