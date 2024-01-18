@@ -50,10 +50,8 @@ public class tictactoe implements ActionListener,MouseListener{
 	JButton NeonButton = new JButton("Neon");
 	JButton StarTrekButton = new JButton("Star Trek");
 	
-	// Chat
-	// RYAN STUFF
+	// Chat setup
 	JTextField nameField = new JTextField();
-	//String strName = nameField.getText();
 
 	JButton hostButton = new JButton("Host");
 	JButton joinButton = new JButton("Join");
@@ -66,7 +64,6 @@ public class tictactoe implements ActionListener,MouseListener{
 	JScrollPane thescroll = new JScrollPane(chatArea);
 	
 	SuperSocketMaster ssm = null;
-	//
 	
 	// Methods
 	public void mousePressed(MouseEvent e) {
@@ -110,6 +107,7 @@ public class tictactoe implements ActionListener,MouseListener{
 		
  	 }
 	public void actionPerformed(ActionEvent event){
+		// Button for entering and exiting panels
 		if(event.getSource() == standardButton){
 			mainFrame.setContentPane(setupPanel);
 			mainFrame.pack();
@@ -150,7 +148,11 @@ public class tictactoe implements ActionListener,MouseListener{
 			mainFrame.setContentPane(mainPanel);
 			mainFrame.pack();
 			mainFrame.repaint();
+			
+		// End of panel buttons	
 		}else if(event.getSource() == LightButton){
+			// Theme buttons
+			
 			mainPanel.repaint();
 			setupPanel.repaint();
 			themesPanel.repaint();
@@ -431,9 +433,11 @@ public class tictactoe implements ActionListener,MouseListener{
 			themesPanel.blnneonbg = true;
 			themesPanel.blnStartrek = false;
 			themesPanel.blnStartrekbg = false;
+			
+			// End of themes	
 		}
-
-			if(event.getSource() == sendField){
+		// Networking setup
+		if(event.getSource() == sendField){
 			System.out.println("Send: "+sendField.getText());
 			ssm.sendText(nameField.getText() + ":" + sendField.getText());
 			chatArea.append("You: " + sendField.getText() + "\n");
