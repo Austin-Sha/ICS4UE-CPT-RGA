@@ -14,8 +14,10 @@ public class tictactoe implements ActionListener, MouseListener {
 
 	// GAMEPLAY
 	int[][] game = new int[3][3];
-	int player1;
-	int player2;
+	int intPlayer1;
+	int intPlayer2;
+	boolean blnstandard;
+	boolean blnturn;
 
 	// Panels
 	themepanel mainPanel = new themepanel();
@@ -81,27 +83,56 @@ public class tictactoe implements ActionListener, MouseListener {
 	}
 
 	public void mouseClicked(MouseEvent e) {
-		// if(<e.getX()< && <e.getY()<){
-		// ssm.sendText("#:0:0:send");
-		// }else if(<e.getX()< && <e.getY()<){
-		// ssm.sendText("#:1:0:send");
-		// }else if(<e.getX()< && <e.getY()<){
-		// ssm.sendText("#:2:0:send");
-		// }else if(<e.getX()< && <e.getY()<){
-		// ssm.sendText("#:0:1:send");
-		// }else if(<e.getX()< && <e.getY()<){
-		// ssm.sendText("#:0:2:send");
-		// }else if(<e.getX()< && <e.getY()<){
-		// ssm.sendText("#:1:1:send");
-		// }else if(<e.getX()< && <e.getY()<){
-		// ssm.sendText("#:1:2:send");
-		// }else if(<e.getX()< && <e.getY()<){
-		// ssm.sendText("#:2:1:send");
-		// }else if(<e.getX()< && <e.getY()<){
-		// ssm.sendText("#:2:2:send");
-		// }else{
+		if (blnstandard == true) {
+			if (blnturn == true) {
+				//  if(0 <e.getX()<200 && 0<e.getY()<200){
+				//  ssm.sendText("#:0:0:send");
+				// System.out.println("nice it works");
+				// }
+				//else if(<e.getX()< && <e.getY()<){
+				// ssm.sendText("#:1:0:send");
+				// }else if(<e.getX()< && <e.getY()<){
+				// ssm.sendText("#:2:0:send");
+				// }else if(<e.getX()< && <e.getY()<){
+				// ssm.sendText("#:0:1:send");
+				// }else if(<e.getX()< && <e.getY()<){
+				// ssm.sendText("#:0:2:send");
+				// }else if(<e.getX()< && <e.getY()<){
+				// ssm.sendText("#:1:1:send");
+				// }else if(<e.getX()< && <e.getY()<){
+				// ssm.sendText("#:1:2:send");
+				// }else if(<e.getX()< && <e.getY()<){
+				// ssm.sendText("#:2:1:send");
+				// }else if(<e.getX()< && <e.getY()<){
+				// ssm.sendText("#:2:2:send");
+				// }else{
+				// }
+			}else{
+				System.out.println("not your turn");
+			}
 
-		// }
+		}else{
+			// if(<e.getX()< && <e.getY()<){
+				// ssm.sendText("#:0:0:send");
+				// }else if(<e.getX()< && <e.getY()<){
+				// ssm.sendText("#:1:0:send");
+				// }else if(<e.getX()< && <e.getY()<){
+				// ssm.sendText("#:2:0:send");
+				// }else if(<e.getX()< && <e.getY()<){
+				// ssm.sendText("#:0:1:send");
+				// }else if(<e.getX()< && <e.getY()<){
+				// ssm.sendText("#:0:2:send");
+				// }else if(<e.getX()< && <e.getY()<){
+				// ssm.sendText("#:1:1:send");
+				// }else if(<e.getX()< && <e.getY()<){
+				// ssm.sendText("#:1:2:send");
+				// }else if(<e.getX()< && <e.getY()<){
+				// ssm.sendText("#:2:1:send");
+				// }else if(<e.getX()< && <e.getY()<){
+				// ssm.sendText("#:2:2:send");
+				// }else{
+				// }
+		}
 
 	}
 
@@ -111,6 +142,7 @@ public class tictactoe implements ActionListener, MouseListener {
 			mainFrame.setContentPane(setupPanel);
 			mainFrame.pack();
 			mainFrame.repaint();
+			blnstandard = true;
 		} else if (event.getSource() == backButton) {
 			mainFrame.setContentPane(mainPanel);
 			mainFrame.pack();
@@ -443,10 +475,11 @@ public class tictactoe implements ActionListener, MouseListener {
 			sendField.setText("");
 		} else if (event.getSource() == hostButton) {
 			System.out.println("Start socket in server mode");
-			player1 = 1;
-			player2 = 2;
+			intPlayer1 = 1;
+			intPlayer2 = 2;
 			hostButton.setEnabled(false);
 			joinButton.setEnabled(false);
+			blnturn = true;
 			ssm = new SuperSocketMaster(Integer.parseInt(portField.getText()), this);
 			ssm.connect();
 			ipField.setText(ssm.getMyAddress());
@@ -454,10 +487,11 @@ public class tictactoe implements ActionListener, MouseListener {
 			System.out.println(nameField.getText());
 		} else if (event.getSource() == joinButton) {
 			System.out.println("Start socket in client mode");
-			player1 = 2;
-			player2 = 1;
+			intPlayer1 = 2;
+			intPlayer2 = 1;
 			hostButton.setEnabled(false);
 			joinButton.setEnabled(false);
+			blnturn = false;
 			ssm = new SuperSocketMaster(ipField.getText(), Integer.parseInt(portField.getText()), this);
 			ssm.connect();
 		} else if (event.getSource() == ssm) {
@@ -473,10 +507,10 @@ public class tictactoe implements ActionListener, MouseListener {
 				try {
 					if (game[Integer.parseInt(strChat[1])][Integer.parseInt(strChat[2])] == 0) {
 						if (strChat[3].equals("sent")) {
-							game[Integer.parseInt(strChat[1])][Integer.parseInt(strChat[2])] = player2;
+							game[Integer.parseInt(strChat[1])][Integer.parseInt(strChat[2])] = intPlayer2;
 							ssm.sendText(strChat[0] + ":" + strChat[1] + ":" + strChat[2] + ":" + "recieved");
 						} else if (strChat[3].equals("recieved")) {
-							game[Integer.parseInt(strChat[1])][Integer.parseInt(strChat[2])] = player1;
+							game[Integer.parseInt(strChat[1])][Integer.parseInt(strChat[2])] = intPlayer1;
 						}
 					}
 				} catch (IndexOutOfBoundsException e) {
@@ -493,6 +527,7 @@ public class tictactoe implements ActionListener, MouseListener {
 		backButton.setSize(100, 50);
 		backButton.setLocation(600, 600);
 		setupPanel.add(backButton);
+		setupPanel.addMouseListener(this);
 		backButton.addActionListener(this);
 
 		quicksetupPanel.setLayout(null);
@@ -567,7 +602,6 @@ public class tictactoe implements ActionListener, MouseListener {
 		helpButton.addActionListener(this);
 		aboutButton.addActionListener(this);
 
-		mainPanel.addMouseListener(this);
 		mainPanel.add(standardButton);
 		mainPanel.add(quickButton);
 		mainPanel.add(themeButton);
