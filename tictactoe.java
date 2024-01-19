@@ -85,10 +85,10 @@ public class tictactoe implements ActionListener, MouseListener {
 	public void mouseClicked(MouseEvent e) {
 		if (blnstandard == true) {
 			if (blnturn == true) {
-				//  if(0 <e.getX()<200 && 0<e.getY()<200){
-				//  ssm.sendText("#:0:0:send");
-				// System.out.println("nice it works");
-				// }
+				//   if(e.getX()>0 && e.getX()<200 && e.getY()>0 && e.getY()<200){
+				//   ssm.sendText("#:0:0:send");
+				//  System.out.println("nice it works");
+				//  }
 				//else if(<e.getX()< && <e.getY()<){
 				// ssm.sendText("#:1:0:send");
 				// }else if(<e.getX()< && <e.getY()<){
@@ -509,8 +509,10 @@ public class tictactoe implements ActionListener, MouseListener {
 						if (strChat[3].equals("sent")) {
 							game[Integer.parseInt(strChat[1])][Integer.parseInt(strChat[2])] = intPlayer2;
 							ssm.sendText(strChat[0] + ":" + strChat[1] + ":" + strChat[2] + ":" + "recieved");
+							blnturn = true;
 						} else if (strChat[3].equals("recieved")) {
 							game[Integer.parseInt(strChat[1])][Integer.parseInt(strChat[2])] = intPlayer1;
+							blnturn = false;
 						}
 					}
 				} catch (IndexOutOfBoundsException e) {
