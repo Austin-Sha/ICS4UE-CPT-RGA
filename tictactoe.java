@@ -91,48 +91,51 @@ public class tictactoe implements ActionListener, MouseListener {
 				} else if (e.getX() > 0 && e.getX() < 200 && e.getY() > 200 && e.getY() < 400) {
 					ssm.sendText("#:1:0:send");
 					System.out.println("nice it works 2");
+				} else if (e.getX() > 0 && e.getX() < 200 && e.getY() > 400 && e.getY() < 600) {
+					ssm.sendText("#:2:0:send");
+				} else if (e.getX() > 200 && e.getX() < 400 && e.getY() > 0 && e.getY() < 200) {
+					ssm.sendText("#:0:1:send");
+				} else if (e.getX() > 0 && e.getX() < 200 && e.getY() > 400 && e.getY() < 600) {
+					ssm.sendText("#:0:2:send");
+				} else if (e.getX() > 200 && e.getX() < 400 && e.getY() > 200 && e.getY() < 400) {
+					ssm.sendText("#:1:1:send");
+				} else if (e.getX() > 200 && e.getX() < 400 && e.getY() > 400 && e.getY() < 600) {
+					ssm.sendText("#:1:2:send");
+				} else if (e.getX() > 400 && e.getX() < 600 && e.getY() > 200 && e.getY() < 400) {
+					ssm.sendText("#:2:1:send");
+				} else if (e.getX() > 400 && e.getX() < 600 && e.getY() > 400 && e.getY() < 600) {
+					ssm.sendText("#:2:2:send");
+				} else {
 				}
-				//else if(<e.getX()< && <e.getY()<){
-				// ssm.sendText("#:2:0:send");
-				// }else if(<e.getX()< && <e.getY()<){
-				// ssm.sendText("#:0:1:send");
-				// }else if(<e.getX()< && <e.getY()<){
-				// ssm.sendText("#:0:2:send");
-				// }else if(<e.getX()< && <e.getY()<){
-				// ssm.sendText("#:1:1:send");
-				// }else if(<e.getX()< && <e.getY()<){
-				// ssm.sendText("#:1:2:send");
-				// }else if(<e.getX()< && <e.getY()<){
-				// ssm.sendText("#:2:1:send");
-				// }else if(<e.getX()< && <e.getY()<){
-				// ssm.sendText("#:2:2:send");
-				// }else{
-				// }
-			}else{
-				System.out.println("not your turn");
+
+
+			} else {
+				chatArea.append("System: Not Your Turn \n");
 			}
 
-		}else{
-			// if(<e.getX()< && <e.getY()<){
-				// ssm.sendText("#:0:0:send");
-				// }else if(<e.getX()< && <e.getY()<){
-				// ssm.sendText("#:1:0:send");
-				// }else if(<e.getX()< && <e.getY()<){
-				// ssm.sendText("#:2:0:send");
-				// }else if(<e.getX()< && <e.getY()<){
-				// ssm.sendText("#:0:1:send");
-				// }else if(<e.getX()< && <e.getY()<){
-				// ssm.sendText("#:0:2:send");
-				// }else if(<e.getX()< && <e.getY()<){
-				// ssm.sendText("#:1:1:send");
-				// }else if(<e.getX()< && <e.getY()<){
-				// ssm.sendText("#:1:2:send");
-				// }else if(<e.getX()< && <e.getY()<){
-				// ssm.sendText("#:2:1:send");
-				// }else if(<e.getX()< && <e.getY()<){
-				// ssm.sendText("#:2:2:send");
-				// }else{
-				// }
+		} else {
+			if (e.getX() > 0 && e.getX() < 200 && e.getY() > 0 && e.getY() < 200) {
+				ssm.sendText("#:0:0:send");
+				System.out.println("nice it works");
+			} else if (e.getX() > 0 && e.getX() < 200 && e.getY() > 200 && e.getY() < 400) {
+				ssm.sendText("#:1:0:send");
+				System.out.println("nice it works 2");
+			} else if (e.getX() > 0 && e.getX() < 200 && e.getY() > 400 && e.getY() < 600) {
+				ssm.sendText("#:2:0:send");
+			} else if (e.getX() > 200 && e.getX() < 400 && e.getY() > 0 && e.getY() < 200) {
+				ssm.sendText("#:0:1:send");
+			} else if (e.getX() > 0 && e.getX() < 200 && e.getY() > 400 && e.getY() < 600) {
+				ssm.sendText("#:0:2:send");
+			} else if (e.getX() > 200 && e.getX() < 400 && e.getY() > 200 && e.getY() < 400) {
+				ssm.sendText("#:1:1:send");
+			} else if (e.getX() > 200 && e.getX() < 400 && e.getY() > 400 && e.getY() < 600) {
+				ssm.sendText("#:1:2:send");
+			} else if (e.getX() > 400 && e.getX() < 600 && e.getY() > 200 && e.getY() < 400) {
+				ssm.sendText("#:2:1:send");
+			} else if (e.getX() > 400 && e.getX() < 600 && e.getY() > 400 && e.getY() < 600) {
+				ssm.sendText("#:2:2:send");
+			} else {
+			}
 		}
 
 	}
@@ -498,27 +501,32 @@ public class tictactoe implements ActionListener, MouseListener {
 		} else if (event.getSource() == ssm) {
 
 			String[] strChat = ssm.readText().split(":");
-			if (strChat[0] != "#") {
-				try {
-					chatArea.append(strChat[0] + ": " + strChat[1] + "\n");
-				} catch (IndexOutOfBoundsException e) {
-					System.out.println("uwu :3 ur code cwashed" + strChat[0]);
-				}
-			} else {
+			if (strChat[0].equals("#")) {
 				try {
 					if (game[Integer.parseInt(strChat[1])][Integer.parseInt(strChat[2])] == 0) {
-						if (strChat[3].equals("sent")) {
+						if (strChat[3].equals("send")) {
 							game[Integer.parseInt(strChat[1])][Integer.parseInt(strChat[2])] = intPlayer2;
 							ssm.sendText(strChat[0] + ":" + strChat[1] + ":" + strChat[2] + ":" + "recieved");
 							blnturn = true;
+							chatArea.append("System:Your Turn \n");
 						} else if (strChat[3].equals("recieved")) {
 							game[Integer.parseInt(strChat[1])][Integer.parseInt(strChat[2])] = intPlayer1;
 							blnturn = false;
+								System.out.println();
+							}
+						}else{
+							ssm.sendText("System:Spot Taken");
 						}
-					}
+					}catch (IndexOutOfBoundsException e) {
+					System.out.println("uwu :3 ur code cwashed" + strChat[0]);
+				}
+			} else {
+				try{
+				chatArea.append(strChat[0] + ": " + strChat[1] + "\n");
 				} catch (IndexOutOfBoundsException e) {
 					System.out.println("uwu :3 ur code cwashed" + strChat[0]);
 				}
+				
 			}
 		}
 	}
