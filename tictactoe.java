@@ -85,14 +85,14 @@ public class tictactoe implements ActionListener, MouseListener {
 	public void mouseClicked(MouseEvent e) {
 		if (blnstandard == true) {
 			if (blnturn == true) {
-				//funnu
-				//   if(e.getX()>0 && e.getX()<200 && e.getY()>0 && e.getY()<200){
-				//   ssm.sendText("#:0:0:send");
-				//  System.out.println("nice it works");
-				//  }
+				if (e.getX() > 0 && e.getX() < 200 && e.getY() > 0 && e.getY() < 200) {
+					ssm.sendText("#:0:0:send");
+					System.out.println("nice it works");
+				} else if (e.getX() > 0 && e.getX() < 200 && e.getY() > 200 && e.getY() < 400) {
+					ssm.sendText("#:1:0:send");
+					System.out.println("nice it works 2");
+				}
 				//else if(<e.getX()< && <e.getY()<){
-				// ssm.sendText("#:1:0:send");
-				// }else if(<e.getX()< && <e.getY()<){
 				// ssm.sendText("#:2:0:send");
 				// }else if(<e.getX()< && <e.getY()<){
 				// ssm.sendText("#:0:1:send");
