@@ -540,7 +540,7 @@ public class tictactoe implements ActionListener, MouseListener {
 		setupPanel.add(backButton);
 		setupPanel.addMouseListener(this);
 		backButton.addActionListener(this);
-
+		
 		quicksetupPanel.setLayout(null);
 		quicksetupPanel.setPreferredSize(new Dimension(1280, 720));
 		backButton2.setSize(100, 50);
