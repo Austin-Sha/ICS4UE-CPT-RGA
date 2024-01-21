@@ -30,6 +30,7 @@ public class tictactoe implements ActionListener, MouseListener {
 	// Labels
 	JLabel test = new JLabel("test");
 
+	JLabel nameLabel = new JLabel("Name: ");
 	// Buttons
 	JButton standardButton = new JButton("Standard");
 	JButton quickButton = new JButton("Quick Play");
@@ -42,6 +43,9 @@ public class tictactoe implements ActionListener, MouseListener {
 	JButton backButton4 = new JButton("Back");
 	JButton backButton5 = new JButton("Back");
 
+	// New
+	JButton confirm1 = new JButton("Confirm Name");
+	JButton confirm2 = new JButton("Confirm Name");
 	// Themes JButton
 	JButton LightButton = new JButton("Light Mode");
 	JButton DarkButton = new JButton("Dark Mode");
@@ -143,22 +147,61 @@ public class tictactoe implements ActionListener, MouseListener {
 	public void actionPerformed(ActionEvent event) {
 		// Button for entering and exiting panels
 		if (event.getSource() == standardButton) {
-			mainFrame.setContentPane(setupPanel);
-			mainFrame.pack();
-			mainFrame.repaint();
+			// New
+			// Delete panel switch code
 			blnstandard = true;
+			standardButton.setVisible(false);
+			quickButton.setVisible(false);
+			themeButton.setVisible(false);
+			helpButton.setVisible(false);
+			aboutButton.setVisible(false);
+			nameField.setVisible(true);
+			confirm1.setVisible(true);
 		} else if (event.getSource() == backButton) {
+			
 			mainFrame.setContentPane(mainPanel);
 			mainFrame.pack();
 			mainFrame.repaint();
+			standardButton.setVisible(true);
+			quickButton.setVisible(true);
+			themeButton.setVisible(true);
+			helpButton.setVisible(true);
+			aboutButton.setVisible(true);
+			nameField.setVisible(false);
+			confirm1.setVisible(false);
+			
 		} else if (event.getSource() == quickButton) {
-			mainFrame.setContentPane(quicksetupPanel);
-			mainFrame.pack();
-			mainFrame.repaint();
+			// New
+			// Delete panel switch code
+			blnstandard = true;
+			standardButton.setVisible(false);
+			quickButton.setVisible(false);
+			themeButton.setVisible(false);
+			helpButton.setVisible(false);
+			aboutButton.setVisible(false);
+			nameField.setVisible(true);
+			confirm2.setVisible(true);
+			 // End
 		} else if (event.getSource() == backButton2) {
 			mainFrame.setContentPane(mainPanel);
 			mainFrame.pack();
 			mainFrame.repaint();
+			standardButton.setVisible(true);
+			quickButton.setVisible(true);
+			themeButton.setVisible(true);
+			helpButton.setVisible(true);
+			aboutButton.setVisible(true);
+			nameField.setVisible(false);
+			confirm1.setVisible(false);
+		} else if (event.getSource() == confirm1) {
+			mainFrame.setContentPane(setupPanel);
+			mainFrame.pack();
+			mainFrame.repaint();
+		} else if (event.getSource() == confirm2) { 
+			mainFrame.setContentPane(quicksetupPanel);
+			mainFrame.pack();
+			mainFrame.repaint();
+			// End
 		} else if (event.getSource() == themeButton) {
 			mainFrame.setContentPane(themesPanel);
 			mainFrame.pack();
@@ -503,7 +546,10 @@ public class tictactoe implements ActionListener, MouseListener {
 			String[] strChat = ssm.readText().split(":");
 			if (strChat[0].equals("#")) {
 				try {
-					if (game[Integer.parseInt(strChat[1])][Integer.parseInt(strChat[2])] == 0) {
+					if(strChat[1].equals("game")){
+						
+					}
+					else if (game[Integer.parseInt(strChat[1])][Integer.parseInt(strChat[2])] == 0) {
 						if (strChat[3].equals("send")) {
 							game[Integer.parseInt(strChat[1])][Integer.parseInt(strChat[2])] = intPlayer2;
 							ssm.sendText(strChat[0] + ":" + strChat[1] + ":" + strChat[2] + ":" + "recieved");
@@ -512,6 +558,7 @@ public class tictactoe implements ActionListener, MouseListener {
 						} else if (strChat[3].equals("recieved")) {
 							game[Integer.parseInt(strChat[1])][Integer.parseInt(strChat[2])] = intPlayer1;
 							blnturn = false;
+							
 							}
 						}else{
 							ssm.sendText("System:Spot Taken");
@@ -618,8 +665,31 @@ public class tictactoe implements ActionListener, MouseListener {
 		mainPanel.add(helpButton);
 		mainPanel.add(aboutButton);
 
-		nameField.setSize(200, 50);
-		nameField.setLocation(950, 80);
+		nameLabel.setSize(100,50);
+		nameLabel.setLocation(900,250);
+		mainPanel.add(nameLabel);
+
+		nameLabel.setSize(100,50);
+		nameLabel.setLocation(900,250);
+		mainPanel.add(nameLabel);
+
+		confirm1.setSize(250,50);
+		confirm1.setLocation(950,300);
+		mainPanel.add(confirm1);
+		confirm1.setVisible(false);
+		confirm1.addActionListener(this);
+		
+		confirm2.setSize(250,50);
+		confirm2.setLocation(950,300);
+		mainPanel.add(confirm2);
+		confirm2.setVisible(false);
+		confirm2.addActionListener(this);
+		
+		nameField.setSize(250, 50);
+		nameField.setLocation(950, 250);
+		nameField.setVisible(false);
+
+		
 
 		thescroll.setSize(400, 400);
 		thescroll.setLocation(850, 50);
