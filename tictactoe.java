@@ -512,7 +512,6 @@ public class tictactoe implements ActionListener, MouseListener {
 						} else if (strChat[3].equals("recieved")) {
 							game[Integer.parseInt(strChat[1])][Integer.parseInt(strChat[2])] = intPlayer1;
 							blnturn = false;
-								System.out.println();
 							}
 						}else{
 							ssm.sendText("System:Spot Taken");
