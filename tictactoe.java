@@ -14,7 +14,7 @@ public class tictactoe implements ActionListener, MouseListener {
 
 	// GAMEPLAY
 	int[][] game = new int[3][3];
-	int intPlayer1;
+	int intPlayerYou;
 	int intPlayer2;
 	boolean blnstandard;
 	boolean blnturn;
@@ -522,7 +522,7 @@ public class tictactoe implements ActionListener, MouseListener {
 			sendField.setText("");
 		} else if (event.getSource() == hostButton) {
 			System.out.println("Start socket in server mode");
-			intPlayer1 = 1;
+			intPlayerYou = 1;
 			intPlayer2 = 2;
 			hostButton.setEnabled(false);
 			joinButton.setEnabled(false);
@@ -534,7 +534,7 @@ public class tictactoe implements ActionListener, MouseListener {
 			System.out.println(nameField.getText());
 		} else if (event.getSource() == joinButton) {
 			System.out.println("Start socket in client mode");
-			intPlayer1 = 2;
+			intPlayerYou = 2;
 			intPlayer2 = 1;
 			hostButton.setEnabled(false);
 			joinButton.setEnabled(false);
@@ -556,9 +556,37 @@ public class tictactoe implements ActionListener, MouseListener {
 							blnturn = true;
 							chatArea.append("System:Your Turn \n");
 						} else if (strChat[3].equals("recieved")) {
-							game[Integer.parseInt(strChat[1])][Integer.parseInt(strChat[2])] = intPlayer1;
+							game[Integer.parseInt(strChat[1])][Integer.parseInt(strChat[2])] = intPlayerYou;
 							blnturn = false;
+							if(game[0][0] == intPlayerYou && game[1][0] == intPlayerYou && game[2][0] == intPlayerYou) {
+								
+							}
+							else if(game[0][1] == intPlayerYou && game[1][1] == intPlayerYou && game[2][1] == intPlayerYou) {
+								
+							}
+							else if(game[0][2] == intPlayerYou && game[1][2] == intPlayerYou && game[2][2] == intPlayerYou) {
+								
+							}
+							else if(game[0][0] == intPlayerYou && game[1][0] == intPlayerYou && game[2][0] == intPlayerYou) {
+								
+							}
+							else if(game[0][1] == intPlayerYou && game[1][1] == intPlayerYou && game[2][1] == intPlayerYou) {
+								
+							}
+							else if(game[0][2] == intPlayerYou && game[1][2] == intPlayerYou && game[2][2] == intPlayerYou) {
+								
+							}
+							else if(game[0][0] == intPlayerYou && game[1][1] == intPlayerYou && game[2][2] == intPlayerYou) {
+								
+							}
+							else if(game[0][2] == intPlayerYou && game[1][1] == intPlayerYou && game[2][0] == intPlayerYou) {
+								
+							}
 							
+							
+							
+							
+			
 							}
 						}else{
 							ssm.sendText("System:Spot Taken");
