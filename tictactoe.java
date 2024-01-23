@@ -555,6 +555,7 @@ public class tictactoe implements ActionListener, MouseListener {
 					if (strChat[1].equals("game")) {
 						chatArea.append("System:Loss\n");
 						intLosses++;
+						intMoves = 0;
 						headerLabel.setText("Wins: "+intWins+" | Losses: "+intLosses+" | Ties: "+intTies);
 						for (int i = 0; i < 3; i++) {
 							for (int t = 0; t < 3; t++) {
@@ -595,6 +596,7 @@ public class tictactoe implements ActionListener, MouseListener {
 								ssm.sendText("#:game");
 								chatArea.append("System:Win\n");
 								intWins++;
+								intMoves = 0;
 								headerLabel.setText("Wins: " + intWins + " | Losses: " + intLosses + " | Ties: " + intTies);
 								for (int i = 0; i < 3; i++) {
 									for (int t = 0; t < 3; t++) {
@@ -606,6 +608,7 @@ public class tictactoe implements ActionListener, MouseListener {
 								ssm.sendText("#:game");
 								chatArea.append("System:Win\n");
 								intWins++;
+								intMoves = 0;
 								headerLabel.setText("Wins: " + intWins + " | Losses: " + intLosses + " | Ties: " + intTies);
 								for (int i = 0; i < 3; i++) {
 									for (int t = 0; t < 3; t++) {
@@ -617,6 +620,7 @@ public class tictactoe implements ActionListener, MouseListener {
 								ssm.sendText("#:game");
 								chatArea.append("System:Win\n");
 								intWins++;
+								intMoves = 0;
 								headerLabel.setText(
 										"Wins: " + intWins + " | Losses: " + intLosses + " | Ties: " + intTies);
 								for (int i = 0; i < 3; i++) {
@@ -629,6 +633,7 @@ public class tictactoe implements ActionListener, MouseListener {
 								ssm.sendText("#:game");
 								chatArea.append("System:Win\n");
 								intWins++;
+								intMoves = 0;
 								headerLabel.setText(
 										"Wins: " + intWins + " | Losses: " + intLosses + " | Ties: " + intTies);
 								headerLabel.setText(
@@ -643,6 +648,7 @@ public class tictactoe implements ActionListener, MouseListener {
 								ssm.sendText("#:game");
 								chatArea.append("System:Win\n");
 								intWins++;
+								intMoves = 0;
 								headerLabel.setText(
 										"Wins: " + intWins + " | Losses: " + intLosses + " | Ties: " + intTies);
 
@@ -656,6 +662,7 @@ public class tictactoe implements ActionListener, MouseListener {
 								ssm.sendText("#:game");
 								chatArea.append("System:Win\n");
 								intWins++;
+								intMoves = 0;
 								headerLabel.setText(
 										"Wins: " + intWins + " | Losses: " + intLosses + " | Ties: " + intTies);
 								for (int i = 0; i < 3; i++) {
@@ -668,6 +675,7 @@ public class tictactoe implements ActionListener, MouseListener {
 								ssm.sendText("#:game");
 								chatArea.append("System:Win\n");
 								intWins++;
+								intMoves = 0;
 								headerLabel.setText(
 										"Wins: " + intWins + " | Losses: " + intLosses + " | Ties: " + intTies);
 								for (int i = 0; i < 3; i++) {
@@ -680,6 +688,7 @@ public class tictactoe implements ActionListener, MouseListener {
 								ssm.sendText("#:game");
 								chatArea.append("System:Win\n");
 								intWins++;
+								intMoves = 0;
 								headerLabel.setText(
 										"Wins: " + intWins + " | Losses: " + intLosses + " | Ties: " + intTies);
 								for (int i = 0; i < 3; i++) {
