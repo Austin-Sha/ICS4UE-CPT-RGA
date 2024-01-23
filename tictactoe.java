@@ -579,8 +579,8 @@ public class tictactoe implements ActionListener, MouseListener {
 							blnturn = false;
 							intMoves++;
 							if (intMoves >= 9) {
-								chatArea.append("Tie");
-								ssm.sendText("Tie");
+								chatArea.append("System:Tie\n");
+								ssm.sendText("System:Tie");
 								intMoves = 0;
 								intTies++;
 								headerLabel.setText("Wins: "+intWins+" | Losses: "+intLosses+" | Ties: "+intTies);
