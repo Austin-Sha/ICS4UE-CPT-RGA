@@ -53,6 +53,13 @@ public class themepanel extends JPanel{
 	public boolean blnneonbg = false;
 	public boolean blnStartrek = false;
 	public boolean blnStartrekbg = false;
+
+	public boolean blnlighttheme = true;
+	public boolean blndarktheme = false;
+	public boolean blnchristmastheme = false;
+	public boolean blnhalloweentheme = false;
+	public boolean blnneontheme = false;
+	public boolean blnStarTrek = false;
 	
 	// Methods
 	public void paintComponent(Graphics g){
