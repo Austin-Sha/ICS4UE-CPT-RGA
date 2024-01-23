@@ -42,63 +42,82 @@ public class themepanel extends JPanel{
 
 	
 	public boolean blnlight = true;
-	public boolean blnlightbg = true;
 	public boolean blndark = false;
-	public boolean blndarkbg = false;
 	public boolean blnchristmas = false;
-	public boolean blnchristmasbg = false;
 	public boolean blnhalloween = false;
-	public boolean blnhalloweenbg = false;
 	public boolean blnneon = false;
-	public boolean blnneonbg = false;
 	public boolean blnStartrek = false;
-	public boolean blnStartrekbg = false;
-
-	public boolean blnlighttheme = true;
+	
+	public boolean blnlighttheme = false;
 	public boolean blndarktheme = false;
 	public boolean blnchristmastheme = false;
 	public boolean blnhalloweentheme = false;
 	public boolean blnneontheme = false;
-	public boolean blnStarTrek = false;
+	public boolean blnStartrektheme = false;
+	
+	public boolean bln000 = false;
+	public boolean bln100 = false;
+	public boolean bln001 = false;
+	public boolean bln101 = false;
+	public boolean bln002 = false;
+	public boolean bln102 = false;
+	public boolean bln010 = false;
+	public boolean bln110 = false;
+	public boolean bln011 = false;
+	public boolean bln111 = false;
+	public boolean bln012 = false;
+	public boolean bln112 = false;
+	public boolean bln020 = false;
+	public boolean bln120 = false;
+	public boolean bln021 = false;
+	public boolean bln121 = false;
+	public boolean bln022 = false;
+	public boolean bln122 = false;
 	
 	// Methods
 	public void paintComponent(Graphics g){
-		if(blnlight == true && blnlightbg == true){
+		if(blnlighttheme == true){
 			g.drawImage(lightbg,0,0,null);
 			g.drawImage(lightboard, 0,0, null);
 			g.drawImage(lightx,200,200,null);
 			g.drawImage(lighto,0,0,null);
-		}else if(blnlight == false && blnlightbg == true){
+		}else if(blnlight == true){
 			g.drawImage(lightbg,0,0, null);
 			g.drawImage(lightboard, 0,0, null);
-		}else if(blndark == true){
+		}else if(blndarktheme == true){
 			g.drawImage(darkbg,0,0,null);
 			g.drawImage(darkboard,0,0,null);
 			g.drawImage(darko,0,200,null);
 			g.drawImage(darkx,200,200,null);
-		}else if(blndark == false && blndarkbg == true){
+		}else if(blndark == true){
 			g.drawImage(darkbg,0,0, null);
-		}else if(blnchristmas == true && blnchristmasbg == true){
+		}else if(blnchristmastheme == true){
 			g.drawImage(christmasbg,0,0, null);
 			g.drawImage(christmasboard,0,0, null);
 			g.drawImage(christmaso,0,400, null);
 			g.drawImage(christmasx,200,200, null);
-		}else if(blnchristmas == false && blnchristmasbg == true){
+		}else if(blnchristmas == true){
 			g.drawImage(christmasbg,0,0, null);
-		}else if(blnhalloween == true && blnhalloweenbg == true){
+		}else if(blnhalloweentheme == true){
 			g.drawImage(halloweenbg,0,0, null);
 			g.drawImage(halloweenboard,0,0, null);
 			g.drawImage(halloweeno,200,400, null);
 			g.drawImage(halloweenx,200,200, null);
-		}else if(blnhalloween == false && blnhalloweenbg == true){
+		}else if(blnhalloween == true){
 			g.drawImage(halloweenbg,0,0, null);
-		}else if(blnneon == true && blnneonbg == true){
+		}else if(blnneontheme == true){
 			g.drawImage(neonbg,0,0, null);
 			g.drawImage(neonboard,0,0, null);
 			g.drawImage(neono,400,400, null);
 			g.drawImage(neonx,200,200, null);
-		}else if(blnneon == false && blnneonbg == true){
+		}else if(blnneon = true){
 			g.drawImage(neonbg,0,0, null);
+		}else if(blnlight == true && bln000 == true){ // NEW*****
+			g.drawImage(lighto,0,0, null);
+		}else if(blnlight == true && bln100 == true){
+			g.drawImage(lightx,0,0, null);
+		}else if(blnlight == true && bln001 == true){
+			g.drawImage(lighto,0,200, null);
 		}
 		
 		

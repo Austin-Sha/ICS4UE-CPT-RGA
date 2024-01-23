@@ -20,7 +20,6 @@ public class tictactoe implements ActionListener, MouseListener {
 	boolean blnturn;
 	int intMoves = 0;
 
-
 	// Panels
 	themepanel mainPanel = new themepanel();
 	themepanel standardPanel = new themepanel();
@@ -71,13 +70,13 @@ public class tictactoe implements ActionListener, MouseListener {
 
 	SuperSocketMaster ssm = null;
 
-	//Header
+	// Header
 	int intWins = 0;
 	int intLosses = 0;
 	int intTies = 0;
 
-	JLabel headerLabel = new JLabel("Wins: "+intWins+" | Losses: "+intLosses+" | Ties: "+intTies);
-	
+	JLabel headerLabel = new JLabel("Wins: " + intWins + " | Losses: " + intLosses + " | Ties: " + intTies);
+
 	Font theFont = null;
 
 	// Methods
@@ -100,29 +99,38 @@ public class tictactoe implements ActionListener, MouseListener {
 	public void mouseClicked(MouseEvent e) {
 		if (blnstandard == true) {
 			if (blnturn == true) {
+				standardPanel.repaint();
 				if (e.getX() > 0 && e.getX() < 200 && e.getY() > 0 && e.getY() < 200) {
 					ssm.sendText("#:0:0:send");
+					standardPanel.bln000 = true;
 				} else if (e.getX() > 0 && e.getX() < 200 && e.getY() > 200 && e.getY() < 400) {
 					ssm.sendText("#:1:0:send");
+					standardPanel.bln001 = true;
 				} else if (e.getX() > 0 && e.getX() < 200 && e.getY() > 400 && e.getY() < 600) {
 					ssm.sendText("#:2:0:send");
+					standardPanel.bln002 = true;
 				} else if (e.getX() > 200 && e.getX() < 400 && e.getY() > 0 && e.getY() < 200) {
 					ssm.sendText("#:0:1:send");
+					standardPanel.bln010 = true;
 				} else if (e.getX() > 400 && e.getX() < 600 && e.getY() > 0 && e.getY() < 200) {
 					ssm.sendText("#:0:2:send");
+					standardPanel.bln020 = true;
 				} else if (e.getX() > 200 && e.getX() < 400 && e.getY() > 200 && e.getY() < 400) {
 					ssm.sendText("#:1:1:send");
+					standardPanel.bln011 = true;
 				} else if (e.getX() > 400 && e.getX() < 600 && e.getY() > 200 && e.getY() < 400) {
 					ssm.sendText("#:1:2:send");
+					standardPanel.bln021 = true;
 				} else if (e.getX() > 200 && e.getX() < 400 && e.getY() > 400 && e.getY() < 600) {
 					ssm.sendText("#:2:1:send");
+					standardPanel.bln012 = true;
 				} else if (e.getX() > 400 && e.getX() < 600 && e.getY() > 400 && e.getY() < 600) {
 					ssm.sendText("#:2:2:send");
+					standardPanel.bln022 = true;
 				} else {
 				}
 
-
-			} else if(e.getX() > 0 && e.getX() < 600 && e.getY() > 0 && e.getY() < 600){
+			} else if (e.getX() > 0 && e.getX() < 600 && e.getY() > 0 && e.getY() < 600) {
 				chatArea.append("System: Not Your Turn \n");
 			}
 
@@ -164,6 +172,7 @@ public class tictactoe implements ActionListener, MouseListener {
 			aboutButton.setVisible(false);
 			nameField.setVisible(true);
 			confirm1.setVisible(true);
+			
 		} else if (event.getSource() == backButton) {
 			
 			mainFrame.setContentPane(mainPanel);
@@ -204,6 +213,8 @@ public class tictactoe implements ActionListener, MouseListener {
 			mainFrame.setContentPane(standardPanel);
 			mainFrame.pack();
 			mainFrame.repaint();
+			
+			
 		} else if (event.getSource() == confirm2) { 
 			mainFrame.setContentPane(quickPanel);
 			mainFrame.pack();
@@ -235,176 +246,176 @@ public class tictactoe implements ActionListener, MouseListener {
 			mainFrame.repaint();
 
 			// End of panel buttons
-		} else if (event.getSource() == LightButton) {
+		} else if (event.getSource() == LightButton) { //NEW****
 			// Theme buttons
 
 			mainPanel.repaint();
 			standardPanel.repaint();
 			themesPanel.repaint();
 
-			mainPanel.blnlight = false;
-			mainPanel.blnlightbg = true;
+			mainPanel.blnlight = true;
+			mainPanel.blnlighttheme = false;
 			mainPanel.blndark = false;
-			mainPanel.blndarkbg = false;
+			mainPanel.blndarktheme = false;
 			mainPanel.blnchristmas = false;
-			mainPanel.blnchristmasbg = false;
+			mainPanel.blnchristmastheme = false;
 			mainPanel.blnhalloween = false;
-			mainPanel.blnhalloweenbg = false;
+			mainPanel.blnhalloweentheme = false;
 			mainPanel.blnneon = false;
-			mainPanel.blnneonbg = false;
+			mainPanel.blnneontheme = false;
 			mainPanel.blnStartrek = false;
-			mainPanel.blnStartrekbg = false;
+			mainPanel.blnStartrektheme = false;
 
-			standardPanel.blnlight = false;
-			standardPanel.blnlightbg = true;
+			standardPanel.blnlight = true;
+			standardPanel.blnlighttheme = false;
 			standardPanel.blndark = false;
-			standardPanel.blndarkbg = false;
+			standardPanel.blndarktheme = false;
 			standardPanel.blnchristmas = false;
-			standardPanel.blnchristmasbg = false;
+			standardPanel.blnchristmastheme = false;
 			standardPanel.blnhalloween = false;
-			standardPanel.blnhalloweenbg = false;
+			standardPanel.blnhalloweentheme = false;
 			standardPanel.blnneon = false;
-			standardPanel.blnneonbg = false;
+			standardPanel.blnneontheme = false;
 			standardPanel.blnStartrek = false;
-			standardPanel.blnStartrekbg = false;
+			standardPanel.blnStartrektheme = false;
 
-			quickPanel.blnlight = false;
-			quickPanel.blnlightbg = true;
+			quickPanel.blnlight = true;
+			quickPanel.blnlighttheme = false;
 			quickPanel.blndark = false;
-			quickPanel.blndarkbg = false;
+			quickPanel.blndarktheme = false;
 			quickPanel.blnchristmas = false;
-			quickPanel.blnchristmasbg = false;
+			quickPanel.blnchristmastheme = false;
 			quickPanel.blnhalloween = false;
-			quickPanel.blnhalloweenbg = false;
+			quickPanel.blnhalloweentheme = false;
 			quickPanel.blnneon = false;
-			quickPanel.blnneonbg = false;
+			quickPanel.blnneontheme = false;
 			quickPanel.blnStartrek = false;
-			quickPanel.blnStartrekbg = false;
+			quickPanel.blnStartrektheme = false;
 
-			themesPanel.blnlight = true;
-			themesPanel.blnlightbg = true;
+			themesPanel.blnlight = false;
+			themesPanel.blnlighttheme = true;
 			themesPanel.blndark = false;
-			themesPanel.blndarkbg = false;
+			themesPanel.blndarktheme = false;
 			themesPanel.blnchristmas = false;
-			themesPanel.blnchristmasbg = false;
+			themesPanel.blnchristmastheme = false;
 			themesPanel.blnhalloween = false;
-			themesPanel.blnhalloweenbg = false;
+			themesPanel.blnhalloweentheme = false;
 			themesPanel.blnneon = false;
-			themesPanel.blnneonbg = false;
+			themesPanel.blnneontheme = false;
 			themesPanel.blnStartrek = false;
-			themesPanel.blnStartrekbg = false;
+			themesPanel.blnStartrektheme = false;
 		} else if (event.getSource() == DarkButton) {
 			mainPanel.repaint();
 			standardPanel.repaint();
 			themesPanel.repaint();
 
 			mainPanel.blnlight = false;
-			mainPanel.blnlightbg = false;
+			mainPanel.blnlighttheme = false;
 			mainPanel.blndark = false;
-			mainPanel.blndarkbg = true;
+			mainPanel.blndarktheme = true;
 			mainPanel.blnchristmas = false;
-			mainPanel.blnchristmasbg = false;
+			mainPanel.blnchristmastheme = false;
 			mainPanel.blnhalloween = false;
-			mainPanel.blnhalloweenbg = false;
+			mainPanel.blnhalloweentheme = false;
 			mainPanel.blnneon = false;
-			mainPanel.blnneonbg = false;
+			mainPanel.blnneontheme = false;
 			mainPanel.blnStartrek = false;
-			mainPanel.blnStartrekbg = false;
+			mainPanel.blnStartrektheme = false;
 
 			standardPanel.blnlight = false;
-			standardPanel.blnlightbg = false;
+			standardPanel.blnlighttheme = false;
 			standardPanel.blndark = false;
-			standardPanel.blndarkbg = true;
+			standardPanel.blndarktheme = true;
 			standardPanel.blnchristmas = false;
-			standardPanel.blnchristmasbg = false;
+			standardPanel.blnchristmastheme = false;
 			standardPanel.blnhalloween = false;
-			standardPanel.blnhalloweenbg = false;
+			standardPanel.blnhalloweentheme = false;
 			standardPanel.blnneon = false;
-			standardPanel.blnneonbg = false;
+			standardPanel.blnneontheme = false;
 			standardPanel.blnStartrek = false;
-			standardPanel.blnStartrekbg = false;
+			standardPanel.blnStartrektheme = false;
 
 			quickPanel.blnlight = false;
-			quickPanel.blnlightbg = false;
+			quickPanel.blnlighttheme = false;
 			quickPanel.blndark = false;
-			quickPanel.blndarkbg = true;
+			quickPanel.blndarktheme = true;
 			quickPanel.blnchristmas = false;
-			quickPanel.blnchristmasbg = false;
+			quickPanel.blnchristmastheme = false;
 			quickPanel.blnhalloween = false;
-			quickPanel.blnhalloweenbg = false;
+			quickPanel.blnhalloweentheme = false;
 			quickPanel.blnneon = false;
-			quickPanel.blnneonbg = false;
+			quickPanel.blnneontheme = false;
 			quickPanel.blnStartrek = false;
-			quickPanel.blnStartrekbg = false;
+			quickPanel.blnStartrektheme = false;
 
 			themesPanel.blnlight = false;
-			themesPanel.blnlightbg = false;
-			themesPanel.blndark = true;
-			themesPanel.blndarkbg = true;
+			themesPanel.blnlighttheme = false;
+			themesPanel.blndark = false;
+			themesPanel.blndarktheme = true;
 			themesPanel.blnchristmas = false;
-			themesPanel.blnchristmasbg = false;
+			themesPanel.blnchristmastheme = false;
 			themesPanel.blnhalloween = false;
-			themesPanel.blnhalloweenbg = false;
+			themesPanel.blnhalloweentheme = false;
 			themesPanel.blnneon = false;
-			themesPanel.blnneonbg = false;
+			themesPanel.blnneontheme = false;
 			themesPanel.blnStartrek = false;
-			themesPanel.blnStartrekbg = false;
+			themesPanel.blnStartrektheme = false;
 		} else if (event.getSource() == ChristmasButton) {
 			mainPanel.repaint();
 			standardPanel.repaint();
 			themesPanel.repaint();
 
 			mainPanel.blnlight = false;
-			mainPanel.blnlightbg = false;
+			mainPanel.blnlighttheme = false;
 			mainPanel.blndark = false;
-			mainPanel.blndarkbg = false;
+			mainPanel.blndarktheme = false;
 			mainPanel.blnchristmas = false;
-			mainPanel.blnchristmasbg = true;
+			mainPanel.blnchristmastheme = true;
 			mainPanel.blnhalloween = false;
-			mainPanel.blnhalloweenbg = false;
+			mainPanel.blnhalloweentheme = false;
 			mainPanel.blnneon = false;
-			mainPanel.blnneonbg = false;
+			mainPanel.blnneontheme = false;
 			mainPanel.blnStartrek = false;
-			mainPanel.blnStartrekbg = false;
+			mainPanel.blnStartrektheme = false;
 
 			standardPanel.blnlight = false;
-			standardPanel.blnlightbg = false;
+			standardPanel.blnlighttheme = true;
 			standardPanel.blndark = false;
-			standardPanel.blndarkbg = false;
+			standardPanel.blndarktheme = false;
 			standardPanel.blnchristmas = false;
-			standardPanel.blnchristmasbg = true;
+			standardPanel.blnchristmastheme = true;
 			standardPanel.blnhalloween = false;
-			standardPanel.blnhalloweenbg = false;
+			standardPanel.blnhalloweentheme = false;
 			standardPanel.blnneon = false;
-			standardPanel.blnneonbg = false;
+			standardPanel.blnneontheme = false;
 			standardPanel.blnStartrek = false;
-			standardPanel.blnStartrekbg = false;
+			standardPanel.blnStartrektheme = false;
 
 			quickPanel.blnlight = false;
-			quickPanel.blnlightbg = false;
+			quickPanel.blnlighttheme = false;
 			quickPanel.blndark = false;
-			quickPanel.blndarkbg = false;
+			quickPanel.blndarktheme = false;
 			quickPanel.blnchristmas = false;
-			quickPanel.blnchristmasbg = true;
+			quickPanel.blnchristmastheme = true;
 			quickPanel.blnhalloween = false;
-			quickPanel.blnhalloweenbg = false;
+			quickPanel.blnhalloweentheme = false;
 			quickPanel.blnneon = false;
-			quickPanel.blnneonbg = false;
+			quickPanel.blnneontheme = false;
 			quickPanel.blnStartrek = false;
-			quickPanel.blnStartrekbg = false;
+			quickPanel.blnStartrektheme = false;
 
 			themesPanel.blnlight = false;
-			themesPanel.blnlightbg = false;
+			themesPanel.blnlighttheme = false;
 			themesPanel.blndark = false;
-			themesPanel.blndarkbg = false;
-			themesPanel.blnchristmas = true;
-			themesPanel.blnchristmasbg = true;
+			themesPanel.blndarktheme = false;
+			themesPanel.blnchristmas = false;
+			themesPanel.blnchristmastheme = true;
 			themesPanel.blnhalloween = false;
-			themesPanel.blnhalloweenbg = false;
+			themesPanel.blnhalloweentheme = false;
 			themesPanel.blnneon = false;
-			themesPanel.blnneonbg = false;
+			themesPanel.blnneontheme = false;
 			themesPanel.blnStartrek = false;
-			themesPanel.blnStartrekbg = false;
+			themesPanel.blnStartrektheme = false;
 
 		} else if (event.getSource() == HalloweenButton) {
 			mainPanel.repaint();
@@ -412,112 +423,112 @@ public class tictactoe implements ActionListener, MouseListener {
 			themesPanel.repaint();
 
 			mainPanel.blnlight = false;
-			mainPanel.blnlightbg = false;
+			mainPanel.blnlighttheme = false;
 			mainPanel.blndark = false;
-			mainPanel.blndarkbg = false;
+			mainPanel.blndarktheme = false;
 			mainPanel.blnchristmas = false;
-			mainPanel.blnchristmasbg = false;
+			mainPanel.blnchristmastheme = false;
 			mainPanel.blnhalloween = false;
-			mainPanel.blnhalloweenbg = true;
+			mainPanel.blnhalloweentheme = true;
 			mainPanel.blnneon = false;
-			mainPanel.blnneonbg = false;
+			mainPanel.blnneontheme = false;
 			mainPanel.blnStartrek = false;
-			mainPanel.blnStartrekbg = false;
+			mainPanel.blnStartrektheme = false;
 
 			standardPanel.blnlight = false;
-			standardPanel.blnlightbg = false;
+			standardPanel.blnlighttheme = false;
 			standardPanel.blndark = false;
-			standardPanel.blndarkbg = false;
+			standardPanel.blndarktheme = false;
 			standardPanel.blnchristmas = false;
-			standardPanel.blnchristmasbg = false;
+			standardPanel.blnchristmastheme = false;
 			standardPanel.blnhalloween = false;
-			standardPanel.blnhalloweenbg = true;
+			standardPanel.blnhalloweentheme = true;
 			standardPanel.blnneon = false;
-			standardPanel.blnneonbg = false;
+			standardPanel.blnneontheme = false;
 			standardPanel.blnStartrek = false;
-			standardPanel.blnStartrekbg = false;
+			standardPanel.blnStartrektheme = false;
 
 			quickPanel.blnlight = false;
-			quickPanel.blnlightbg = false;
+			quickPanel.blnlighttheme = false;
 			quickPanel.blndark = false;
-			quickPanel.blndarkbg = false;
+			quickPanel.blndarktheme = false;
 			quickPanel.blnchristmas = false;
-			quickPanel.blnchristmasbg = false;
+			quickPanel.blnchristmastheme = false;
 			quickPanel.blnhalloween = false;
-			quickPanel.blnhalloweenbg = true;
+			quickPanel.blnhalloweentheme = true;
 			quickPanel.blnneon = false;
-			quickPanel.blnneonbg = false;
+			quickPanel.blnneontheme = false;
 			quickPanel.blnStartrek = false;
-			quickPanel.blnStartrekbg = false;
+			quickPanel.blnStartrektheme = false;
 
 			themesPanel.blnlight = false;
-			themesPanel.blnlightbg = false;
+			themesPanel.blnlighttheme = false;
 			themesPanel.blndark = false;
-			themesPanel.blndarkbg = false;
+			themesPanel.blndarktheme = false;
 			themesPanel.blnchristmas = false;
-			themesPanel.blnchristmasbg = false;
-			themesPanel.blnhalloween = true;
-			themesPanel.blnhalloweenbg = true;
+			themesPanel.blnchristmastheme = false;
+			themesPanel.blnhalloween = false;
+			themesPanel.blnhalloweentheme = true;
 			themesPanel.blnneon = false;
-			themesPanel.blnneonbg = false;
+			themesPanel.blnneontheme = false;
 			themesPanel.blnStartrek = false;
-			themesPanel.blnStartrekbg = false;
+			themesPanel.blnStartrektheme = false;
 		} else if (event.getSource() == NeonButton) {
 			mainPanel.repaint();
 			standardPanel.repaint();
 			themesPanel.repaint();
 
 			mainPanel.blnlight = false;
-			mainPanel.blnlightbg = false;
+			mainPanel.blnlighttheme = false;
 			mainPanel.blndark = false;
-			mainPanel.blndarkbg = false;
+			mainPanel.blndarktheme = false;
 			mainPanel.blnchristmas = false;
-			mainPanel.blnchristmasbg = false;
+			mainPanel.blnchristmastheme = false;
 			mainPanel.blnhalloween = false;
-			mainPanel.blnhalloweenbg = false;
+			mainPanel.blnhalloweentheme = false;
 			mainPanel.blnneon = false;
-			mainPanel.blnneonbg = true;
+			mainPanel.blnneontheme = true;
 			mainPanel.blnStartrek = false;
-			mainPanel.blnStartrekbg = false;
+			mainPanel.blnStartrektheme = false;
 
 			standardPanel.blnlight = false;
-			standardPanel.blnlightbg = false;
+			standardPanel.blnlighttheme = false;
 			standardPanel.blndark = false;
-			standardPanel.blndarkbg = false;
+			standardPanel.blndarktheme = false;
 			standardPanel.blnchristmas = false;
-			standardPanel.blnchristmasbg = false;
+			standardPanel.blnchristmastheme = false;
 			standardPanel.blnhalloween = false;
-			standardPanel.blnhalloweenbg = false;
+			standardPanel.blnhalloweentheme = false;
 			standardPanel.blnneon = false;
-			standardPanel.blnneonbg = true;
+			standardPanel.blnneontheme = true;
 			standardPanel.blnStartrek = false;
-			standardPanel.blnStartrekbg = false;
+			standardPanel.blnStartrektheme = false;
 
 			quickPanel.blnlight = false;
-			quickPanel.blnlightbg = false;
+			quickPanel.blnlighttheme = false;
 			quickPanel.blndark = false;
-			quickPanel.blndarkbg = false;
+			quickPanel.blndarktheme = false;
 			quickPanel.blnchristmas = false;
-			quickPanel.blnchristmasbg = false;
+			quickPanel.blnchristmastheme = false;
 			quickPanel.blnhalloween = false;
-			quickPanel.blnhalloweenbg = false;
+			quickPanel.blnhalloweentheme = false;
 			quickPanel.blnneon = false;
-			quickPanel.blnneonbg = true;
+			quickPanel.blnneontheme = true;
 			quickPanel.blnStartrek = false;
-			quickPanel.blnStartrekbg = false;
+			quickPanel.blnStartrektheme = false;
 
 			themesPanel.blnlight = false;
-			themesPanel.blnlightbg = false;
+			themesPanel.blnlighttheme = false;
 			themesPanel.blndark = false;
-			themesPanel.blndarkbg = false;
+			themesPanel.blndarktheme = false;
 			themesPanel.blnchristmas = false;
-			themesPanel.blnchristmasbg = false;
+			themesPanel.blnchristmastheme = false;
 			themesPanel.blnhalloween = false;
-			themesPanel.blnhalloweenbg = false;
-			themesPanel.blnneon = true;
-			themesPanel.blnneonbg = true;
+			themesPanel.blnhalloweentheme = false;
+			themesPanel.blnneon = false;
+			themesPanel.blnneontheme = true;
 			themesPanel.blnStartrek = false;
-			themesPanel.blnStartrekbg = false;
+			themesPanel.blnStartrektheme = false;
 
 			// End of themes
 		}
@@ -553,25 +564,53 @@ public class tictactoe implements ActionListener, MouseListener {
 			String[] strChat = ssm.readText().split(":");
 			if (strChat[0].equals("#")) {
 				try {
-					if(strChat[1].equals("game")){
+					if (strChat[1].equals("game")) {
 						chatArea.append("System:Loss\n");
 						intLosses++;
-						for(int i = 0; i<3;i++){
-							for(int t = 0; t<3;t++){
+						intMoves = 0;
+						headerLabel.setText("Wins: "+intWins+" | Losses: "+intLosses+" | Ties: "+intTies);
+						for (int i = 0; i < 3; i++) {
+							for (int t = 0; t < 3; t++) {
 								game[i][t] = 0;
 							}
 						}
-					}
-					else if (game[Integer.parseInt(strChat[1])][Integer.parseInt(strChat[2])] == 0) {
+					} else if (game[Integer.parseInt(strChat[1])][Integer.parseInt(strChat[2])] == 0) {
 						if (strChat[3].equals("send")) {
+							standardPanel.repaint();
 							game[Integer.parseInt(strChat[1])][Integer.parseInt(strChat[2])] = intPlayer2;
 							ssm.sendText(strChat[0] + ":" + strChat[1] + ":" + strChat[2] + ":" + "recieved");
 							blnturn = true;
 							intMoves++;
+							// strchat 2 is x
+							// strchat 1 is y
+							
+							if(Integer.parseInt(strChat[2]) > 0 && Integer.parseInt(strChat[2]) < 200 && Integer.parseInt(strChat[1]) > 0 && Integer.parseInt(strChat[1]) < 200){
+								standardPanel.bln100 = true;
+							}else if(Integer.parseInt(strChat[2]) > 0 && Integer.parseInt(strChat[2]) < 200 && Integer.parseInt(strChat[1]) > 200 && Integer.parseInt(strChat[1]) < 400){
+								standardPanel.bln101 = true;
+							}else if(Integer.parseInt(strChat[2]) > 0 && Integer.parseInt(strChat[2]) < 200 && Integer.parseInt(strChat[1]) > 400 && Integer.parseInt(strChat[1]) < 600){
+								standardPanel.bln102 = true;
+							}else if(Integer.parseInt(strChat[2]) > 200 && Integer.parseInt(strChat[2]) < 400 && Integer.parseInt(strChat[1]) > 0 && Integer.parseInt(strChat[1]) < 200){
+								standardPanel.bln110 = true;
+							}else if(Integer.parseInt(strChat[2]) > 200 && Integer.parseInt(strChat[2]) < 400 && Integer.parseInt(strChat[1]) > 200 && Integer.parseInt(strChat[1]) < 400){
+								standardPanel.bln111 = true;
+							}else if(Integer.parseInt(strChat[2]) > 200 && Integer.parseInt(strChat[2]) < 400 && Integer.parseInt(strChat[1]) > 400 && Integer.parseInt(strChat[1]) < 600){
+								standardPanel.bln112 = true;
+							}else if(Integer.parseInt(strChat[2]) > 400 && Integer.parseInt(strChat[2]) < 600 && Integer.parseInt(strChat[1]) > 0 && Integer.parseInt(strChat[1]) < 200){
+								standardPanel.bln120 = true;
+							}else if(Integer.parseInt(strChat[2]) > 400 && Integer.parseInt(strChat[2]) < 600 && Integer.parseInt(strChat[1]) > 200 && Integer.parseInt(strChat[1]) < 400){
+								standardPanel.bln121 = true;
+							}else if(Integer.parseInt(strChat[2]) > 400 && Integer.parseInt(strChat[2]) < 600 && Integer.parseInt(strChat[1]) > 400 && Integer.parseInt(strChat[1]) < 600){
+								standardPanel.bln122 = true;
+							}
+							
+							
+							
+							
 							chatArea.append("System:Your Turn \n");
-							for(int i = 0;i<3;i++){
-								for(int t = 0;t<3;t++){
-									chatArea.append(game[i][t] +",");
+							for (int i = 0; i < 3; i++) {
+								for (int t = 0; t < 3; t++) {
+									chatArea.append(game[i][t] + ",");
 								}
 								chatArea.append("\n");
 							}
@@ -579,116 +618,139 @@ public class tictactoe implements ActionListener, MouseListener {
 							game[Integer.parseInt(strChat[1])][Integer.parseInt(strChat[2])] = intPlayerYou;
 							blnturn = false;
 							intMoves++;
-							if(intMoves >= 9){
-								chatArea.append("Tie");
-								ssm.sendText("Tie");
+							if (intMoves >= 9) {
+								chatArea.append("System:Tie\n");
+								ssm.sendText("System:Tie");
 								intMoves = 0;
 								intTies++;
-								for(int i = 0; i<3;i++){
-									for(int t = 0; t<3;t++){
+								headerLabel.setText("Wins: "+intWins+" | Losses: "+intLosses+" | Ties: "+intTies);
+								for (int i = 0; i < 3; i++) {
+									for (int t = 0; t < 3; t++) {
 										game[i][t] = 0;
 									}
 								}
 							}
-							if(game[0][0] == intPlayerYou && game[1][0] == intPlayerYou && game[2][0] == intPlayerYou) {
+							if (game[0][0] == intPlayerYou && game[1][0] == intPlayerYou
+									&& game[2][0] == intPlayerYou) {
 								ssm.sendText("#:game");
 								chatArea.append("System:Win\n");
 								intWins++;
-								for(int i = 0; i<3;i++){
-									for(int t = 0; t<3;t++){
+								intMoves = 0;
+								headerLabel.setText("Wins: " + intWins + " | Losses: " + intLosses + " | Ties: " + intTies);
+								for (int i = 0; i < 3; i++) {
+									for (int t = 0; t < 3; t++) {
 										game[i][t] = 0;
 									}
 								}
-							}
-							else if(game[0][0] == intPlayerYou && game[0][1] == intPlayerYou && game[0][2] == intPlayerYou) {
+							} else if (game[0][0] == intPlayerYou && game[0][1] == intPlayerYou
+									&& game[0][2] == intPlayerYou) {
 								ssm.sendText("#:game");
 								chatArea.append("System:Win\n");
 								intWins++;
-								for(int i = 0; i<3;i++){
-									for(int t = 0; t<3;t++){
+								intMoves = 0;
+								headerLabel.setText("Wins: " + intWins + " | Losses: " + intLosses + " | Ties: " + intTies);
+								for (int i = 0; i < 3; i++) {
+									for (int t = 0; t < 3; t++) {
 										game[i][t] = 0;
 									}
 								}
-							}
-							else if(game[1][0] == intPlayerYou && game[1][1] == intPlayerYou && game[1][2] == intPlayerYou) {
+							} else if (game[1][0] == intPlayerYou && game[1][1] == intPlayerYou
+									&& game[1][2] == intPlayerYou) {
 								ssm.sendText("#:game");
 								chatArea.append("System:Win\n");
 								intWins++;
-								for(int i = 0; i<3;i++){
-									for(int t = 0; t<3;t++){
+								intMoves = 0;
+								headerLabel.setText(
+										"Wins: " + intWins + " | Losses: " + intLosses + " | Ties: " + intTies);
+								for (int i = 0; i < 3; i++) {
+									for (int t = 0; t < 3; t++) {
 										game[i][t] = 0;
 									}
 								}
-							}
-							else if(game[2][0] == intPlayerYou && game[2][1] == intPlayerYou && game[2][2] == intPlayerYou) {
+							} else if (game[2][0] == intPlayerYou && game[2][1] == intPlayerYou
+									&& game[2][2] == intPlayerYou) {
 								ssm.sendText("#:game");
 								chatArea.append("System:Win\n");
 								intWins++;
-								for(int i = 0; i<3;i++){
-									for(int t = 0; t<3;t++){
+								intMoves = 0;
+								headerLabel.setText(
+										"Wins: " + intWins + " | Losses: " + intLosses + " | Ties: " + intTies);
+								headerLabel.setText(
+										"Wins: " + intWins + " | Losses: " + intLosses + " | Ties: " + intTies);
+								for (int i = 0; i < 3; i++) {
+									for (int t = 0; t < 3; t++) {
 										game[i][t] = 0;
 									}
 								}
-							}
-							else if(game[0][1] == intPlayerYou && game[1][1] == intPlayerYou && game[2][1] == intPlayerYou) {
+							} else if (game[0][1] == intPlayerYou && game[1][1] == intPlayerYou
+									&& game[2][1] == intPlayerYou) {
 								ssm.sendText("#:game");
 								chatArea.append("System:Win\n");
 								intWins++;
-								for(int i = 0; i<3;i++){
-									for(int t = 0; t<3;t++){
+								intMoves = 0;
+								headerLabel.setText(
+										"Wins: " + intWins + " | Losses: " + intLosses + " | Ties: " + intTies);
+
+								for (int i = 0; i < 3; i++) {
+									for (int t = 0; t < 3; t++) {
 										game[i][t] = 0;
 									}
 								}
-							}
-							else if(game[0][2] == intPlayerYou && game[1][2] == intPlayerYou && game[2][2] == intPlayerYou) {
+							} else if (game[0][2] == intPlayerYou && game[1][2] == intPlayerYou
+									&& game[2][2] == intPlayerYou) {
 								ssm.sendText("#:game");
 								chatArea.append("System:Win\n");
 								intWins++;
-								for(int i = 0; i<3;i++){
-									for(int t = 0; t<3;t++){
+								intMoves = 0;
+								headerLabel.setText(
+										"Wins: " + intWins + " | Losses: " + intLosses + " | Ties: " + intTies);
+								for (int i = 0; i < 3; i++) {
+									for (int t = 0; t < 3; t++) {
 										game[i][t] = 0;
 									}
 								}
-							}
-							else if(game[0][0] == intPlayerYou && game[1][1] == intPlayerYou && game[2][2] == intPlayerYou) {
+							} else if (game[0][0] == intPlayerYou && game[1][1] == intPlayerYou
+									&& game[2][2] == intPlayerYou) {
 								ssm.sendText("#:game");
 								chatArea.append("System:Win\n");
 								intWins++;
-								for(int i = 0; i<3;i++){
-									for(int t = 0; t<3;t++){
+								intMoves = 0;
+								headerLabel.setText(
+										"Wins: " + intWins + " | Losses: " + intLosses + " | Ties: " + intTies);
+								for (int i = 0; i < 3; i++) {
+									for (int t = 0; t < 3; t++) {
 										game[i][t] = 0;
 									}
 								}
-							}
-							else if(game[2][0] == intPlayerYou && game[1][1] == intPlayerYou && game[0][2] == intPlayerYou) {
+							} else if (game[2][0] == intPlayerYou && game[1][1] == intPlayerYou
+									&& game[0][2] == intPlayerYou) {
 								ssm.sendText("#:game");
 								chatArea.append("System:Win\n");
 								intWins++;
-								for(int i = 0; i<3;i++){
-									for(int t = 0; t<3;t++){
+								intMoves = 0;
+								headerLabel.setText(
+										"Wins: " + intWins + " | Losses: " + intLosses + " | Ties: " + intTies);
+								for (int i = 0; i < 3; i++) {
+									for (int t = 0; t < 3; t++) {
 										game[i][t] = 0;
 									}
 								}
 							}
-							
-							
-							
-							
-			
-							}
-						}else{
-							ssm.sendText("System:Spot Taken");
+
 						}
-					}catch (IndexOutOfBoundsException e) {
-					System.out.println("uwu :3 ur code cwashed" + strChat[0]);
-				}
-			} else {
-				try{
-				chatArea.append(strChat[0] + ": " + strChat[1] + "\n");
+					} else {
+						ssm.sendText("System:Spot Taken");
+					}
 				} catch (IndexOutOfBoundsException e) {
 					System.out.println("uwu :3 ur code cwashed" + strChat[0]);
 				}
-				
+			} else {
+				try {
+					chatArea.append(strChat[0] + ": " + strChat[1] + "\n");
+				} catch (IndexOutOfBoundsException e) {
+					System.out.println("uwu :3 ur code cwashed" + strChat[0]);
+				}
+
 			}
 		}
 	}
@@ -702,7 +764,7 @@ public class tictactoe implements ActionListener, MouseListener {
 		standardPanel.add(backButton);
 		standardPanel.addMouseListener(this);
 		backButton.addActionListener(this);
-		
+
 		quickPanel.setLayout(null);
 		quickPanel.setPreferredSize(new Dimension(1280, 720));
 		backButton2.setSize(100, 50);
@@ -781,39 +843,37 @@ public class tictactoe implements ActionListener, MouseListener {
 		mainPanel.add(helpButton);
 		mainPanel.add(aboutButton);
 
-		nameLabel.setSize(100,50);
-		nameLabel.setLocation(900,250);
+		nameLabel.setSize(100, 50);
+		nameLabel.setLocation(900, 250);
 		mainPanel.add(nameLabel);
 
 		headerLabel.setSize(2000, 50);
 		headerLabel.setLocation(922, 0);
 		headerLabel.setForeground(Color.red);
 		standardPanel.add(headerLabel);
-		
+
 		theFont = new Font("arial", Font.BOLD, 20);
 		headerLabel.setFont(theFont);
 
-		nameLabel.setSize(100,50);
-		nameLabel.setLocation(900,250);
+		nameLabel.setSize(100, 50);
+		nameLabel.setLocation(900, 250);
 		mainPanel.add(nameLabel);
 
-		confirm1.setSize(250,50);
-		confirm1.setLocation(950,300);
+		confirm1.setSize(250, 50);
+		confirm1.setLocation(950, 300);
 		mainPanel.add(confirm1);
 		confirm1.setVisible(false);
 		confirm1.addActionListener(this);
-		
-		confirm2.setSize(250,50);
-		confirm2.setLocation(950,300);
+
+		confirm2.setSize(250, 50);
+		confirm2.setLocation(950, 300);
 		mainPanel.add(confirm2);
 		confirm2.setVisible(false);
 		confirm2.addActionListener(this);
-		
+
 		nameField.setSize(250, 50);
 		nameField.setLocation(950, 250);
 		nameField.setVisible(false);
-
-		
 
 		thescroll.setSize(400, 400);
 		thescroll.setLocation(850, 50);
