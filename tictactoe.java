@@ -157,6 +157,7 @@ public class tictactoe implements ActionListener, MouseListener {
 			// New
 			// Delete panel switch code
 			blnstandard = true;
+
 			standardButton.setVisible(false);
 			quickButton.setVisible(false);
 			themeButton.setVisible(false);
@@ -583,7 +584,7 @@ public class tictactoe implements ActionListener, MouseListener {
 								chatArea.append("Tie");
 								ssm.sendText("Tie");
 								intMoves = 0;
-								intTies++;
+								intTies++; 
 								for(int i = 0; i<3;i++){
 									for(int t = 0; t<3;t++){
 										game[i][t] = 0;
