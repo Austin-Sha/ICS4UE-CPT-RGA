@@ -20,7 +20,6 @@ public class tictactoe implements ActionListener, MouseListener {
 	boolean blnturn;
 	int intMoves = 0;
 
-
 	// Panels
 	themepanel mainPanel = new themepanel();
 	themepanel standardPanel = new themepanel();
@@ -71,13 +70,13 @@ public class tictactoe implements ActionListener, MouseListener {
 
 	SuperSocketMaster ssm = null;
 
-	//Header
+	// Header
 	int intWins = 0;
 	int intLosses = 0;
 	int intTies = 0;
 
-	JLabel headerLabel = new JLabel("Wins: "+intWins+" | Losses: "+intLosses+" | Ties: "+intTies);
-	
+	JLabel headerLabel = new JLabel("Wins: " + intWins + " | Losses: " + intLosses + " | Ties: " + intTies);
+
 	Font theFont = null;
 
 	// Methods
@@ -121,8 +120,7 @@ public class tictactoe implements ActionListener, MouseListener {
 				} else {
 				}
 
-
-			} else if(e.getX() > 0 && e.getX() < 600 && e.getY() > 0 && e.getY() < 600){
+			} else if (e.getX() > 0 && e.getX() < 600 && e.getY() > 0 && e.getY() < 600) {
 				chatArea.append("System: Not Your Turn \n");
 			}
 
@@ -166,7 +164,7 @@ public class tictactoe implements ActionListener, MouseListener {
 			nameField.setVisible(true);
 			confirm1.setVisible(true);
 		} else if (event.getSource() == backButton) {
-			
+
 			mainFrame.setContentPane(mainPanel);
 			mainFrame.pack();
 			mainFrame.repaint();
@@ -177,7 +175,7 @@ public class tictactoe implements ActionListener, MouseListener {
 			aboutButton.setVisible(true);
 			nameField.setVisible(false);
 			confirm1.setVisible(false);
-			
+
 		} else if (event.getSource() == quickButton) {
 			// New
 			// Delete panel switch code
@@ -189,7 +187,7 @@ public class tictactoe implements ActionListener, MouseListener {
 			aboutButton.setVisible(false);
 			nameField.setVisible(true);
 			confirm2.setVisible(true);
-			 // End
+			// End
 		} else if (event.getSource() == backButton2) {
 			mainFrame.setContentPane(mainPanel);
 			mainFrame.pack();
@@ -205,7 +203,7 @@ public class tictactoe implements ActionListener, MouseListener {
 			mainFrame.setContentPane(standardPanel);
 			mainFrame.pack();
 			mainFrame.repaint();
-		} else if (event.getSource() == confirm2) { 
+		} else if (event.getSource() == confirm2) {
 			mainFrame.setContentPane(quickPanel);
 			mainFrame.pack();
 			mainFrame.repaint();
@@ -554,25 +552,25 @@ public class tictactoe implements ActionListener, MouseListener {
 			String[] strChat = ssm.readText().split(":");
 			if (strChat[0].equals("#")) {
 				try {
-					if(strChat[1].equals("game")){
+					if (strChat[1].equals("game")) {
 						chatArea.append("System:Loss\n");
 						intLosses++;
-						for(int i = 0; i<3;i++){
-							for(int t = 0; t<3;t++){
+						headerLabel.setText("Wins: "+intWins+" | Losses: "+intLosses+" | Ties: "+intTies);
+						for (int i = 0; i < 3; i++) {
+							for (int t = 0; t < 3; t++) {
 								game[i][t] = 0;
 							}
 						}
-					}
-					else if (game[Integer.parseInt(strChat[1])][Integer.parseInt(strChat[2])] == 0) {
+					} else if (game[Integer.parseInt(strChat[1])][Integer.parseInt(strChat[2])] == 0) {
 						if (strChat[3].equals("send")) {
 							game[Integer.parseInt(strChat[1])][Integer.parseInt(strChat[2])] = intPlayer2;
 							ssm.sendText(strChat[0] + ":" + strChat[1] + ":" + strChat[2] + ":" + "recieved");
 							blnturn = true;
 							intMoves++;
 							chatArea.append("System:Your Turn \n");
-							for(int i = 0;i<3;i++){
-								for(int t = 0;t<3;t++){
-									chatArea.append(game[i][t] +",");
+							for (int i = 0; i < 3; i++) {
+								for (int t = 0; t < 3; t++) {
+									chatArea.append(game[i][t] + ",");
 								}
 								chatArea.append("\n");
 							}
@@ -580,116 +578,131 @@ public class tictactoe implements ActionListener, MouseListener {
 							game[Integer.parseInt(strChat[1])][Integer.parseInt(strChat[2])] = intPlayerYou;
 							blnturn = false;
 							intMoves++;
-							if(intMoves >= 9){
+							if (intMoves >= 9) {
 								chatArea.append("Tie");
 								ssm.sendText("Tie");
 								intMoves = 0;
-								intTies++; 
-								for(int i = 0; i<3;i++){
-									for(int t = 0; t<3;t++){
+								intTies++;
+								headerLabel.setText("Wins: "+intWins+" | Losses: "+intLosses+" | Ties: "+intTies);
+								for (int i = 0; i < 3; i++) {
+									for (int t = 0; t < 3; t++) {
 										game[i][t] = 0;
 									}
 								}
 							}
-							if(game[0][0] == intPlayerYou && game[1][0] == intPlayerYou && game[2][0] == intPlayerYou) {
+							if (game[0][0] == intPlayerYou && game[1][0] == intPlayerYou
+									&& game[2][0] == intPlayerYou) {
 								ssm.sendText("#:game");
 								chatArea.append("System:Win\n");
 								intWins++;
-								for(int i = 0; i<3;i++){
-									for(int t = 0; t<3;t++){
+								headerLabel.setText("Wins: " + intWins + " | Losses: " + intLosses + " | Ties: " + intTies);
+								for (int i = 0; i < 3; i++) {
+									for (int t = 0; t < 3; t++) {
 										game[i][t] = 0;
 									}
 								}
-							}
-							else if(game[0][0] == intPlayerYou && game[0][1] == intPlayerYou && game[0][2] == intPlayerYou) {
+							} else if (game[0][0] == intPlayerYou && game[0][1] == intPlayerYou
+									&& game[0][2] == intPlayerYou) {
 								ssm.sendText("#:game");
 								chatArea.append("System:Win\n");
 								intWins++;
-								for(int i = 0; i<3;i++){
-									for(int t = 0; t<3;t++){
+								headerLabel.setText("Wins: " + intWins + " | Losses: " + intLosses + " | Ties: " + intTies);
+								for (int i = 0; i < 3; i++) {
+									for (int t = 0; t < 3; t++) {
 										game[i][t] = 0;
 									}
 								}
-							}
-							else if(game[1][0] == intPlayerYou && game[1][1] == intPlayerYou && game[1][2] == intPlayerYou) {
+							} else if (game[1][0] == intPlayerYou && game[1][1] == intPlayerYou
+									&& game[1][2] == intPlayerYou) {
 								ssm.sendText("#:game");
 								chatArea.append("System:Win\n");
 								intWins++;
-								for(int i = 0; i<3;i++){
-									for(int t = 0; t<3;t++){
+								headerLabel.setText(
+										"Wins: " + intWins + " | Losses: " + intLosses + " | Ties: " + intTies);
+								for (int i = 0; i < 3; i++) {
+									for (int t = 0; t < 3; t++) {
 										game[i][t] = 0;
 									}
 								}
-							}
-							else if(game[2][0] == intPlayerYou && game[2][1] == intPlayerYou && game[2][2] == intPlayerYou) {
+							} else if (game[2][0] == intPlayerYou && game[2][1] == intPlayerYou
+									&& game[2][2] == intPlayerYou) {
 								ssm.sendText("#:game");
 								chatArea.append("System:Win\n");
 								intWins++;
-								for(int i = 0; i<3;i++){
-									for(int t = 0; t<3;t++){
+								headerLabel.setText(
+										"Wins: " + intWins + " | Losses: " + intLosses + " | Ties: " + intTies);
+								headerLabel.setText(
+										"Wins: " + intWins + " | Losses: " + intLosses + " | Ties: " + intTies);
+								for (int i = 0; i < 3; i++) {
+									for (int t = 0; t < 3; t++) {
 										game[i][t] = 0;
 									}
 								}
-							}
-							else if(game[0][1] == intPlayerYou && game[1][1] == intPlayerYou && game[2][1] == intPlayerYou) {
+							} else if (game[0][1] == intPlayerYou && game[1][1] == intPlayerYou
+									&& game[2][1] == intPlayerYou) {
 								ssm.sendText("#:game");
 								chatArea.append("System:Win\n");
 								intWins++;
-								for(int i = 0; i<3;i++){
-									for(int t = 0; t<3;t++){
+								headerLabel.setText(
+										"Wins: " + intWins + " | Losses: " + intLosses + " | Ties: " + intTies);
+
+								for (int i = 0; i < 3; i++) {
+									for (int t = 0; t < 3; t++) {
 										game[i][t] = 0;
 									}
 								}
-							}
-							else if(game[0][2] == intPlayerYou && game[1][2] == intPlayerYou && game[2][2] == intPlayerYou) {
+							} else if (game[0][2] == intPlayerYou && game[1][2] == intPlayerYou
+									&& game[2][2] == intPlayerYou) {
 								ssm.sendText("#:game");
 								chatArea.append("System:Win\n");
 								intWins++;
-								for(int i = 0; i<3;i++){
-									for(int t = 0; t<3;t++){
+								headerLabel.setText(
+										"Wins: " + intWins + " | Losses: " + intLosses + " | Ties: " + intTies);
+								for (int i = 0; i < 3; i++) {
+									for (int t = 0; t < 3; t++) {
 										game[i][t] = 0;
 									}
 								}
-							}
-							else if(game[0][0] == intPlayerYou && game[1][1] == intPlayerYou && game[2][2] == intPlayerYou) {
+							} else if (game[0][0] == intPlayerYou && game[1][1] == intPlayerYou
+									&& game[2][2] == intPlayerYou) {
 								ssm.sendText("#:game");
 								chatArea.append("System:Win\n");
 								intWins++;
-								for(int i = 0; i<3;i++){
-									for(int t = 0; t<3;t++){
+								headerLabel.setText(
+										"Wins: " + intWins + " | Losses: " + intLosses + " | Ties: " + intTies);
+								for (int i = 0; i < 3; i++) {
+									for (int t = 0; t < 3; t++) {
 										game[i][t] = 0;
 									}
 								}
-							}
-							else if(game[2][0] == intPlayerYou && game[1][1] == intPlayerYou && game[0][2] == intPlayerYou) {
+							} else if (game[2][0] == intPlayerYou && game[1][1] == intPlayerYou
+									&& game[0][2] == intPlayerYou) {
 								ssm.sendText("#:game");
 								chatArea.append("System:Win\n");
 								intWins++;
-								for(int i = 0; i<3;i++){
-									for(int t = 0; t<3;t++){
+								headerLabel.setText(
+										"Wins: " + intWins + " | Losses: " + intLosses + " | Ties: " + intTies);
+								for (int i = 0; i < 3; i++) {
+									for (int t = 0; t < 3; t++) {
 										game[i][t] = 0;
 									}
 								}
 							}
-							
-							
-							
-							
-			
-							}
-						}else{
-							ssm.sendText("System:Spot Taken");
+
 						}
-					}catch (IndexOutOfBoundsException e) {
-					System.out.println("uwu :3 ur code cwashed" + strChat[0]);
-				}
-			} else {
-				try{
-				chatArea.append(strChat[0] + ": " + strChat[1] + "\n");
+					} else {
+						ssm.sendText("System:Spot Taken");
+					}
 				} catch (IndexOutOfBoundsException e) {
 					System.out.println("uwu :3 ur code cwashed" + strChat[0]);
 				}
-				
+			} else {
+				try {
+					chatArea.append(strChat[0] + ": " + strChat[1] + "\n");
+				} catch (IndexOutOfBoundsException e) {
+					System.out.println("uwu :3 ur code cwashed" + strChat[0]);
+				}
+
 			}
 		}
 	}
@@ -703,7 +716,7 @@ public class tictactoe implements ActionListener, MouseListener {
 		standardPanel.add(backButton);
 		standardPanel.addMouseListener(this);
 		backButton.addActionListener(this);
-		
+
 		quickPanel.setLayout(null);
 		quickPanel.setPreferredSize(new Dimension(1280, 720));
 		backButton2.setSize(100, 50);
@@ -782,39 +795,37 @@ public class tictactoe implements ActionListener, MouseListener {
 		mainPanel.add(helpButton);
 		mainPanel.add(aboutButton);
 
-		nameLabel.setSize(100,50);
-		nameLabel.setLocation(900,250);
+		nameLabel.setSize(100, 50);
+		nameLabel.setLocation(900, 250);
 		mainPanel.add(nameLabel);
 
 		headerLabel.setSize(2000, 50);
 		headerLabel.setLocation(922, 0);
 		headerLabel.setForeground(Color.red);
 		standardPanel.add(headerLabel);
-		
+
 		theFont = new Font("arial", Font.BOLD, 20);
 		headerLabel.setFont(theFont);
 
-		nameLabel.setSize(100,50);
-		nameLabel.setLocation(900,250);
+		nameLabel.setSize(100, 50);
+		nameLabel.setLocation(900, 250);
 		mainPanel.add(nameLabel);
 
-		confirm1.setSize(250,50);
-		confirm1.setLocation(950,300);
+		confirm1.setSize(250, 50);
+		confirm1.setLocation(950, 300);
 		mainPanel.add(confirm1);
 		confirm1.setVisible(false);
 		confirm1.addActionListener(this);
-		
-		confirm2.setSize(250,50);
-		confirm2.setLocation(950,300);
+
+		confirm2.setSize(250, 50);
+		confirm2.setLocation(950, 300);
 		mainPanel.add(confirm2);
 		confirm2.setVisible(false);
 		confirm2.addActionListener(this);
-		
+
 		nameField.setSize(250, 50);
 		nameField.setLocation(950, 250);
 		nameField.setVisible(false);
-
-		
 
 		thescroll.setSize(400, 400);
 		thescroll.setLocation(850, 50);
