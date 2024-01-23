@@ -165,6 +165,7 @@ public class tictactoe implements ActionListener, MouseListener {
 			// New
 			// Delete panel switch code
 			blnstandard = true;
+
 			standardButton.setVisible(false);
 			quickButton.setVisible(false);
 			themeButton.setVisible(false);
@@ -174,7 +175,7 @@ public class tictactoe implements ActionListener, MouseListener {
 			confirm1.setVisible(true);
 			
 		} else if (event.getSource() == backButton) {
-			
+
 			mainFrame.setContentPane(mainPanel);
 			mainFrame.pack();
 			mainFrame.repaint();
@@ -185,7 +186,7 @@ public class tictactoe implements ActionListener, MouseListener {
 			aboutButton.setVisible(true);
 			nameField.setVisible(false);
 			confirm1.setVisible(false);
-			
+
 		} else if (event.getSource() == quickButton) {
 			// New
 			// Delete panel switch code
@@ -197,7 +198,7 @@ public class tictactoe implements ActionListener, MouseListener {
 			aboutButton.setVisible(false);
 			nameField.setVisible(true);
 			confirm2.setVisible(true);
-			 // End
+			// End
 		} else if (event.getSource() == backButton2) {
 			mainFrame.setContentPane(mainPanel);
 			mainFrame.pack();
@@ -213,9 +214,13 @@ public class tictactoe implements ActionListener, MouseListener {
 			mainFrame.setContentPane(standardPanel);
 			mainFrame.pack();
 			mainFrame.repaint();
+<<<<<<< HEAD
 			
 			
 		} else if (event.getSource() == confirm2) { 
+=======
+		} else if (event.getSource() == confirm2) {
+>>>>>>> b52357fbd72f80d6ae8de806c44ff7acc2fe8b27
 			mainFrame.setContentPane(quickPanel);
 			mainFrame.pack();
 			mainFrame.repaint();
