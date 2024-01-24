@@ -582,6 +582,9 @@ public class tictactoe implements ActionListener, MouseListener {
 							intMoves++;
 							// strchat 2 is x
 							// strchat 1 is y
+							for(int i = 0; i<3;i++){
+
+							}
 							
 							if(Integer.parseInt(strChat[2]) > 0 && Integer.parseInt(strChat[2]) < 200 && Integer.parseInt(strChat[1]) > 0 && Integer.parseInt(strChat[1]) < 200){
 								standardPanel.bln100 = true;
