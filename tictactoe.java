@@ -311,8 +311,8 @@ public class tictactoe implements ActionListener, MouseListener {
 
 			mainPanel.blnlight = false;
 			mainPanel.blnlighttheme = false;
-			mainPanel.blndark = false;
-			mainPanel.blndarktheme = true;
+			mainPanel.blndark = true;
+			mainPanel.blndarktheme = false;
 			mainPanel.blnchristmas = false;
 			mainPanel.blnchristmastheme = false;
 			mainPanel.blnhalloween = false;
@@ -324,8 +324,8 @@ public class tictactoe implements ActionListener, MouseListener {
 
 			standardPanel.blnlight = false;
 			standardPanel.blnlighttheme = false;
-			standardPanel.blndark = false;
-			standardPanel.blndarktheme = true;
+			standardPanel.blndark = true;
+			standardPanel.blndarktheme = false;
 			standardPanel.blnchristmas = false;
 			standardPanel.blnchristmastheme = false;
 			standardPanel.blnhalloween = false;
@@ -337,8 +337,8 @@ public class tictactoe implements ActionListener, MouseListener {
 
 			quickPanel.blnlight = false;
 			quickPanel.blnlighttheme = false;
-			quickPanel.blndark = false;
-			quickPanel.blndarktheme = true;
+			quickPanel.blndark = true;
+			quickPanel.blndarktheme = false;
 			quickPanel.blnchristmas = false;
 			quickPanel.blnchristmastheme = false;
 			quickPanel.blnhalloween = false;
@@ -369,8 +369,8 @@ public class tictactoe implements ActionListener, MouseListener {
 			mainPanel.blnlighttheme = false;
 			mainPanel.blndark = false;
 			mainPanel.blndarktheme = false;
-			mainPanel.blnchristmas = false;
-			mainPanel.blnchristmastheme = true;
+			mainPanel.blnchristmas = true;
+			mainPanel.blnchristmastheme = false;
 			mainPanel.blnhalloween = false;
 			mainPanel.blnhalloweentheme = false;
 			mainPanel.blnneon = false;
@@ -379,11 +379,11 @@ public class tictactoe implements ActionListener, MouseListener {
 			mainPanel.blnStartrektheme = false;
 
 			standardPanel.blnlight = false;
-			standardPanel.blnlighttheme = true;
+			standardPanel.blnlighttheme = false;
 			standardPanel.blndark = false;
 			standardPanel.blndarktheme = false;
-			standardPanel.blnchristmas = false;
-			standardPanel.blnchristmastheme = true;
+			standardPanel.blnchristmas = true;
+			standardPanel.blnchristmastheme = false;
 			standardPanel.blnhalloween = false;
 			standardPanel.blnhalloweentheme = false;
 			standardPanel.blnneon = false;
@@ -395,8 +395,8 @@ public class tictactoe implements ActionListener, MouseListener {
 			quickPanel.blnlighttheme = false;
 			quickPanel.blndark = false;
 			quickPanel.blndarktheme = false;
-			quickPanel.blnchristmas = false;
-			quickPanel.blnchristmastheme = true;
+			quickPanel.blnchristmas = true;
+			quickPanel.blnchristmastheme = false;
 			quickPanel.blnhalloween = false;
 			quickPanel.blnhalloweentheme = false;
 			quickPanel.blnneon = false;
@@ -428,8 +428,8 @@ public class tictactoe implements ActionListener, MouseListener {
 			mainPanel.blndarktheme = false;
 			mainPanel.blnchristmas = false;
 			mainPanel.blnchristmastheme = false;
-			mainPanel.blnhalloween = false;
-			mainPanel.blnhalloweentheme = true;
+			mainPanel.blnhalloween = true;
+			mainPanel.blnhalloweentheme = false;
 			mainPanel.blnneon = false;
 			mainPanel.blnneontheme = false;
 			mainPanel.blnStartrek = false;
@@ -441,8 +441,8 @@ public class tictactoe implements ActionListener, MouseListener {
 			standardPanel.blndarktheme = false;
 			standardPanel.blnchristmas = false;
 			standardPanel.blnchristmastheme = false;
-			standardPanel.blnhalloween = false;
-			standardPanel.blnhalloweentheme = true;
+			standardPanel.blnhalloween = true;
+			standardPanel.blnhalloweentheme = false;
 			standardPanel.blnneon = false;
 			standardPanel.blnneontheme = false;
 			standardPanel.blnStartrek = false;
@@ -467,8 +467,8 @@ public class tictactoe implements ActionListener, MouseListener {
 			themesPanel.blndarktheme = false;
 			themesPanel.blnchristmas = false;
 			themesPanel.blnchristmastheme = false;
-			themesPanel.blnhalloween = false;
-			themesPanel.blnhalloweentheme = true;
+			themesPanel.blnhalloween = true;
+			themesPanel.blnhalloweentheme = false;
 			themesPanel.blnneon = false;
 			themesPanel.blnneontheme = false;
 			themesPanel.blnStartrek = false;
@@ -487,7 +487,7 @@ public class tictactoe implements ActionListener, MouseListener {
 			mainPanel.blnhalloween = false;
 			mainPanel.blnhalloweentheme = false;
 			mainPanel.blnneon = false;
-			mainPanel.blnneontheme = true;
+			mainPanel.blnneontheme = false;
 			mainPanel.blnStartrek = false;
 			mainPanel.blnStartrektheme = false;
 
@@ -499,9 +499,67 @@ public class tictactoe implements ActionListener, MouseListener {
 			standardPanel.blnchristmastheme = false;
 			standardPanel.blnhalloween = false;
 			standardPanel.blnhalloweentheme = false;
-			standardPanel.blnneon = false;
-			standardPanel.blnneontheme = true;
+			standardPanel.blnneon = true;
+			standardPanel.blnneontheme = false;
 			standardPanel.blnStartrek = false;
+			standardPanel.blnStartrektheme = false;
+
+			quickPanel.blnlight = false;
+			quickPanel.blnlighttheme = false;
+			quickPanel.blndark = false;
+			quickPanel.blndarktheme = false;
+			quickPanel.blnchristmas = false;
+			quickPanel.blnchristmastheme = false;
+			quickPanel.blnhalloween = false;
+			quickPanel.blnhalloweentheme = false;
+			quickPanel.blnneon = true;
+			quickPanel.blnneontheme = false;
+			quickPanel.blnStartrek = false;
+			quickPanel.blnStartrektheme = false;
+
+			themesPanel.blnlight = false;
+			themesPanel.blnlighttheme = false;
+			themesPanel.blndark = false;
+			themesPanel.blndarktheme = false;
+			themesPanel.blnchristmas = false;
+			themesPanel.blnchristmastheme = false;
+			themesPanel.blnhalloween = false;
+			themesPanel.blnhalloweentheme = false;
+			themesPanel.blnneon = false;
+			themesPanel.blnneontheme = true;
+			themesPanel.blnStartrek = false;
+			themesPanel.blnStartrektheme = false;
+
+			// End of themes
+		}else if(event.getSource() == StarTrekButton){
+			mainPanel.repaint();
+			standardPanel.repaint();
+			themesPanel.repaint();
+
+			mainPanel.blnlight = false;
+			mainPanel.blnlighttheme = false;
+			mainPanel.blndark = false;
+			mainPanel.blndarktheme = false;
+			mainPanel.blnchristmas = false;
+			mainPanel.blnchristmastheme = false;
+			mainPanel.blnhalloween = false;
+			mainPanel.blnhalloweentheme = false;
+			mainPanel.blnneon = false ;
+			mainPanel.blnneontheme = false;
+			mainPanel.blnStartrek = true;
+			mainPanel.blnStartrektheme = false;
+
+			standardPanel.blnlight = false;
+			standardPanel.blnlighttheme = false;
+			standardPanel.blndark = false;
+			standardPanel.blndarktheme = false;
+			standardPanel.blnchristmas = false;
+			standardPanel.blnchristmastheme = false;
+			standardPanel.blnhalloween = false;
+			standardPanel.blnhalloweentheme = false;
+			standardPanel.blnneon = false;
+			standardPanel.blnneontheme = false;
+			standardPanel.blnStartrek = true;
 			standardPanel.blnStartrektheme = false;
 
 			quickPanel.blnlight = false;
@@ -526,11 +584,9 @@ public class tictactoe implements ActionListener, MouseListener {
 			themesPanel.blnhalloween = false;
 			themesPanel.blnhalloweentheme = false;
 			themesPanel.blnneon = false;
-			themesPanel.blnneontheme = true;
+			themesPanel.blnneontheme = false;
 			themesPanel.blnStartrek = false;
-			themesPanel.blnStartrektheme = false;
-
-			// End of themes
+			themesPanel.blnStartrektheme = true;
 		}
 		// Networking setup
 		if (event.getSource() == sendField) {

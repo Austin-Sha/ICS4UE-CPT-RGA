@@ -91,6 +91,7 @@ public class themepanel extends JPanel{
 			g.drawImage(darkx,200,200,null);
 		}else if(blndark == true){
 			g.drawImage(darkbg,0,0, null);
+			g.drawImage(darkboard,0,0, null);
 		}else if(blnchristmastheme == true){
 			g.drawImage(christmasbg,0,0, null);
 			g.drawImage(christmasboard,0,0, null);
@@ -98,6 +99,7 @@ public class themepanel extends JPanel{
 			g.drawImage(christmasx,200,200, null);
 		}else if(blnchristmas == true){
 			g.drawImage(christmasbg,0,0, null);
+			g.drawImage(christmasboard,0,0, null);
 		}else if(blnhalloweentheme == true){
 			g.drawImage(halloweenbg,0,0, null);
 			g.drawImage(halloweenboard,0,0, null);
@@ -105,6 +107,15 @@ public class themepanel extends JPanel{
 			g.drawImage(halloweenx,200,200, null);
 		}else if(blnhalloween == true){
 			g.drawImage(halloweenbg,0,0, null);
+			g.drawImage(halloweenboard,0,0, null);
+		}else if(blnStartrek == true){
+			g.drawImage(startrekbg,0,0, null);
+			g.drawImage(startrekboard,0, 0, null);
+		}else if(blnStartrektheme == true){
+			g.drawImage(startrekbg,0,0, null);
+			g.drawImage(startrekboard,0,0, null);
+			g.drawImage(startreko,400,400, null);
+			g.drawImage(startrekx,200,200, null);
 		}else if(blnneontheme == true){
 			g.drawImage(neonbg,0,0, null);
 			g.drawImage(neonboard,0,0, null);
@@ -112,7 +123,9 @@ public class themepanel extends JPanel{
 			g.drawImage(neonx,200,200, null);
 		}else if(blnneon = true){
 			g.drawImage(neonbg,0,0, null);
-		}if(blnlight == true && bln000 == true){
+			g.drawImage(neonboard,0,0, null);
+		}
+		if(blnlight == true && bln000 == true){
 			g.drawImage(lighto,0,0, null);
 			}if(blnlight == true && bln001 == true){
 			g.drawImage(lighto,0,200, null);
@@ -339,6 +352,43 @@ public class themepanel extends JPanel{
 			}if(blnStartrek == true && bln122 == true){
 			g.drawImage(neonx,400,400, null);
 			}
+			if(blnStartrek == true && bln000 == true){ 
+				g.drawImage(neono,0,0, null);
+			}if(blnStartrek == true && bln001 == true){
+				g.drawImage(neono,0,200, null);
+			}if(blnStartrek == true && bln002 == true){
+				g.drawImage(neono,0,400, null);
+			}if(blnStartrek == true && bln010 == true){
+				g.drawImage(neono,200,0, null);
+			}if(blnStartrek == true && bln011 == true){
+				g.drawImage(neono,200,200, null);
+			}if(blnStartrek == true && bln012 == true){
+				g.drawImage(neono,200,400, null);
+			}if(blnStartrek == true && bln020 == true){
+				g.drawImage(neono,400,400, null);
+			}if(blnStartrek == true && bln021 == true){
+				g.drawImage(neono,400,400, null);
+			}if(blnStartrek == true && bln022 == true){
+				g.drawImage(neono,400,400, null);
+			}if(blnStartrek == true && bln100 == true){ 
+				g.drawImage(neonx,0,0, null);
+			}if(blnStartrek == true && bln101 == true){
+				g.drawImage(neonx,0,200, null);
+			}if(blnStartrek == true && bln102 == true){
+				g.drawImage(neonx,0,400, null);
+			}if(blnStartrek == true && bln110 == true){
+				g.drawImage(neonx,200,0, null);
+			}if(blnStartrek == true && bln111 == true){
+				g.drawImage(neonx,200,200, null);
+			}if(blnStartrek == true && bln112 == true){
+				g.drawImage(neonx,200,400, null);
+			}if(blnStartrek == true && bln120 == true){
+				g.drawImage(neonx,400,400, null);
+			}if(blnStartrek == true && bln121 == true){
+				g.drawImage(neonx,400,400, null);
+			}if(blnStartrek == true && bln122 == true){
+				g.drawImage(neonx,400,400, null);
+			}
 			
 		
 		
@@ -377,6 +427,11 @@ public class themepanel extends JPanel{
 			neonbg = ImageIO.read(new File("Neonbg.jpg"));
 			neono = ImageIO.read(new File("Neono.png"));
 			neonx = ImageIO.read(new File("Neonx.png"));
+
+			startrekboard = ImageIO.read(new File("Startrekboard.jpg"));
+			startrekbg = ImageIO.read(new File("Startrekbg.jpg"));
+			startreko = ImageIO.read(new File("Startreko.png"));
+			startrekx = ImageIO.read(new File("Startrekx.png"));
 			
 		}catch(IOException e){
 			System.out.println("Unable to load image");
