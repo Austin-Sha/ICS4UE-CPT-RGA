@@ -173,7 +173,7 @@ public class tictactoe implements ActionListener, MouseListener {
 			aboutButton.setVisible(false);
 			nameField.setVisible(true);
 			confirm1.setVisible(true);
-			
+
 		} else if (event.getSource() == backButton) {
 
 			mainFrame.setContentPane(mainPanel);
@@ -209,7 +209,7 @@ public class tictactoe implements ActionListener, MouseListener {
 			helpButton.setVisible(true);
 			aboutButton.setVisible(true);
 			nameField.setVisible(false);
-			confirm1.setVisible(false);
+			confirm2.setVisible(false);
 		} else if (event.getSource() == confirm1) {
 			mainFrame.setContentPane(standardPanel);
 			mainFrame.pack();
@@ -227,6 +227,7 @@ public class tictactoe implements ActionListener, MouseListener {
 			mainFrame.setContentPane(mainPanel);
 			mainFrame.pack();
 			mainFrame.repaint();
+
 		} else if (event.getSource() == helpButton) {
 			mainFrame.setContentPane(helpPanel);
 			mainFrame.pack();
@@ -245,7 +246,7 @@ public class tictactoe implements ActionListener, MouseListener {
 			mainFrame.repaint();
 
 			// End of panel buttons
-		} else if (event.getSource() == LightButton) { //NEW****
+		} else if (event.getSource() == LightButton) { // NEW****
 			// Theme buttons
 
 			mainPanel.repaint();
@@ -567,7 +568,7 @@ public class tictactoe implements ActionListener, MouseListener {
 						chatArea.append("System:Loss\n");
 						intLosses++;
 						intMoves = 0;
-						headerLabel.setText("Wins: "+intWins+" | Losses: "+intLosses+" | Ties: "+intTies);
+						headerLabel.setText("Wins: " + intWins + " | Losses: " + intLosses + " | Ties: " + intTies);
 						for (int i = 0; i < 3; i++) {
 							for (int t = 0; t < 3; t++) {
 								game[i][t] = 0;
@@ -581,73 +582,71 @@ public class tictactoe implements ActionListener, MouseListener {
 							intMoves++;
 							// strchat 2 is x
 							// strchat 1 is y
-							for(int i = 0; i<3;i++){
-								for(int t = 0; t<3; t++){
-									
-									if(game[i][t] == intPlayerYou){
-										if(t == 0 && i == 0){
+							for (int i = 0; i < 3; i++) {
+								for (int t = 0; t < 3; t++) {
+
+									if (game[i][t] == intPlayerYou) {
+										if (t == 0 && i == 0) {
 											standardPanel.bln000 = true;
 										}
-										if(t == 1 && i == 0){
+										if (t == 1 && i == 0) {
 											standardPanel.bln010 = true;
 										}
-										if(t == 2 && i == 0){
+										if (t == 2 && i == 0) {
 											standardPanel.bln020 = true;
 										}
-										if(t == 0 && i == 1){
+										if (t == 0 && i == 1) {
 											standardPanel.bln001 = true;
 										}
-										if(t == 0 && i == 2){
+										if (t == 0 && i == 2) {
 											standardPanel.bln002 = true;
 										}
-										if(t == 1 && i == 1){
+										if (t == 1 && i == 1) {
 											standardPanel.bln011 = true;
 										}
-										if(t == 1 && i == 2){
+										if (t == 1 && i == 2) {
 											standardPanel.bln012 = true;
 										}
-										if(t == 2 && i == 2){
+										if (t == 2 && i == 2) {
 											standardPanel.bln022 = true;
 										}
-										if(t == 2 && i == 1){
+										if (t == 2 && i == 1) {
 											standardPanel.bln021 = true;
 										}
 									}
-									if(game[i][t] == intPlayer2){
-										if(t == 0 && i == 0){
+									if (game[i][t] == intPlayer2) {
+										if (t == 0 && i == 0) {
 											standardPanel.bln100 = true;
 										}
-										if(t == 1 && i == 0){
+										if (t == 1 && i == 0) {
 											standardPanel.bln110 = true;
 										}
-										if(t == 2 && i == 0){
+										if (t == 2 && i == 0) {
 											standardPanel.bln120 = true;
 										}
-										if(t == 0 && i == 1){
+										if (t == 0 && i == 1) {
 											standardPanel.bln101 = true;
 										}
-										if(t == 0 && i == 2){
+										if (t == 0 && i == 2) {
 											standardPanel.bln102 = true;
 										}
-										if(t == 1 && i == 1){
+										if (t == 1 && i == 1) {
 											standardPanel.bln111 = true;
 										}
-										if(t == 1 && i == 2){
+										if (t == 1 && i == 2) {
 											standardPanel.bln112 = true;
 										}
-										if(t == 2 && i == 2){
+										if (t == 2 && i == 2) {
 											standardPanel.bln122 = true;
 										}
-										if(t == 2 && i == 1){
+										if (t == 2 && i == 1) {
 											standardPanel.bln121 = true;
 										}
 									}
 								}
 							}
 							standardPanel.repaint();
-							
-							
-							
+
 							chatArea.append("System:Your Turn \n");
 							for (int i = 0; i < 3; i++) {
 								for (int t = 0; t < 3; t++) {
@@ -657,64 +656,64 @@ public class tictactoe implements ActionListener, MouseListener {
 							}
 						} else if (strChat[3].equals("recieved")) {
 							game[Integer.parseInt(strChat[1])][Integer.parseInt(strChat[2])] = intPlayerYou;
-							for(int i = 0; i<3;i++){
-								for(int t = 0; t<3; t++){
-									
-									if(game[i][t] == intPlayerYou){
-										if(t == 0 && i == 0){
+							for (int i = 0; i < 3; i++) {
+								for (int t = 0; t < 3; t++) {
+
+									if (game[i][t] == intPlayerYou) {
+										if (t == 0 && i == 0) {
 											standardPanel.bln000 = true;
 										}
-										if(t == 1 && i == 0){
+										if (t == 1 && i == 0) {
 											standardPanel.bln010 = true;
 										}
-										if(t == 2 && i == 0){
+										if (t == 2 && i == 0) {
 											standardPanel.bln020 = true;
 										}
-										if(t == 0 && i == 1){
+										if (t == 0 && i == 1) {
 											standardPanel.bln001 = true;
 										}
-										if(t == 0 && i == 2){
+										if (t == 0 && i == 2) {
 											standardPanel.bln002 = true;
 										}
-										if(t == 1 && i == 1){
+										if (t == 1 && i == 1) {
 											standardPanel.bln011 = true;
 										}
-										if(t == 1 && i == 2){
+										if (t == 1 && i == 2) {
 											standardPanel.bln012 = true;
 										}
-										if(t == 2 && i == 2){
+										if (t == 2 && i == 2) {
 											standardPanel.bln022 = true;
 										}
-										if(t == 2 && i == 1){
+										if (t == 2 && i == 1) {
 											standardPanel.bln021 = true;
 										}
 									}
-									if(game[i][t] == intPlayer2){
-										if(t == 0 && i == 0){
+									if (game[i][t] == intPlayer2) {
+										if (t == 0 && i == 0) {
 											standardPanel.bln100 = true;
 										}
-										if(t == 1 && i == 0){
+										if (t == 1 && i == 0) {
 											standardPanel.bln110 = true;
 										}
-										if(t == 2 && i == 0){
+										if (t == 2 && i == 0) {
 											standardPanel.bln120 = true;
 										}
-										if(t == 0 && i == 1){
+										if (t == 0 && i == 1) {
 											standardPanel.bln101 = true;
 										}
-										if(t == 0 && i == 2){
+										if (t == 0 && i == 2) {
 											standardPanel.bln102 = true;
 										}
-										if(t == 1 && i == 1){
+										if (t == 1 && i == 1) {
 											standardPanel.bln111 = true;
 										}
-										if(t == 1 && i == 2){
+										if (t == 1 && i == 2) {
 											standardPanel.bln112 = true;
 										}
-										if(t == 2 && i == 2){
+										if (t == 2 && i == 2) {
 											standardPanel.bln122 = true;
 										}
-										if(t == 2 && i == 1){
+										if (t == 2 && i == 1) {
 											standardPanel.bln121 = true;
 										}
 									}
@@ -728,33 +727,35 @@ public class tictactoe implements ActionListener, MouseListener {
 								ssm.sendText("System:Tie");
 								intMoves = 0;
 								intTies++;
-								headerLabel.setText("Wins: "+intWins+" | Losses: "+intLosses+" | Ties: "+intTies);
+								headerLabel.setText(
+										"Wins: " + intWins + " | Losses: " + intLosses + " | Ties: " + intTies);
 								for (int i = 0; i < 3; i++) {
 									for (int t = 0; t < 3; t++) {
 										game[i][t] = 0;
 									}
 								}
 							}
-							if (game[0][0] == intPlayerYou && game[1][0] == intPlayerYou
-									&& game[2][0] == intPlayerYou) {
+							if (game[0][0] == intPlayerYou && game[1][0] == intPlayerYou && game[2][0] == intPlayerYou) {
 								ssm.sendText("#:game");
 								chatArea.append("System:Win\n");
 								intWins++;
 								intMoves = 0;
-								headerLabel.setText("Wins: " + intWins + " | Losses: " + intLosses + " | Ties: " + intTies);
+								headerLabel.setText(
+										"Wins: " + intWins + " | Losses: " + intLosses + " | Ties: " + intTies);
 								for (int i = 0; i < 3; i++) {
 									for (int t = 0; t < 3; t++) {
 										game[i][t] = 0;
 									}
 								}
-								//funny
+								// funny
 							} else if (game[0][0] == intPlayerYou && game[0][1] == intPlayerYou
 									&& game[0][2] == intPlayerYou) {
 								ssm.sendText("#:game");
 								chatArea.append("System:Win\n");
 								intWins++;
 								intMoves = 0;
-								headerLabel.setText("Wins: " + intWins + " | Losses: " + intLosses + " | Ties: " + intTies);
+								headerLabel.setText(
+										"Wins: " + intWins + " | Losses: " + intLosses + " | Ties: " + intTies);
 								for (int i = 0; i < 3; i++) {
 									for (int t = 0; t < 3; t++) {
 										game[i][t] = 0;
