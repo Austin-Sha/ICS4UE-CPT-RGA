@@ -215,7 +215,7 @@ public class tictactoe implements ActionListener, MouseListener {
 			mainFrame.pack();
 			mainFrame.repaint();
 		} else if (event.getSource() == confirm2) {
-			mainFrame.setContentPane(quickPanel);
+			mainFrame.setContentPane(standardPanel);
 			mainFrame.pack();
 			mainFrame.repaint();
 			// End
