@@ -575,7 +575,6 @@ public class tictactoe implements ActionListener, MouseListener {
 						}
 					} else if (game[Integer.parseInt(strChat[1])][Integer.parseInt(strChat[2])] == 0) {
 						if (strChat[3].equals("send")) {
-							standardPanel.repaint();
 							game[Integer.parseInt(strChat[1])][Integer.parseInt(strChat[2])] = intPlayer2;
 							ssm.sendText(strChat[0] + ":" + strChat[1] + ":" + strChat[2] + ":" + "recieved");
 							blnturn = true;
@@ -585,13 +584,63 @@ public class tictactoe implements ActionListener, MouseListener {
 							for(int i = 0; i<3;i++){
 								for(int t = 0; t<3; t++){
 									
-									if(game[i][t] == 1){
-										if(i == 0 && t == 0){
-											standardPanel.bln100 = true;
+									if(game[i][t] == intPlayerYou){
+										if(t == 0 && i == 0){
+											standardPanel.bln000 = true;
+										}
+										if(t == 1 && i == 0){
+											standardPanel.bln010 = true;
+										}
+										if(t == 2 && i == 0){
+											standardPanel.bln020 = true;
+										}
+										if(t == 0 && i == 1){
+											standardPanel.bln001 = true;
+										}
+										if(t == 0 && i == 2){
+											standardPanel.bln002 = true;
+										}
+										if(t == 1 && i == 1){
+											standardPanel.bln011 = true;
+										}
+										if(t == 1 && i == 2){
+											standardPanel.bln012 = true;
+										}
+										if(t == 2 && i == 2){
+											standardPanel.bln022 = true;
+										}
+										if(t == 2 && i == 1){
+											standardPanel.bln021 = true;
 										}
 									}
-									if(game[i][t] == 2){
-										
+									if(game[i][t] == intPlayer2){
+										if(t == 0 && i == 0){
+											standardPanel.bln100 = true;
+										}
+										if(t == 1 && i == 0){
+											standardPanel.bln110 = true;
+										}
+										if(t == 2 && i == 0){
+											standardPanel.bln120 = true;
+										}
+										if(t == 0 && i == 1){
+											standardPanel.bln101 = true;
+										}
+										if(t == 0 && i == 2){
+											standardPanel.bln102 = true;
+										}
+										if(t == 1 && i == 1){
+											standardPanel.bln111 = true;
+										}
+										if(t == 1 && i == 2){
+											standardPanel.bln112 = true;
+										}
+										if(t == 2 && i == 2){
+											standardPanel.bln122 = true;
+										}
+										if(t == 2 && i == 1){
+											standardPanel.bln121 = true;
+										}
 									}
 								}
 							}
@@ -608,6 +657,70 @@ public class tictactoe implements ActionListener, MouseListener {
 							}
 						} else if (strChat[3].equals("recieved")) {
 							game[Integer.parseInt(strChat[1])][Integer.parseInt(strChat[2])] = intPlayerYou;
+							for(int i = 0; i<3;i++){
+								for(int t = 0; t<3; t++){
+									
+									if(game[i][t] == intPlayerYou){
+										if(t == 0 && i == 0){
+											standardPanel.bln000 = true;
+										}
+										if(t == 1 && i == 0){
+											standardPanel.bln010 = true;
+										}
+										if(t == 2 && i == 0){
+											standardPanel.bln020 = true;
+										}
+										if(t == 0 && i == 1){
+											standardPanel.bln001 = true;
+										}
+										if(t == 0 && i == 2){
+											standardPanel.bln002 = true;
+										}
+										if(t == 1 && i == 1){
+											standardPanel.bln011 = true;
+										}
+										if(t == 1 && i == 2){
+											standardPanel.bln012 = true;
+										}
+										if(t == 2 && i == 2){
+											standardPanel.bln022 = true;
+										}
+										if(t == 2 && i == 1){
+											standardPanel.bln021 = true;
+										}
+									}
+									if(game[i][t] == intPlayer2){
+										if(t == 0 && i == 0){
+											standardPanel.bln100 = true;
+										}
+										if(t == 1 && i == 0){
+											standardPanel.bln110 = true;
+										}
+										if(t == 2 && i == 0){
+											standardPanel.bln120 = true;
+										}
+										if(t == 0 && i == 1){
+											standardPanel.bln101 = true;
+										}
+										if(t == 0 && i == 2){
+											standardPanel.bln102 = true;
+										}
+										if(t == 1 && i == 1){
+											standardPanel.bln111 = true;
+										}
+										if(t == 1 && i == 2){
+											standardPanel.bln112 = true;
+										}
+										if(t == 2 && i == 2){
+											standardPanel.bln122 = true;
+										}
+										if(t == 2 && i == 1){
+											standardPanel.bln121 = true;
+										}
+									}
+								}
+							}
+							standardPanel.repaint();
 							blnturn = false;
 							intMoves++;
 							if (intMoves >= 9) {

@@ -112,13 +112,234 @@ public class themepanel extends JPanel{
 			g.drawImage(neonx,200,200, null);
 		}else if(blnneon = true){
 			g.drawImage(neonbg,0,0, null);
-		}else if(blnlight == true && bln000 == true){ // NEW*****
+		}if(blnlight == true && bln000 == true){
 			g.drawImage(lighto,0,0, null);
-		}else if(blnlight == true && bln100 == true){
-			g.drawImage(lightx,0,0, null);
-		}else if(blnlight == true && bln001 == true){
+			}if(blnlight == true && bln001 == true){
 			g.drawImage(lighto,0,200, null);
-		}
+			}if(blnlight == true && bln002 == true){
+			g.drawImage(lighto,0,400, null);
+			}if(blnlight == true && bln010 == true){
+			g.drawImage(lighto,200,0, null);
+			}if(blnlight == true && bln011 == true){
+			g.drawImage(lighto,200,200, null);
+			}if(blnlight == true && bln012 == true){
+			g.drawImage(lighto,200,400, null);
+			}if(blnlight == true && bln020 == true){
+			g.drawImage(lighto,400,0, null);
+			}if(blnlight == true && bln021 == true){
+			g.drawImage(lighto,400,200, null);
+			}if(blnlight == true && bln022 == true){
+			g.drawImage(lighto,400,400, null);
+			}if(blnlight == true && bln100 == true){
+			g.drawImage(lightx,0,0, null);
+			}if(blnlight == true && bln101 == true){
+			g.drawImage(lightx,0,200, null);
+			}if(blnlight == true && bln102 == true){
+			g.drawImage(lightx,0,400, null);
+			}if(blnlight == true && bln110 == true){
+			g.drawImage(lightx,200,0, null);
+			}if(blnlight == true && bln111 == true){
+			g.drawImage(lightx,200,200, null);
+			}if(blnlight == true && bln112 == true){
+			g.drawImage(lightx,200,400, null);
+			}if(blnlight == true && bln120 == true){
+			g.drawImage(lightx,400,000, null);
+			}if(blnlight == true && bln121 == true){
+			g.drawImage(lightx,400,200, null);
+			}if(blnlight == true && bln122 == true){
+			g.drawImage(lightx,400,400, null);
+			}
+			
+			if(blndark == true && bln000 == true){
+			g.drawImage(darko,0,0, null);
+			}if(blndark == true && bln001 == true){
+			g.drawImage(darko,0,200, null);
+			}if(blndark == true && bln002 == true){
+			g.drawImage(darko,0,400, null);
+			}if(blndark == true && bln010 == true){
+			g.drawImage(darko,200,0, null);
+			}if(blndark == true && bln011 == true){
+			g.drawImage(darko,200,200, null);
+			}if(blndark == true && bln012 == true){
+			g.drawImage(darko,200,400, null);
+			}if(blndark == true && bln020 == true){
+			g.drawImage(darko,400,400, null);
+			}if(blndark == true && bln021 == true){
+			g.drawImage(darko,400,400, null);
+			}if(blndark == true && bln022 == true){
+			g.drawImage(darko,400,400, null);
+			}if(blndark == true && bln100 == true){
+			g.drawImage(darkx,0,0, null);
+			}if(blndark == true && bln101 == true){
+			g.drawImage(darkx,0,200, null);
+			}if(blndark == true && bln102 == true){
+			g.drawImage(darkx,0,400, null);
+			}if(blndark == true && bln110 == true){
+			g.drawImage(darkx,200,0, null);
+			}if(blndark == true && bln111 == true){
+			g.drawImage(darkx,200,200, null);
+			}if(blndark == true && bln112 == true){
+			g.drawImage(darkx,200,400, null);
+			}if(blndark == true && bln120 == true){
+			g.drawImage(darkx,400,400, null);
+			}if(blndark == true && bln121 == true){
+			g.drawImage(darkx,400,400, null);
+			}if(blndark == true && bln122 == true){
+			g.drawImage(darkx,400,400, null);
+			}
+			
+			if(blnchristmas == true && bln000 == true){
+			g.drawImage(christmaso,0,0, null);
+			}if(blnchristmas == true && bln001 == true){
+			g.drawImage(christmaso,0,200, null);
+			}if(blnchristmas == true && bln002 == true){
+			g.drawImage(christmaso,0,400, null);
+			}if(blnchristmas == true && bln010 == true){
+			g.drawImage(christmaso,200,0, null);
+			}if(blnchristmas == true && bln011 == true){
+			g.drawImage(christmaso,200,200, null);
+			}if(blnchristmas == true && bln012 == true){
+			g.drawImage(christmaso,200,400, null);
+			}if(blnchristmas == true && bln020 == true){
+			g.drawImage(christmaso,400,400, null);
+			}if(blnchristmas == true && bln021 == true){
+			g.drawImage(christmaso,400,400, null);
+			}if(blnchristmas == true && bln022 == true){
+			g.drawImage(christmaso,400,400, null);
+			}if(blnchristmas == true && bln100 == true){
+			g.drawImage(christmasx,0,0, null);
+			}if(blnchristmas == true && bln101 == true){
+			g.drawImage(christmasx,0,200, null);
+			}if(blnchristmas == true && bln102 == true){
+			g.drawImage(christmasx,0,400, null);
+			}if(blnchristmas == true && bln110 == true){
+			g.drawImage(christmasx,200,0, null);
+			}if(blnchristmas == true && bln111 == true){
+			g.drawImage(christmasx,200,200, null);
+			}if(blnchristmas == true && bln112 == true){
+			g.drawImage(christmasx,200,400, null);
+			}if(blnchristmas == true && bln120 == true){
+			g.drawImage(christmasx,400,400, null);
+			}if(blnchristmas == true && bln121 == true){
+			g.drawImage(christmasx,400,400, null);
+			}if(blnchristmas == true && bln122 == true){
+			g.drawImage(christmasx,400,400, null);
+			}
+			
+			if(blnhalloween == true && bln000 == true){
+			g.drawImage(halloweeno,0,0, null);
+			}if(blnhalloween == true && bln001 == true){
+			g.drawImage(halloweeno,0,200, null);
+			}if(blnhalloween == true && bln002 == true){
+			g.drawImage(halloweeno,0,400, null);
+			}if(blnhalloween == true && bln010 == true){
+			g.drawImage(halloweeno,200,0, null);
+			}if(blnhalloween == true && bln011 == true){
+			g.drawImage(halloweeno,200,200, null);
+			}if(blnhalloween == true && bln012 == true){
+			g.drawImage(halloweeno,200,400, null);
+			}if(blnhalloween == true && bln020 == true){
+			g.drawImage(halloweeno,400,400, null);
+			}if(blnhalloween == true && bln021 == true){
+			g.drawImage(halloweeno,400,400, null);
+			}if(blnhalloween == true && bln022 == true){
+			g.drawImage(halloweeno,400,400, null);
+			}if(blnhalloween == true && bln100 == true){
+			g.drawImage(halloweenx,0,0, null);
+			}if(blnhalloween == true && bln101 == true){
+			g.drawImage(halloweenx,0,200, null);
+			}if(blnhalloween == true && bln102 == true){
+			g.drawImage(halloweenx,0,400, null);
+			}if(blnhalloween == true && bln110 == true){
+			g.drawImage(halloweenx,200,0, null);
+			}if(blnhalloween == true && bln111 == true){
+			g.drawImage(halloweenx,200,200, null);
+			}if(blnhalloween == true && bln112 == true){
+			g.drawImage(halloweenx,200,400, null);
+			}if(blnhalloween == true && bln120 == true){
+			g.drawImage(halloweenx,400,400, null);
+			}if(blnhalloween == true && bln121 == true){
+			g.drawImage(halloweenx,400,400, null);
+			}if(blnhalloween == true && bln122 == true){
+			g.drawImage(halloweenx,400,400, null);
+			}
+			
+			if(blnneon == true && bln000 == true){
+			g.drawImage(neono,0,0, null);
+			}if(blnneon == true && bln001 == true){
+			g.drawImage(neono,0,200, null);
+			}if(blnneon == true && bln002 == true){
+			g.drawImage(neono,0,400, null);
+			}if(blnneon == true && bln010 == true){
+			g.drawImage(neono,200,0, null);
+			}if(blnneon == true && bln011 == true){
+			g.drawImage(neono,200,200, null);
+			}if(blnneon == true && bln012 == true){
+			g.drawImage(neono,200,400, null);
+			}if(blnneon == true && bln020 == true){
+			g.drawImage(neono,400,400, null);
+			}if(blnneon == true && bln021 == true){
+			g.drawImage(neono,400,400, null);
+			}if(blnneon == true && bln022 == true){
+			g.drawImage(neono,400,400, null);
+			}if(blnneon == true && bln100 == true){
+			g.drawImage(neonx,0,0, null);
+			}if(blnneon == true && bln101 == true){
+			g.drawImage(neonx,0,200, null);
+			}if(blnneon == true && bln102 == true){
+			g.drawImage(neonx,0,400, null);
+			}if(blnneon == true && bln110 == true){
+			g.drawImage(neonx,200,0, null);
+			}if(blnneon == true && bln111 == true){
+			g.drawImage(neonx,200,200, null);
+			}if(blnneon == true && bln112 == true){
+			g.drawImage(neonx,200,400, null);
+			}if(blnneon == true && bln120 == true){
+			g.drawImage(neonx,400,400, null);
+			}if(blnneon == true && bln121 == true){
+			g.drawImage(neonx,400,400, null);
+			}if(blnneon == true && bln122 == true){
+			g.drawImage(neonx,400,400, null);
+			}
+			
+			if(blnStartrek == true && bln000 == true){
+			g.drawImage(neono,0,0, null);
+			}if(blnStartrek == true && bln001 == true){
+			g.drawImage(neono,0,200, null);
+			}if(blnStartrek == true && bln002 == true){
+			g.drawImage(neono,0,400, null);
+			}if(blnStartrek == true && bln010 == true){
+			g.drawImage(neono,200,0, null);
+			}if(blnStartrek == true && bln011 == true){
+			g.drawImage(neono,200,200, null);
+			}if(blnStartrek == true && bln012 == true){
+			g.drawImage(neono,200,400, null);
+			}if(blnStartrek == true && bln020 == true){
+			g.drawImage(neono,400,400, null);
+			}if(blnStartrek == true && bln021 == true){
+			g.drawImage(neono,400,400, null);
+			}if(blnStartrek == true && bln022 == true){
+			g.drawImage(neono,400,400, null);
+			}if(blnStartrek == true && bln100 == true){
+			g.drawImage(neonx,0,0, null);
+			}if(blnStartrek == true && bln101 == true){
+			g.drawImage(neonx,0,200, null);
+			}if(blnStartrek == true && bln102 == true){
+			g.drawImage(neonx,0,400, null);
+			}if(blnStartrek == true && bln110 == true){
+			g.drawImage(neonx,200,0, null);
+			}if(blnStartrek == true && bln111 == true){
+			g.drawImage(neonx,200,200, null);
+			}if(blnStartrek == true && bln112 == true){
+			g.drawImage(neonx,200,400, null);
+			}if(blnStartrek == true && bln120 == true){
+			g.drawImage(neonx,400,400, null);
+			}if(blnStartrek == true && bln121 == true){
+			g.drawImage(neonx,400,400, null);
+			}if(blnStartrek == true && bln122 == true){
+			g.drawImage(neonx,400,400, null);
+			}
+			
 		
 		
 		
