@@ -583,29 +583,19 @@ public class tictactoe implements ActionListener, MouseListener {
 							// strchat 2 is x
 							// strchat 1 is y
 							for(int i = 0; i<3;i++){
-
+								for(int t = 0; t<3; t++){
+									
+									if(game[i][t] == 1){
+										if(i == 0 && t == 0){
+											standardPanel.bln100 = true;
+										}
+									}
+									if(game[i][t] == 2){
+										
+									}
+								}
 							}
-							
-							if(Integer.parseInt(strChat[2]) > 0 && Integer.parseInt(strChat[2]) < 200 && Integer.parseInt(strChat[1]) > 0 && Integer.parseInt(strChat[1]) < 200){
-								standardPanel.bln100 = true;
-							}else if(Integer.parseInt(strChat[2]) > 0 && Integer.parseInt(strChat[2]) < 200 && Integer.parseInt(strChat[1]) > 200 && Integer.parseInt(strChat[1]) < 400){
-								standardPanel.bln101 = true;
-							}else if(Integer.parseInt(strChat[2]) > 0 && Integer.parseInt(strChat[2]) < 200 && Integer.parseInt(strChat[1]) > 400 && Integer.parseInt(strChat[1]) < 600){
-								standardPanel.bln102 = true;
-							}else if(Integer.parseInt(strChat[2]) > 200 && Integer.parseInt(strChat[2]) < 400 && Integer.parseInt(strChat[1]) > 0 && Integer.parseInt(strChat[1]) < 200){
-								standardPanel.bln110 = true;
-							}else if(Integer.parseInt(strChat[2]) > 200 && Integer.parseInt(strChat[2]) < 400 && Integer.parseInt(strChat[1]) > 200 && Integer.parseInt(strChat[1]) < 400){
-								standardPanel.bln111 = true;
-							}else if(Integer.parseInt(strChat[2]) > 200 && Integer.parseInt(strChat[2]) < 400 && Integer.parseInt(strChat[1]) > 400 && Integer.parseInt(strChat[1]) < 600){
-								standardPanel.bln112 = true;
-							}else if(Integer.parseInt(strChat[2]) > 400 && Integer.parseInt(strChat[2]) < 600 && Integer.parseInt(strChat[1]) > 0 && Integer.parseInt(strChat[1]) < 200){
-								standardPanel.bln120 = true;
-							}else if(Integer.parseInt(strChat[2]) > 400 && Integer.parseInt(strChat[2]) < 600 && Integer.parseInt(strChat[1]) > 200 && Integer.parseInt(strChat[1]) < 400){
-								standardPanel.bln121 = true;
-							}else if(Integer.parseInt(strChat[2]) > 400 && Integer.parseInt(strChat[2]) < 600 && Integer.parseInt(strChat[1]) > 400 && Integer.parseInt(strChat[1]) < 600){
-								standardPanel.bln122 = true;
-							}
-							
+							standardPanel.repaint();
 							
 							
 							
