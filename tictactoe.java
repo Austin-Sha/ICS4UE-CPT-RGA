@@ -190,7 +190,7 @@ public class tictactoe implements ActionListener, MouseListener {
 		} else if (event.getSource() == quickButton) {
 			// New
 			// Delete panel switch code
-			blnstandard = true;
+			blnstandard = false;
 			standardButton.setVisible(false);
 			quickButton.setVisible(false);
 			themeButton.setVisible(false);
