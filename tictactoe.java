@@ -747,6 +747,7 @@ public class tictactoe implements ActionListener, MouseListener {
 										game[i][t] = 0;
 									}
 								}
+								//funny
 							} else if (game[0][0] == intPlayerYou && game[0][1] == intPlayerYou
 									&& game[0][2] == intPlayerYou) {
 								ssm.sendText("#:game");
