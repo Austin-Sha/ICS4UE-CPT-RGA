@@ -25,7 +25,7 @@ public class tictactoe implements ActionListener, MouseListener {
 	themepanel standardPanel = new themepanel();
 	themepanel quickPanel = new themepanel();
 	themepanel themesPanel = new themepanel();
-	JPanel helpPanel = new JPanel();
+	helppanel helpPanel = new helppanel();
 	abtPanel aboutPanel = new abtPanel();
 
 	// Labels
