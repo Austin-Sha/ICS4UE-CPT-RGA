@@ -55,6 +55,9 @@ public class themepanel extends JPanel{
 	public boolean blnneontheme = false;
 	public boolean blnStartrektheme = false;
 	
+	
+	// first digit is the player: 0 - player 1(you), 1 - Player 2(other player)
+	// second and their digit represents the x and y of the board in index format
 	public boolean bln000 = false;
 	public boolean bln100 = false;
 	public boolean bln001 = false;
