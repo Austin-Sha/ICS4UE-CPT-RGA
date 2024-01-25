@@ -24,7 +24,7 @@ public class tictactoe implements ActionListener, MouseListener {
 	int intMoves = 0;
 
 	// Timer
-	Timer theTimer = new Timer(1000/48, this);
+	Timer theTimer = new Timer(1000/60, this);
 
 	// Panels
 	themepanel winpanel = new themepanel();
@@ -1225,7 +1225,6 @@ public class tictactoe implements ActionListener, MouseListener {
 		winLabel.setSize(50,200);
 		winLabel.setLocation(900,220);
 		
-
 		losepanel.setLayout(null);
 		losepanel.setPreferredSize(new Dimension(1280, 720));
 		continueButton2.setSize(300,75);

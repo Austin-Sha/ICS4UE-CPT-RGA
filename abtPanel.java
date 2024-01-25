@@ -8,22 +8,22 @@ import java.awt.image.*;
 import javax.swing.JSlider.*;
 import java.util.*;
 
-public class abtPanel extends JPanel{
+public class abtPanel extends JPanel {
 	// Properties
 	BufferedImage about = null;
-	
+
 	// Methods
-	public void paintComponent(Graphics g){
-		g.drawImage(about, 0,0, null);
+	public void paintComponent(Graphics g) {
+		g.drawImage(about, 0, 0, null);
 	}
-	
+
 	// Constructor
-	public abtPanel(){
-		try{
+	public abtPanel() {
+		try {
 			about = ImageIO.read(new File("abt.png"));
-		}catch(IOException e){
+		} catch (IOException e) {
 			System.out.println("Unable to load image");
 		}
 	}
-	
+
 }
