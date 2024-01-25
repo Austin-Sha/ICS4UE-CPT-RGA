@@ -39,6 +39,9 @@ public class themepanel extends JPanel{
 	BufferedImage startrekbg = null;
 	BufferedImage startrekx = null;
 	BufferedImage startreko = null;
+	
+	BufferedImage imgtitle = null;
+	public static int intTitleX = 0;
 
 	
 	public boolean blnlight = true;
@@ -76,11 +79,15 @@ public class themepanel extends JPanel{
 	
 	// Methods
 	public void paintComponent(Graphics g){
+		g.drawImage(imgtitle, 800, 500, null);				
+		
 		if(blnlighttheme == true){
 			g.drawImage(lightbg,0,0,null);
 			g.drawImage(lightboard, 0,0, null);
 			g.drawImage(lightx,200,200,null);
 			g.drawImage(lighto,0,0,null);
+			g.drawImage(imgtitle, 800, 500, null);				
+
 		}else if(blnlight == true){
 			g.drawImage(lightbg,0,0, null);
 			g.drawImage(lightboard, 0,0, null);
@@ -389,8 +396,9 @@ public class themepanel extends JPanel{
 			}if(blnStartrek == true && bln122 == true){
 				g.drawImage(startrekx,400,400, null);
 			}
+			g.drawImage(imgtitle, intTitleX, 10, null);				
 			
-		
+
 		
 		
 		
@@ -432,6 +440,8 @@ public class themepanel extends JPanel{
 			startrekbg = ImageIO.read(new File("Startrekbg.jpg"));
 			startreko = ImageIO.read(new File("Startreko.png"));
 			startrekx = ImageIO.read(new File("Startrekx.png"));
+			
+			imgtitle = ImageIO.read(new File("animation.png"));
 			
 		}catch(IOException e){
 			System.out.println("Unable to load image");
