@@ -11,7 +11,7 @@ import java.util.*;
 public class tictactoe implements ActionListener, MouseListener {
 	// Properties
 	JFrame mainFrame = new JFrame("Tic Tac Toe!");
-
+	//gordon did an oopsy
 	// GAMEPLAY
 	int[][] game = new int[3][3];
 	int intPlayerYou;
