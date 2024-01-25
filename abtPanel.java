@@ -10,14 +10,23 @@ import java.util.*;
 
 public class abtPanel extends JPanel {
 	// Properties
+	/**
+	 * Variable for About Panel image
+	 */
 	BufferedImage about = null;
 
 	// Methods
+	/**
+	 * Draws aboutpanel Image
+	 */
 	public void paintComponent(Graphics g) {
 		g.drawImage(about, 0, 0, null);
 	}
 
 	// Constructor
+	/**
+	 * Draws About Panel Image
+	 */
 	public abtPanel() {
 		try {
 			about = ImageIO.read(new File("abt.png"));

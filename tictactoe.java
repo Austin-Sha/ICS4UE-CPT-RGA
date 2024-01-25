@@ -103,7 +103,9 @@ public class tictactoe implements ActionListener, MouseListener {
 	public void mouseExited(MouseEvent e) {
 	}
 	
-	// Checks to see if you click on a box
+	/** 
+	 * Checks to see if you click on a box when on gameboard to display piece
+	 */
 	public void mouseClicked(MouseEvent e) {
 		if (blnstandard == true) {
 			if (blnturn == true) {
@@ -168,6 +170,9 @@ public class tictactoe implements ActionListener, MouseListener {
 	}
 
 	// actionPerformed
+	/**
+	 *actionPerformed method listens to all JButtons (Themes, moving panels etc...)
+	 */
 	public void actionPerformed(ActionEvent event) {
 		
 		if(event.getSource() == interactiveHelpButton){
@@ -1155,6 +1160,11 @@ public class tictactoe implements ActionListener, MouseListener {
 	}
 
 	// Constructor
+	/**
+	 * Adds the actionlisteners for all of the JButtons
+	 * Draws and sets the location of all of the JButtons
+	 * Adds JButtons to each Panel
+	 */
 	tictactoe() {
 		standardPanel.setLayout(null);
 		standardPanel.setPreferredSize(new Dimension(1280, 720));
@@ -1348,6 +1358,9 @@ public class tictactoe implements ActionListener, MouseListener {
 	}
 
 	// Main Method
+	/**
+	 * Main Method for tic-tac-toe game
+	 */
 	public static void main(String[] args) {
 		new tictactoe();
 	}

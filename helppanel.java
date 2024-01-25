@@ -10,14 +10,23 @@ import java.util.*;
 
 public class helppanel extends JPanel {
 	// Properties
+	/**
+	 * Variable for Help Panel image
+	 */
 	BufferedImage help = null;
 
 	// Methods
+	/**
+	 * Draws the Help Panel Image to helppanel
+	 */
 	public void paintComponent(Graphics g) {
 		g.drawImage(help, 0, 0, null);
 	}
 
 	// Constructor
+	/**
+	 * Draws Help Panel Image
+	 */
 	public helppanel() {
 		try {
 			help = ImageIO.read(new File("helppanel.jpg"));
