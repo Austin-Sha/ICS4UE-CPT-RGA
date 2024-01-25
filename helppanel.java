@@ -15,16 +15,10 @@ public class helppanel extends JPanel{
 	// Methods
 	public void paintComponent(Graphics g){
 		g.drawImage(help,0,0, null);
-		
-		
-		
+
 		
 	}
 
-	
-	
-	
-	
 	// Constructor
 	public helppanel(){
 		try{

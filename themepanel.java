@@ -397,15 +397,8 @@ public class themepanel extends JPanel{
 				g.drawImage(startrekx,400,400, null);
 			}
 			g.drawImage(imgtitle, intTitleX, 10, null);				
-			
-
-		
-		
 		
 	}
-
-	
-	
 	
 	
 	// Constructor
@@ -447,7 +440,5 @@ public class themepanel extends JPanel{
 			System.out.println("Unable to load image");
 		}
 	}
-	
-	
 	
 }	

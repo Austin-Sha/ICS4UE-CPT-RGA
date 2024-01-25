@@ -1,3 +1,7 @@
+// Program: tictactoe
+// Version 1.2.7
+// Created by: Ryan Kong, Gordon Yip, Austin Sha
+
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
@@ -11,7 +15,6 @@ import javax.swing.JSlider.*;
 public class tictactoe implements ActionListener, MouseListener {
 	// Properties
 	JFrame mainFrame = new JFrame("Tic Tac Toe!");
-	//gordon did an oopsy
 	// GAMEPLAY
 	int[][] game = new int[3][3];
 	int intPlayerYou;
@@ -20,6 +23,7 @@ public class tictactoe implements ActionListener, MouseListener {
 	boolean blnturn;
 	int intMoves = 0;
 
+	// Timer
 	Timer theTimer = new Timer(1000/48, this);
 
 	// Panels
@@ -37,6 +41,7 @@ public class tictactoe implements ActionListener, MouseListener {
 	JLabel winLabel = new JLabel("Win");
 	JLabel loseLabel = new JLabel("Lose");
 	JLabel nameLabel = new JLabel("Name: ");
+	JLabel moreLabel = new JLabel("Clicking on a position within the boundaries of the board will place an 'o' piece there");
 	// Buttons
 	JButton standardButton = new JButton("Standard");
 	JButton quickButton = new JButton("Quick Play");
@@ -52,9 +57,10 @@ public class tictactoe implements ActionListener, MouseListener {
 	JButton continueButton = new JButton("Continue");
 	JButton continueButton2 = new JButton("Continue");
 
-	// New
 	JButton confirm1 = new JButton("Confirm Name");
 	JButton confirm2 = new JButton("Confirm Name");
+	
+	JButton interactiveHelpButton = new JButton("More");
 	// Themes JButton
 	JButton LightButton = new JButton("Light Mode");
 	JButton DarkButton = new JButton("Dark Mode");
@@ -96,6 +102,8 @@ public class tictactoe implements ActionListener, MouseListener {
 	}
 	public void mouseExited(MouseEvent e) {
 	}
+	
+	// Checks to see if you click on a box
 	public void mouseClicked(MouseEvent e) {
 		if (blnstandard == true) {
 			if (blnturn == true) {
@@ -159,7 +167,14 @@ public class tictactoe implements ActionListener, MouseListener {
 
 	}
 
+	// actionPerformed
 	public void actionPerformed(ActionEvent event) {
+		
+		if(event.getSource() == interactiveHelpButton){
+			interactiveHelpButton.setVisible(false);
+			moreLabel.setVisible(true);
+			
+		}
 
 		if(event.getSource() == theTimer){
 			// Title animation
@@ -168,7 +183,6 @@ public class tictactoe implements ActionListener, MouseListener {
 		}
 		// Button for entering and exiting panels
 		if (event.getSource() == standardButton) {
-			// New
 			// Delete panel switch code
 			blnstandard = true;
 
@@ -194,7 +208,6 @@ public class tictactoe implements ActionListener, MouseListener {
 			confirm1.setVisible(false);
 
 		} else if (event.getSource() == quickButton) {
-			// New
 			// Delete panel switch code
 			blnstandard = false;
 			standardButton.setVisible(false);
@@ -204,7 +217,6 @@ public class tictactoe implements ActionListener, MouseListener {
 			aboutButton.setVisible(false);
 			nameField.setVisible(true);
 			confirm2.setVisible(true);
-			// End
 		} else if (event.getSource() == backButton2) {
 			mainFrame.setContentPane(mainPanel);
 			mainFrame.pack();
@@ -258,7 +270,7 @@ public class tictactoe implements ActionListener, MouseListener {
 			mainFrame.setContentPane(standardPanel);
 			mainFrame.pack();
 			mainFrame.repaint();
-		}else if (event.getSource() == LightButton) { // NEW****
+		}else if (event.getSource() == LightButton) { 
 			// Theme buttons
 
 			mainPanel.repaint();
@@ -542,7 +554,6 @@ public class tictactoe implements ActionListener, MouseListener {
 			themesPanel.blnStartrek = false;
 			themesPanel.blnStartrektheme = false;
 
-			// End of themes
 		} else if (event.getSource() == StarTrekButton) {
 			mainPanel.repaint();
 			standardPanel.repaint();
@@ -1131,13 +1142,13 @@ public class tictactoe implements ActionListener, MouseListener {
 						ssm.sendText("System:Spot Taken");
 					}
 				} catch (IndexOutOfBoundsException e) {
-					System.out.println("uwu :3 ur code cwashed" + strChat[0]);
+					System.out.println("Error: " + strChat[0]);
 				}
 			} else {
 				try {
 					chatArea.append(strChat[0] + ": " + strChat[1] + "\n");
 				} catch (IndexOutOfBoundsException e) {
-					System.out.println("uwu :3 ur code cwashed" + strChat[0]);
+					System.out.println("Error: " + strChat[0]);
 				}
 			}
 		}
@@ -1316,6 +1327,17 @@ public class tictactoe implements ActionListener, MouseListener {
 		winpanel.add(continueButton);
 		losepanel.add(loseLabel);
 		losepanel.add(continueButton2);
+		
+		interactiveHelpButton.setSize(100, 50);
+		interactiveHelpButton.setLocation(45, 35);
+		interactiveHelpButton.addActionListener(this);
+		helpPanel.add(interactiveHelpButton);
+		
+		moreLabel.setSize(5000, 20);
+		moreLabel.setLocation(10, 5);
+		helpPanel.add(moreLabel);
+		moreLabel.setVisible(false);
+		
 
 		mainFrame.setContentPane(mainPanel);
 		mainFrame.pack();
