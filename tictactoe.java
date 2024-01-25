@@ -102,31 +102,31 @@ public class tictactoe implements ActionListener, MouseListener {
 				standardPanel.repaint();
 				if (e.getX() > 0 && e.getX() < 200 && e.getY() > 0 && e.getY() < 200) {
 					ssm.sendText("#:0:0:send");
-					standardPanel.bln000 = true;
+					
 				} else if (e.getX() > 0 && e.getX() < 200 && e.getY() > 200 && e.getY() < 400) {
 					ssm.sendText("#:1:0:send");
-					standardPanel.bln001 = true;
+					
 				} else if (e.getX() > 0 && e.getX() < 200 && e.getY() > 400 && e.getY() < 600) {
 					ssm.sendText("#:2:0:send");
-					standardPanel.bln002 = true;
+					
 				} else if (e.getX() > 200 && e.getX() < 400 && e.getY() > 0 && e.getY() < 200) {
 					ssm.sendText("#:0:1:send");
-					standardPanel.bln010 = true;
+					
 				} else if (e.getX() > 400 && e.getX() < 600 && e.getY() > 0 && e.getY() < 200) {
 					ssm.sendText("#:0:2:send");
-					standardPanel.bln020 = true;
+					
 				} else if (e.getX() > 200 && e.getX() < 400 && e.getY() > 200 && e.getY() < 400) {
 					ssm.sendText("#:1:1:send");
-					standardPanel.bln011 = true;
+					
 				} else if (e.getX() > 400 && e.getX() < 600 && e.getY() > 200 && e.getY() < 400) {
 					ssm.sendText("#:1:2:send");
-					standardPanel.bln021 = true;
+					
 				} else if (e.getX() > 200 && e.getX() < 400 && e.getY() > 400 && e.getY() < 600) {
 					ssm.sendText("#:2:1:send");
-					standardPanel.bln012 = true;
+					
 				} else if (e.getX() > 400 && e.getX() < 600 && e.getY() > 400 && e.getY() < 600) {
 					ssm.sendText("#:2:2:send");
-					standardPanel.bln022 = true;
+					
 				} else {
 				}
 
@@ -454,8 +454,8 @@ public class tictactoe implements ActionListener, MouseListener {
 			quickPanel.blndarktheme = false;
 			quickPanel.blnchristmas = false;
 			quickPanel.blnchristmastheme = false;
-			quickPanel.blnhalloween = false;
-			quickPanel.blnhalloweentheme = true;
+			quickPanel.blnhalloween = true;
+			quickPanel.blnhalloweentheme = false;
 			quickPanel.blnneon = false;
 			quickPanel.blnneontheme = false;
 			quickPanel.blnStartrek = false;
@@ -467,8 +467,8 @@ public class tictactoe implements ActionListener, MouseListener {
 			themesPanel.blndarktheme = false;
 			themesPanel.blnchristmas = false;
 			themesPanel.blnchristmastheme = false;
-			themesPanel.blnhalloween = true;
-			themesPanel.blnhalloweentheme = false;
+			themesPanel.blnhalloween = false;
+			themesPanel.blnhalloweentheme = true;
 			themesPanel.blnneon = false;
 			themesPanel.blnneontheme = false;
 			themesPanel.blnStartrek = false;
@@ -531,7 +531,7 @@ public class tictactoe implements ActionListener, MouseListener {
 			themesPanel.blnStartrektheme = false;
 
 			// End of themes
-		}else if(event.getSource() == StarTrekButton){
+		} else if (event.getSource() == StarTrekButton) {
 			mainPanel.repaint();
 			standardPanel.repaint();
 			themesPanel.repaint();
@@ -544,7 +544,7 @@ public class tictactoe implements ActionListener, MouseListener {
 			mainPanel.blnchristmastheme = false;
 			mainPanel.blnhalloween = false;
 			mainPanel.blnhalloweentheme = false;
-			mainPanel.blnneon = false ;
+			mainPanel.blnneon = false;
 			mainPanel.blnneontheme = false;
 			mainPanel.blnStartrek = true;
 			mainPanel.blnStartrektheme = false;
@@ -571,8 +571,8 @@ public class tictactoe implements ActionListener, MouseListener {
 			quickPanel.blnhalloween = false;
 			quickPanel.blnhalloweentheme = false;
 			quickPanel.blnneon = false;
-			quickPanel.blnneontheme = true;
-			quickPanel.blnStartrek = false;
+			quickPanel.blnneontheme = false;
+			quickPanel.blnStartrek = true;
 			quickPanel.blnStartrektheme = false;
 
 			themesPanel.blnlight = false;
@@ -620,6 +620,34 @@ public class tictactoe implements ActionListener, MouseListener {
 			String[] strChat = ssm.readText().split(":");
 			if (strChat[0].equals("#")) {
 				try {
+					if (strChat[1].equals("tie")){
+						intTies++;
+						headerLabel.setText("Wins: " + intWins + " | Losses: " + intLosses + " | Ties: " + intTies);
+						for (int i = 0; i < 3; i++) {
+							for (int t = 0; t < 3; t++) {
+								game[i][t] = 0;
+							}
+						}
+						standardPanel.bln000 = false;
+						standardPanel.bln100 = false;
+						standardPanel.bln001 = false;
+						standardPanel.bln101 = false;
+						standardPanel.bln002 = false;
+						standardPanel.bln102 = false;
+						standardPanel.bln010 = false;
+						standardPanel.bln110 = false;
+						standardPanel.bln011 = false;
+						standardPanel.bln111 = false;
+						standardPanel.bln012 = false;
+						standardPanel.bln112 = false;
+						standardPanel.bln020 = false;
+						standardPanel.bln120 = false;
+						standardPanel.bln021 = false;
+						standardPanel.bln121 = false;
+						standardPanel.bln022 = false;
+						standardPanel.bln122 = false;
+						standardPanel.repaint();
+					}
 					if (strChat[1].equals("game")) {
 						chatArea.append("System:Loss\n");
 						intLosses++;
@@ -629,6 +657,25 @@ public class tictactoe implements ActionListener, MouseListener {
 							for (int t = 0; t < 3; t++) {
 								game[i][t] = 0;
 							}
+							standardPanel.bln000 = false;
+							standardPanel.bln100 = false;
+							standardPanel.bln001 = false;
+							standardPanel.bln101 = false;
+							standardPanel.bln002 = false;
+							standardPanel.bln102 = false;
+							standardPanel.bln010 = false;
+							standardPanel.bln110 = false;
+							standardPanel.bln011 = false;
+							standardPanel.bln111 = false;
+							standardPanel.bln012 = false;
+							standardPanel.bln112 = false;
+							standardPanel.bln020 = false;
+							standardPanel.bln120 = false;
+							standardPanel.bln021 = false;
+							standardPanel.bln121 = false;
+							standardPanel.bln022 = false;
+							standardPanel.bln122 = false;
+							standardPanel.repaint();
 						}
 					} else if (game[Integer.parseInt(strChat[1])][Integer.parseInt(strChat[2])] == 0) {
 						if (strChat[3].equals("send")) {
@@ -704,12 +751,7 @@ public class tictactoe implements ActionListener, MouseListener {
 							standardPanel.repaint();
 
 							chatArea.append("System:Your Turn \n");
-							for (int i = 0; i < 3; i++) {
-								for (int t = 0; t < 3; t++) {
-									chatArea.append(game[i][t] + ",");
-								}
-								chatArea.append("\n");
-							}
+							
 						} else if (strChat[3].equals("recieved")) {
 							game[Integer.parseInt(strChat[1])][Integer.parseInt(strChat[2])] = intPlayerYou;
 							for (int i = 0; i < 3; i++) {
@@ -781,6 +823,7 @@ public class tictactoe implements ActionListener, MouseListener {
 							if (intMoves >= 9) {
 								chatArea.append("System:Tie\n");
 								ssm.sendText("System:Tie");
+								ssm.sendText("#:tie");
 								intMoves = 0;
 								intTies++;
 								headerLabel.setText(
@@ -790,8 +833,28 @@ public class tictactoe implements ActionListener, MouseListener {
 										game[i][t] = 0;
 									}
 								}
+								standardPanel.bln000 = false;
+								standardPanel.bln100 = false;
+								standardPanel.bln001 = false;
+								standardPanel.bln101 = false;
+								standardPanel.bln002 = false;
+								standardPanel.bln102 = false;
+								standardPanel.bln010 = false;
+								standardPanel.bln110 = false;
+								standardPanel.bln011 = false;
+								standardPanel.bln111 = false;
+								standardPanel.bln012 = false;
+								standardPanel.bln112 = false;
+								standardPanel.bln020 = false;
+								standardPanel.bln120 = false;
+								standardPanel.bln021 = false;
+								standardPanel.bln121 = false;
+								standardPanel.bln022 = false;
+								standardPanel.bln122 = false;
+								standardPanel.repaint();
 							}
-							if (game[0][0] == intPlayerYou && game[1][0] == intPlayerYou && game[2][0] == intPlayerYou) {
+							if (game[0][0] == intPlayerYou && game[1][0] == intPlayerYou
+									&& game[2][0] == intPlayerYou) {
 								ssm.sendText("#:game");
 								chatArea.append("System:Win\n");
 								intWins++;
@@ -803,6 +866,25 @@ public class tictactoe implements ActionListener, MouseListener {
 										game[i][t] = 0;
 									}
 								}
+								standardPanel.bln000 = false;
+								standardPanel.bln100 = false;
+								standardPanel.bln001 = false;
+								standardPanel.bln101 = false;
+								standardPanel.bln002 = false;
+								standardPanel.bln102 = false;
+								standardPanel.bln010 = false;
+								standardPanel.bln110 = false;
+								standardPanel.bln011 = false;
+								standardPanel.bln111 = false;
+								standardPanel.bln012 = false;
+								standardPanel.bln112 = false;
+								standardPanel.bln020 = false;
+								standardPanel.bln120 = false;
+								standardPanel.bln021 = false;
+								standardPanel.bln121 = false;
+								standardPanel.bln022 = false;
+								standardPanel.bln122 = false;
+								standardPanel.repaint();
 								// funny
 							} else if (game[0][0] == intPlayerYou && game[0][1] == intPlayerYou
 									&& game[0][2] == intPlayerYou) {
@@ -817,6 +899,25 @@ public class tictactoe implements ActionListener, MouseListener {
 										game[i][t] = 0;
 									}
 								}
+								standardPanel.bln000 = false;
+								standardPanel.bln100 = false;
+								standardPanel.bln001 = false;
+								standardPanel.bln101 = false;
+								standardPanel.bln002 = false;
+								standardPanel.bln102 = false;
+								standardPanel.bln010 = false;
+								standardPanel.bln110 = false;
+								standardPanel.bln011 = false;
+								standardPanel.bln111 = false;
+								standardPanel.bln012 = false;
+								standardPanel.bln112 = false;
+								standardPanel.bln020 = false;
+								standardPanel.bln120 = false;
+								standardPanel.bln021 = false;
+								standardPanel.bln121 = false;
+								standardPanel.bln022 = false;
+								standardPanel.bln122 = false;
+								standardPanel.repaint();
 							} else if (game[1][0] == intPlayerYou && game[1][1] == intPlayerYou
 									&& game[1][2] == intPlayerYou) {
 								ssm.sendText("#:game");
@@ -830,6 +931,25 @@ public class tictactoe implements ActionListener, MouseListener {
 										game[i][t] = 0;
 									}
 								}
+								standardPanel.bln000 = false;
+								standardPanel.bln100 = false;
+								standardPanel.bln001 = false;
+								standardPanel.bln101 = false;
+								standardPanel.bln002 = false;
+								standardPanel.bln102 = false;
+								standardPanel.bln010 = false;
+								standardPanel.bln110 = false;
+								standardPanel.bln011 = false;
+								standardPanel.bln111 = false;
+								standardPanel.bln012 = false;
+								standardPanel.bln112 = false;
+								standardPanel.bln020 = false;
+								standardPanel.bln120 = false;
+								standardPanel.bln021 = false;
+								standardPanel.bln121 = false;
+								standardPanel.bln022 = false;
+								standardPanel.bln122 = false;
+								standardPanel.repaint();
 							} else if (game[2][0] == intPlayerYou && game[2][1] == intPlayerYou
 									&& game[2][2] == intPlayerYou) {
 								ssm.sendText("#:game");
@@ -845,6 +965,25 @@ public class tictactoe implements ActionListener, MouseListener {
 										game[i][t] = 0;
 									}
 								}
+								standardPanel.bln000 = false;
+								standardPanel.bln100 = false;
+								standardPanel.bln001 = false;
+								standardPanel.bln101 = false;
+								standardPanel.bln002 = false;
+								standardPanel.bln102 = false;
+								standardPanel.bln010 = false;
+								standardPanel.bln110 = false;
+								standardPanel.bln011 = false;
+								standardPanel.bln111 = false;
+								standardPanel.bln012 = false;
+								standardPanel.bln112 = false;
+								standardPanel.bln020 = false;
+								standardPanel.bln120 = false;
+								standardPanel.bln021 = false;
+								standardPanel.bln121 = false;
+								standardPanel.bln022 = false;
+								standardPanel.bln122 = false;
+								standardPanel.repaint();
 							} else if (game[0][1] == intPlayerYou && game[1][1] == intPlayerYou
 									&& game[2][1] == intPlayerYou) {
 								ssm.sendText("#:game");
@@ -859,6 +998,25 @@ public class tictactoe implements ActionListener, MouseListener {
 										game[i][t] = 0;
 									}
 								}
+								standardPanel.bln000 = false;
+								standardPanel.bln100 = false;
+								standardPanel.bln001 = false;
+								standardPanel.bln101 = false;
+								standardPanel.bln002 = false;
+								standardPanel.bln102 = false;
+								standardPanel.bln010 = false;
+								standardPanel.bln110 = false;
+								standardPanel.bln011 = false;
+								standardPanel.bln111 = false;
+								standardPanel.bln012 = false;
+								standardPanel.bln112 = false;
+								standardPanel.bln020 = false;
+								standardPanel.bln120 = false;
+								standardPanel.bln021 = false;
+								standardPanel.bln121 = false;
+								standardPanel.bln022 = false;
+								standardPanel.bln122 = false;
+								standardPanel.repaint();
 							} else if (game[0][2] == intPlayerYou && game[1][2] == intPlayerYou
 									&& game[2][2] == intPlayerYou) {
 								ssm.sendText("#:game");
@@ -872,6 +1030,25 @@ public class tictactoe implements ActionListener, MouseListener {
 										game[i][t] = 0;
 									}
 								}
+								standardPanel.bln000 = false;
+								standardPanel.bln100 = false;
+								standardPanel.bln001 = false;
+								standardPanel.bln101 = false;
+								standardPanel.bln002 = false;
+								standardPanel.bln102 = false;
+								standardPanel.bln010 = false;
+								standardPanel.bln110 = false;
+								standardPanel.bln011 = false;
+								standardPanel.bln111 = false;
+								standardPanel.bln012 = false;
+								standardPanel.bln112 = false;
+								standardPanel.bln020 = false;
+								standardPanel.bln120 = false;
+								standardPanel.bln021 = false;
+								standardPanel.bln121 = false;
+								standardPanel.bln022 = false;
+								standardPanel.bln122 = false;
+								standardPanel.repaint();
 							} else if (game[0][0] == intPlayerYou && game[1][1] == intPlayerYou
 									&& game[2][2] == intPlayerYou) {
 								ssm.sendText("#:game");
@@ -885,6 +1062,25 @@ public class tictactoe implements ActionListener, MouseListener {
 										game[i][t] = 0;
 									}
 								}
+								standardPanel.bln000 = false;
+								standardPanel.bln100 = false;
+								standardPanel.bln001 = false;
+								standardPanel.bln101 = false;
+								standardPanel.bln002 = false;
+								standardPanel.bln102 = false;
+								standardPanel.bln010 = false;
+								standardPanel.bln110 = false;
+								standardPanel.bln011 = false;
+								standardPanel.bln111 = false;
+								standardPanel.bln012 = false;
+								standardPanel.bln112 = false;
+								standardPanel.bln020 = false;
+								standardPanel.bln120 = false;
+								standardPanel.bln021 = false;
+								standardPanel.bln121 = false;
+								standardPanel.bln022 = false;
+								standardPanel.bln122 = false;
+								standardPanel.repaint();
 							} else if (game[2][0] == intPlayerYou && game[1][1] == intPlayerYou
 									&& game[0][2] == intPlayerYou) {
 								ssm.sendText("#:game");
@@ -898,6 +1094,25 @@ public class tictactoe implements ActionListener, MouseListener {
 										game[i][t] = 0;
 									}
 								}
+								standardPanel.bln000 = false;
+								standardPanel.bln100 = false;
+								standardPanel.bln001 = false;
+								standardPanel.bln101 = false;
+								standardPanel.bln002 = false;
+								standardPanel.bln102 = false;
+								standardPanel.bln010 = false;
+								standardPanel.bln110 = false;
+								standardPanel.bln011 = false;
+								standardPanel.bln111 = false;
+								standardPanel.bln012 = false;
+								standardPanel.bln112 = false;
+								standardPanel.bln020 = false;
+								standardPanel.bln120 = false;
+								standardPanel.bln021 = false;
+								standardPanel.bln121 = false;
+								standardPanel.bln022 = false;
+								standardPanel.bln122 = false;
+								standardPanel.repaint();
 							}
 
 						}

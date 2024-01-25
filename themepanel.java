@@ -176,9 +176,9 @@ public class themepanel extends JPanel{
 			}if(blndark == true && bln012 == true){
 			g.drawImage(darko,200,400, null);
 			}if(blndark == true && bln020 == true){
-			g.drawImage(darko,400,400, null);
+			g.drawImage(darko,400,0, null);
 			}if(blndark == true && bln021 == true){
-			g.drawImage(darko,400,400, null);
+			g.drawImage(darko,400,200, null);
 			}if(blndark == true && bln022 == true){
 			g.drawImage(darko,400,400, null);
 			}if(blndark == true && bln100 == true){
@@ -194,9 +194,9 @@ public class themepanel extends JPanel{
 			}if(blndark == true && bln112 == true){
 			g.drawImage(darkx,200,400, null);
 			}if(blndark == true && bln120 == true){
-			g.drawImage(darkx,400,400, null);
+			g.drawImage(darkx,400,0, null);
 			}if(blndark == true && bln121 == true){
-			g.drawImage(darkx,400,400, null);
+			g.drawImage(darkx,400,200, null);
 			}if(blndark == true && bln122 == true){
 			g.drawImage(darkx,400,400, null);
 			}
@@ -214,9 +214,9 @@ public class themepanel extends JPanel{
 			}if(blnchristmas == true && bln012 == true){
 			g.drawImage(christmaso,200,400, null);
 			}if(blnchristmas == true && bln020 == true){
-			g.drawImage(christmaso,400,400, null);
+			g.drawImage(christmaso,400,0, null);
 			}if(blnchristmas == true && bln021 == true){
-			g.drawImage(christmaso,400,400, null);
+			g.drawImage(christmaso,400,200, null);
 			}if(blnchristmas == true && bln022 == true){
 			g.drawImage(christmaso,400,400, null);
 			}if(blnchristmas == true && bln100 == true){
@@ -232,9 +232,9 @@ public class themepanel extends JPanel{
 			}if(blnchristmas == true && bln112 == true){
 			g.drawImage(christmasx,200,400, null);
 			}if(blnchristmas == true && bln120 == true){
-			g.drawImage(christmasx,400,400, null);
+			g.drawImage(christmasx,400,0, null);
 			}if(blnchristmas == true && bln121 == true){
-			g.drawImage(christmasx,400,400, null);
+			g.drawImage(christmasx,400,200, null);
 			}if(blnchristmas == true && bln122 == true){
 			g.drawImage(christmasx,400,400, null);
 			}
@@ -252,9 +252,9 @@ public class themepanel extends JPanel{
 			}if(blnhalloween == true && bln012 == true){
 			g.drawImage(halloweeno,200,400, null);
 			}if(blnhalloween == true && bln020 == true){
-			g.drawImage(halloweeno,400,400, null);
+			g.drawImage(halloweeno,400,0, null);
 			}if(blnhalloween == true && bln021 == true){
-			g.drawImage(halloweeno,400,400, null);
+			g.drawImage(halloweeno,400,200, null);
 			}if(blnhalloween == true && bln022 == true){
 			g.drawImage(halloweeno,400,400, null);
 			}if(blnhalloween == true && bln100 == true){
@@ -270,9 +270,9 @@ public class themepanel extends JPanel{
 			}if(blnhalloween == true && bln112 == true){
 			g.drawImage(halloweenx,200,400, null);
 			}if(blnhalloween == true && bln120 == true){
-			g.drawImage(halloweenx,400,400, null);
+			g.drawImage(halloweenx,400,0, null);
 			}if(blnhalloween == true && bln121 == true){
-			g.drawImage(halloweenx,400,400, null);
+			g.drawImage(halloweenx,400,200, null);
 			}if(blnhalloween == true && bln122 == true){
 			g.drawImage(halloweenx,400,400, null);
 			}
@@ -290,9 +290,9 @@ public class themepanel extends JPanel{
 			}if(blnneon == true && bln012 == true){
 			g.drawImage(neono,200,400, null);
 			}if(blnneon == true && bln020 == true){
-			g.drawImage(neono,400,400, null);
+			g.drawImage(neono,400,0, null);
 			}if(blnneon == true && bln021 == true){
-			g.drawImage(neono,400,400, null);
+			g.drawImage(neono,400,200, null);
 			}if(blnneon == true && bln022 == true){
 			g.drawImage(neono,400,400, null);
 			}if(blnneon == true && bln100 == true){
@@ -308,86 +308,86 @@ public class themepanel extends JPanel{
 			}if(blnneon == true && bln112 == true){
 			g.drawImage(neonx,200,400, null);
 			}if(blnneon == true && bln120 == true){
-			g.drawImage(neonx,400,400, null);
+			g.drawImage(neonx,400,0, null);
 			}if(blnneon == true && bln121 == true){
-			g.drawImage(neonx,400,400, null);
+			g.drawImage(neonx,400,200, null);
 			}if(blnneon == true && bln122 == true){
 			g.drawImage(neonx,400,400, null);
 			}
 			
 			if(blnStartrek == true && bln000 == true){
-			g.drawImage(neono,0,0, null);
+			g.drawImage(startreko,0,0, null);
 			}if(blnStartrek == true && bln001 == true){
-			g.drawImage(neono,0,200, null);
+			g.drawImage(startreko,0,200, null);
 			}if(blnStartrek == true && bln002 == true){
-			g.drawImage(neono,0,400, null);
+			g.drawImage(startreko,0,400, null);
 			}if(blnStartrek == true && bln010 == true){
-			g.drawImage(neono,200,0, null);
+			g.drawImage(startreko,200,0, null);
 			}if(blnStartrek == true && bln011 == true){
-			g.drawImage(neono,200,200, null);
+			g.drawImage(startreko,200,200, null);
 			}if(blnStartrek == true && bln012 == true){
-			g.drawImage(neono,200,400, null);
+			g.drawImage(startreko,200,400, null);
 			}if(blnStartrek == true && bln020 == true){
-			g.drawImage(neono,400,400, null);
+			g.drawImage(startreko,400,0, null);
 			}if(blnStartrek == true && bln021 == true){
-			g.drawImage(neono,400,400, null);
+			g.drawImage(startreko,400,200, null);
 			}if(blnStartrek == true && bln022 == true){
-			g.drawImage(neono,400,400, null);
+			g.drawImage(startreko,400,400, null);
 			}if(blnStartrek == true && bln100 == true){
-			g.drawImage(neonx,0,0, null);
+			g.drawImage(startrekx,0,0, null);
 			}if(blnStartrek == true && bln101 == true){
-			g.drawImage(neonx,0,200, null);
+			g.drawImage(startrekx,0,200, null);
 			}if(blnStartrek == true && bln102 == true){
-			g.drawImage(neonx,0,400, null);
+			g.drawImage(startrekx,0,400, null);
 			}if(blnStartrek == true && bln110 == true){
-			g.drawImage(neonx,200,0, null);
+			g.drawImage(startrekx,200,0, null);
 			}if(blnStartrek == true && bln111 == true){
-			g.drawImage(neonx,200,200, null);
+			g.drawImage(startrekx,200,200, null);
 			}if(blnStartrek == true && bln112 == true){
-			g.drawImage(neonx,200,400, null);
+			g.drawImage(startrekx,200,400, null);
 			}if(blnStartrek == true && bln120 == true){
-			g.drawImage(neonx,400,400, null);
+			g.drawImage(startrekx,400,0, null);
 			}if(blnStartrek == true && bln121 == true){
-			g.drawImage(neonx,400,400, null);
+			g.drawImage(startrekx,400,200, null);
 			}if(blnStartrek == true && bln122 == true){
-			g.drawImage(neonx,400,400, null);
+			g.drawImage(startrekx,400,400, null);
 			}
 			if(blnStartrek == true && bln000 == true){ 
-				g.drawImage(neono,0,0, null);
+				g.drawImage(startreko,0,0, null);
 			}if(blnStartrek == true && bln001 == true){
-				g.drawImage(neono,0,200, null);
+				g.drawImage(startreko,0,200, null);
 			}if(blnStartrek == true && bln002 == true){
-				g.drawImage(neono,0,400, null);
+				g.drawImage(startreko,0,400, null);
 			}if(blnStartrek == true && bln010 == true){
-				g.drawImage(neono,200,0, null);
+				g.drawImage(startreko,200,0, null);
 			}if(blnStartrek == true && bln011 == true){
-				g.drawImage(neono,200,200, null);
+				g.drawImage(startreko,200,200, null);
 			}if(blnStartrek == true && bln012 == true){
-				g.drawImage(neono,200,400, null);
+				g.drawImage(startreko,200,400, null);
 			}if(blnStartrek == true && bln020 == true){
-				g.drawImage(neono,400,400, null);
+				g.drawImage(startreko,400,0, null);
 			}if(blnStartrek == true && bln021 == true){
-				g.drawImage(neono,400,400, null);
+				g.drawImage(startreko,400,200, null);
 			}if(blnStartrek == true && bln022 == true){
-				g.drawImage(neono,400,400, null);
+				g.drawImage(startreko,400,400, null);
 			}if(blnStartrek == true && bln100 == true){ 
-				g.drawImage(neonx,0,0, null);
+				g.drawImage(startrekx,0,0, null);
 			}if(blnStartrek == true && bln101 == true){
-				g.drawImage(neonx,0,200, null);
+				g.drawImage(startrekx,0,200, null);
 			}if(blnStartrek == true && bln102 == true){
-				g.drawImage(neonx,0,400, null);
+				g.drawImage(startrekx,0,400, null);
 			}if(blnStartrek == true && bln110 == true){
-				g.drawImage(neonx,200,0, null);
+				g.drawImage(startrekx,200,0, null);
 			}if(blnStartrek == true && bln111 == true){
-				g.drawImage(neonx,200,200, null);
+				g.drawImage(startrekx,200,200, null);
 			}if(blnStartrek == true && bln112 == true){
-				g.drawImage(neonx,200,400, null);
+				g.drawImage(startrekx,200,400, null);
 			}if(blnStartrek == true && bln120 == true){
-				g.drawImage(neonx,400,400, null);
+				g.drawImage(startrekx,400,0, null);
 			}if(blnStartrek == true && bln121 == true){
-				g.drawImage(neonx,400,400, null);
+				g.drawImage(startrekx,400,200, null);
 			}if(blnStartrek == true && bln122 == true){
-				g.drawImage(neonx,400,400, null);
+				g.drawImage(startrekx,400,400, null);
 			}
 			
 		
