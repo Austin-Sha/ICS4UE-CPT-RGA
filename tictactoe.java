@@ -1,3 +1,7 @@
+// Program: tictactoe
+// Version 1.2.7
+// Created by: Ryan Kong, Gordon Yip, Austin Sha
+
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
@@ -6,12 +10,11 @@ import java.io.*;
 import javax.imageio.*;
 import java.awt.image.*;
 import javax.swing.JSlider.*;
-import java.util.*;
+
 
 public class tictactoe implements ActionListener, MouseListener {
 	// Properties
 	JFrame mainFrame = new JFrame("Tic Tac Toe!");
-	//gordon did an oopsy
 	// GAMEPLAY
 	int[][] game = new int[3][3];
 	int intPlayerYou;
@@ -20,7 +23,12 @@ public class tictactoe implements ActionListener, MouseListener {
 	boolean blnturn;
 	int intMoves = 0;
 
+	// Timer
+	Timer theTimer = new Timer(1000/60, this);
+
 	// Panels
+	themepanel winpanel = new themepanel();
+	themepanel losepanel = new themepanel();
 	themepanel mainPanel = new themepanel();
 	themepanel standardPanel = new themepanel();
 	themepanel quickPanel = new themepanel();
@@ -30,8 +38,10 @@ public class tictactoe implements ActionListener, MouseListener {
 
 	// Labels
 	JLabel test = new JLabel("test");
-
+	JLabel winLabel = new JLabel("Win");
+	JLabel loseLabel = new JLabel("Lose");
 	JLabel nameLabel = new JLabel("Name: ");
+	JLabel moreLabel = new JLabel("Clicking on a position within the boundaries of the board will place an 'o' piece there");
 	// Buttons
 	JButton standardButton = new JButton("Standard");
 	JButton quickButton = new JButton("Quick Play");
@@ -43,10 +53,14 @@ public class tictactoe implements ActionListener, MouseListener {
 	JButton backButton3 = new JButton("Back");
 	JButton backButton4 = new JButton("Back");
 	JButton backButton5 = new JButton("Back");
+	//win/loss continue
+	JButton continueButton = new JButton("Continue");
+	JButton continueButton2 = new JButton("Continue");
 
-	// New
 	JButton confirm1 = new JButton("Confirm Name");
 	JButton confirm2 = new JButton("Confirm Name");
+	
+	JButton interactiveHelpButton = new JButton("More");
 	// Themes JButton
 	JButton LightButton = new JButton("Light Mode");
 	JButton DarkButton = new JButton("Dark Mode");
@@ -81,21 +95,15 @@ public class tictactoe implements ActionListener, MouseListener {
 
 	// Methods
 	public void mousePressed(MouseEvent e) {
-
 	}
-
 	public void mouseReleased(MouseEvent e) {
-
 	}
-
 	public void mouseEntered(MouseEvent e) {
-
 	}
-
 	public void mouseExited(MouseEvent e) {
-
 	}
-
+	
+	// Checks to see if you click on a box
 	public void mouseClicked(MouseEvent e) {
 		if (blnstandard == true) {
 			if (blnturn == true) {
@@ -159,10 +167,22 @@ public class tictactoe implements ActionListener, MouseListener {
 
 	}
 
+	// actionPerformed
 	public void actionPerformed(ActionEvent event) {
+		
+		if(event.getSource() == interactiveHelpButton){
+			interactiveHelpButton.setVisible(false);
+			moreLabel.setVisible(true);
+			
+		}
+
+		if(event.getSource() == theTimer){
+			// Title animation
+			mainPanel.intTitleX = mainPanel.intTitleX + 1;
+			mainPanel.repaint();
+		}
 		// Button for entering and exiting panels
 		if (event.getSource() == standardButton) {
-			// New
 			// Delete panel switch code
 			blnstandard = true;
 
@@ -186,9 +206,9 @@ public class tictactoe implements ActionListener, MouseListener {
 			aboutButton.setVisible(true);
 			nameField.setVisible(false);
 			confirm1.setVisible(false);
+			confirm2.setVisible(false);
 
 		} else if (event.getSource() == quickButton) {
-			// New
 			// Delete panel switch code
 			blnstandard = false;
 			standardButton.setVisible(false);
@@ -198,7 +218,6 @@ public class tictactoe implements ActionListener, MouseListener {
 			aboutButton.setVisible(false);
 			nameField.setVisible(true);
 			confirm2.setVisible(true);
-			// End
 		} else if (event.getSource() == backButton2) {
 			mainFrame.setContentPane(mainPanel);
 			mainFrame.pack();
@@ -218,7 +237,6 @@ public class tictactoe implements ActionListener, MouseListener {
 			mainFrame.setContentPane(standardPanel);
 			mainFrame.pack();
 			mainFrame.repaint();
-			// End
 		} else if (event.getSource() == themeButton) {
 			mainFrame.setContentPane(themesPanel);
 			mainFrame.pack();
@@ -244,9 +262,15 @@ public class tictactoe implements ActionListener, MouseListener {
 			mainFrame.setContentPane(mainPanel);
 			mainFrame.pack();
 			mainFrame.repaint();
-
-			// End of panel buttons
-		} else if (event.getSource() == LightButton) { // NEW****
+		}else if(event.getSource() == continueButton){
+			mainFrame.setContentPane(standardPanel);
+			mainFrame.pack();
+			mainFrame.repaint();
+		}else if(event.getSource() == continueButton2){
+			mainFrame.setContentPane(standardPanel);
+			mainFrame.pack();
+			mainFrame.repaint();
+		}else if (event.getSource() == LightButton) { 
 			// Theme buttons
 
 			mainPanel.repaint();
@@ -530,7 +554,6 @@ public class tictactoe implements ActionListener, MouseListener {
 			themesPanel.blnStartrek = false;
 			themesPanel.blnStartrektheme = false;
 
-			// End of themes
 		} else if (event.getSource() == StarTrekButton) {
 			mainPanel.repaint();
 			standardPanel.repaint();
@@ -653,6 +676,8 @@ public class tictactoe implements ActionListener, MouseListener {
 						intLosses++;
 						intMoves = 0;
 						headerLabel.setText("Wins: " + intWins + " | Losses: " + intLosses + " | Ties: " + intTies);
+						mainFrame.setContentPane(losepanel);
+						mainFrame.pack();
 						for (int i = 0; i < 3; i++) {
 							for (int t = 0; t < 3; t++) {
 								game[i][t] = 0;
@@ -826,8 +851,7 @@ public class tictactoe implements ActionListener, MouseListener {
 								ssm.sendText("#:tie");
 								intMoves = 0;
 								intTies++;
-								headerLabel.setText(
-										"Wins: " + intWins + " | Losses: " + intLosses + " | Ties: " + intTies);
+								headerLabel.setText("Wins: " + intWins + " | Losses: " + intLosses + " | Ties: " + intTies);
 								for (int i = 0; i < 3; i++) {
 									for (int t = 0; t < 3; t++) {
 										game[i][t] = 0;
@@ -852,15 +876,14 @@ public class tictactoe implements ActionListener, MouseListener {
 								standardPanel.bln022 = false;
 								standardPanel.bln122 = false;
 								standardPanel.repaint();
+								
 							}
-							if (game[0][0] == intPlayerYou && game[1][0] == intPlayerYou
-									&& game[2][0] == intPlayerYou) {
+							if (game[0][0] == intPlayerYou && game[1][0] == intPlayerYou && game[2][0] == intPlayerYou) {
 								ssm.sendText("#:game");
 								chatArea.append("System:Win\n");
 								intWins++;
 								intMoves = 0;
-								headerLabel.setText(
-										"Wins: " + intWins + " | Losses: " + intLosses + " | Ties: " + intTies);
+								headerLabel.setText("Wins: " + intWins + " | Losses: " + intLosses + " | Ties: " + intTies);
 								for (int i = 0; i < 3; i++) {
 									for (int t = 0; t < 3; t++) {
 										game[i][t] = 0;
@@ -885,15 +908,15 @@ public class tictactoe implements ActionListener, MouseListener {
 								standardPanel.bln022 = false;
 								standardPanel.bln122 = false;
 								standardPanel.repaint();
-								// funny
-							} else if (game[0][0] == intPlayerYou && game[0][1] == intPlayerYou
-									&& game[0][2] == intPlayerYou) {
+								mainFrame.setContentPane(winpanel);
+								mainFrame.pack();
+								
+							} else if (game[0][0] == intPlayerYou && game[0][1] == intPlayerYou && game[0][2] == intPlayerYou) {
 								ssm.sendText("#:game");
 								chatArea.append("System:Win\n");
 								intWins++;
 								intMoves = 0;
-								headerLabel.setText(
-										"Wins: " + intWins + " | Losses: " + intLosses + " | Ties: " + intTies);
+								headerLabel.setText("Wins: " + intWins + " | Losses: " + intLosses + " | Ties: " + intTies);
 								for (int i = 0; i < 3; i++) {
 									for (int t = 0; t < 3; t++) {
 										game[i][t] = 0;
@@ -918,14 +941,14 @@ public class tictactoe implements ActionListener, MouseListener {
 								standardPanel.bln022 = false;
 								standardPanel.bln122 = false;
 								standardPanel.repaint();
-							} else if (game[1][0] == intPlayerYou && game[1][1] == intPlayerYou
-									&& game[1][2] == intPlayerYou) {
+								mainFrame.setContentPane(winpanel);
+								mainFrame.pack();
+							} else if (game[1][0] == intPlayerYou && game[1][1] == intPlayerYou && game[1][2] == intPlayerYou) {
 								ssm.sendText("#:game");
 								chatArea.append("System:Win\n");
 								intWins++;
 								intMoves = 0;
-								headerLabel.setText(
-										"Wins: " + intWins + " | Losses: " + intLosses + " | Ties: " + intTies);
+								headerLabel.setText("Wins: " + intWins + " | Losses: " + intLosses + " | Ties: " + intTies);
 								for (int i = 0; i < 3; i++) {
 									for (int t = 0; t < 3; t++) {
 										game[i][t] = 0;
@@ -950,16 +973,14 @@ public class tictactoe implements ActionListener, MouseListener {
 								standardPanel.bln022 = false;
 								standardPanel.bln122 = false;
 								standardPanel.repaint();
-							} else if (game[2][0] == intPlayerYou && game[2][1] == intPlayerYou
-									&& game[2][2] == intPlayerYou) {
+								mainFrame.setContentPane(winpanel);
+								mainFrame.pack();
+							} else if (game[2][0] == intPlayerYou && game[2][1] == intPlayerYou && game[2][2] == intPlayerYou) {
 								ssm.sendText("#:game");
 								chatArea.append("System:Win\n");
 								intWins++;
 								intMoves = 0;
-								headerLabel.setText(
-										"Wins: " + intWins + " | Losses: " + intLosses + " | Ties: " + intTies);
-								headerLabel.setText(
-										"Wins: " + intWins + " | Losses: " + intLosses + " | Ties: " + intTies);
+								headerLabel.setText("Wins: " + intWins + " | Losses: " + intLosses + " | Ties: " + intTies);
 								for (int i = 0; i < 3; i++) {
 									for (int t = 0; t < 3; t++) {
 										game[i][t] = 0;
@@ -984,14 +1005,14 @@ public class tictactoe implements ActionListener, MouseListener {
 								standardPanel.bln022 = false;
 								standardPanel.bln122 = false;
 								standardPanel.repaint();
-							} else if (game[0][1] == intPlayerYou && game[1][1] == intPlayerYou
-									&& game[2][1] == intPlayerYou) {
+								mainFrame.setContentPane(winpanel);
+								mainFrame.pack();
+							} else if (game[0][1] == intPlayerYou && game[1][1] == intPlayerYou && game[2][1] == intPlayerYou) {
 								ssm.sendText("#:game");
 								chatArea.append("System:Win\n");
 								intWins++;
 								intMoves = 0;
-								headerLabel.setText(
-										"Wins: " + intWins + " | Losses: " + intLosses + " | Ties: " + intTies);
+								headerLabel.setText("Wins: " + intWins + " | Losses: " + intLosses + " | Ties: " + intTies);
 
 								for (int i = 0; i < 3; i++) {
 									for (int t = 0; t < 3; t++) {
@@ -1017,14 +1038,14 @@ public class tictactoe implements ActionListener, MouseListener {
 								standardPanel.bln022 = false;
 								standardPanel.bln122 = false;
 								standardPanel.repaint();
-							} else if (game[0][2] == intPlayerYou && game[1][2] == intPlayerYou
-									&& game[2][2] == intPlayerYou) {
+								mainFrame.setContentPane(winpanel);
+								mainFrame.pack();
+							} else if (game[0][2] == intPlayerYou && game[1][2] == intPlayerYou && game[2][2] == intPlayerYou) {
 								ssm.sendText("#:game");
 								chatArea.append("System:Win\n");
 								intWins++;
 								intMoves = 0;
-								headerLabel.setText(
-										"Wins: " + intWins + " | Losses: " + intLosses + " | Ties: " + intTies);
+								headerLabel.setText("Wins: " + intWins + " | Losses: " + intLosses + " | Ties: " + intTies);
 								for (int i = 0; i < 3; i++) {
 									for (int t = 0; t < 3; t++) {
 										game[i][t] = 0;
@@ -1049,14 +1070,14 @@ public class tictactoe implements ActionListener, MouseListener {
 								standardPanel.bln022 = false;
 								standardPanel.bln122 = false;
 								standardPanel.repaint();
-							} else if (game[0][0] == intPlayerYou && game[1][1] == intPlayerYou
-									&& game[2][2] == intPlayerYou) {
+								mainFrame.setContentPane(winpanel);
+								mainFrame.pack();
+							} else if (game[0][0] == intPlayerYou && game[1][1] == intPlayerYou && game[2][2] == intPlayerYou) {
 								ssm.sendText("#:game");
 								chatArea.append("System:Win\n");
 								intWins++;
 								intMoves = 0;
-								headerLabel.setText(
-										"Wins: " + intWins + " | Losses: " + intLosses + " | Ties: " + intTies);
+								headerLabel.setText("Wins: " + intWins + " | Losses: " + intLosses + " | Ties: " + intTies);
 								for (int i = 0; i < 3; i++) {
 									for (int t = 0; t < 3; t++) {
 										game[i][t] = 0;
@@ -1081,14 +1102,14 @@ public class tictactoe implements ActionListener, MouseListener {
 								standardPanel.bln022 = false;
 								standardPanel.bln122 = false;
 								standardPanel.repaint();
-							} else if (game[2][0] == intPlayerYou && game[1][1] == intPlayerYou
-									&& game[0][2] == intPlayerYou) {
+								mainFrame.setContentPane(winpanel);
+								mainFrame.pack();
+							} else if (game[2][0] == intPlayerYou && game[1][1] == intPlayerYou && game[0][2] == intPlayerYou) {
 								ssm.sendText("#:game");
 								chatArea.append("System:Win\n");
 								intWins++;
 								intMoves = 0;
-								headerLabel.setText(
-										"Wins: " + intWins + " | Losses: " + intLosses + " | Ties: " + intTies);
+								headerLabel.setText("Wins: " + intWins + " | Losses: " + intLosses + " | Ties: " + intTies);
 								for (int i = 0; i < 3; i++) {
 									for (int t = 0; t < 3; t++) {
 										game[i][t] = 0;
@@ -1113,22 +1134,22 @@ public class tictactoe implements ActionListener, MouseListener {
 								standardPanel.bln022 = false;
 								standardPanel.bln122 = false;
 								standardPanel.repaint();
+								mainFrame.setContentPane(winpanel);
+								mainFrame.pack();
 							}
-
 						}
 					} else {
 						ssm.sendText("System:Spot Taken");
 					}
 				} catch (IndexOutOfBoundsException e) {
-					System.out.println("uwu :3 ur code cwashed" + strChat[0]);
+					System.out.println("Error: " + strChat[0]);
 				}
 			} else {
 				try {
 					chatArea.append(strChat[0] + ": " + strChat[1] + "\n");
 				} catch (IndexOutOfBoundsException e) {
-					System.out.println("uwu :3 ur code cwashed" + strChat[0]);
+					System.out.println("Error: " + strChat[0]);
 				}
-
 			}
 		}
 	}
@@ -1197,6 +1218,20 @@ public class tictactoe implements ActionListener, MouseListener {
 		aboutPanel.add(backButton5);
 		backButton5.addActionListener(this);
 
+		winpanel.setLayout(null);
+		winpanel.setPreferredSize(new Dimension(1280, 720));
+		continueButton.setSize(300,75);
+		continueButton.setLocation(490,610);
+		winLabel.setSize(50,200);
+		winLabel.setLocation(900,220);
+		
+		losepanel.setLayout(null);
+		losepanel.setPreferredSize(new Dimension(1280, 720));
+		continueButton2.setSize(300,75);
+		continueButton2.setLocation(490,610);
+		loseLabel.setSize(50,200);
+		loseLabel.setLocation(900,220);
+
 		mainPanel.setLayout(null);
 		mainPanel.setPreferredSize(new Dimension(1280, 720));
 		standardButton.setSize(300, 75);
@@ -1209,12 +1244,15 @@ public class tictactoe implements ActionListener, MouseListener {
 		helpButton.setLocation(850, 400);
 		aboutButton.setSize(300, 75);
 		aboutButton.setLocation(850, 475);
+		
 		standardButton.addActionListener(this);
 		quickButton.addActionListener(this);
 		themeButton.addActionListener(this);
 		helpButton.addActionListener(this);
 		aboutButton.addActionListener(this);
-
+		continueButton.addActionListener(this);
+		continueButton2.addActionListener(this);
+			
 		mainPanel.add(standardButton);
 		mainPanel.add(quickButton);
 		mainPanel.add(themeButton);
@@ -1232,6 +1270,8 @@ public class tictactoe implements ActionListener, MouseListener {
 
 		theFont = new Font("arial", Font.BOLD, 20);
 		headerLabel.setFont(theFont);
+		winLabel.setFont(theFont);
+		loseLabel.setFont(theFont);
 
 		nameLabel.setSize(100, 50);
 		nameLabel.setLocation(900, 250);
@@ -1282,11 +1322,29 @@ public class tictactoe implements ActionListener, MouseListener {
 		standardPanel.add(hostButton);
 		standardPanel.add(joinButton);
 
+		winpanel.add(winLabel);
+		winpanel.add(continueButton);
+		losepanel.add(loseLabel);
+		losepanel.add(continueButton2);
+		
+		interactiveHelpButton.setSize(100, 50);
+		interactiveHelpButton.setLocation(45, 35);
+		interactiveHelpButton.addActionListener(this);
+		helpPanel.add(interactiveHelpButton);
+		
+		moreLabel.setSize(5000, 20);
+		moreLabel.setLocation(10, 5);
+		helpPanel.add(moreLabel);
+		moreLabel.setVisible(false);
+		
+
 		mainFrame.setContentPane(mainPanel);
 		mainFrame.pack();
 		mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		mainFrame.setResizable(false);
 		mainFrame.setVisible(true);
+		theTimer.start();	
+
 	}
 
 	// Main Method
