@@ -86,7 +86,6 @@ public class themepanel extends JPanel{
 			g.drawImage(lightboard, 0,0, null);
 			g.drawImage(lightx,200,200,null);
 			g.drawImage(lighto,0,0,null);
-			g.drawImage(imgtitle, 800, 500, null);				
 
 		}else if(blnlight == true){
 			g.drawImage(lightbg,0,0, null);

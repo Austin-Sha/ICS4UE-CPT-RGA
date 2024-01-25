@@ -206,6 +206,7 @@ public class tictactoe implements ActionListener, MouseListener {
 			aboutButton.setVisible(true);
 			nameField.setVisible(false);
 			confirm1.setVisible(false);
+			confirm2.setVisible(false);
 
 		} else if (event.getSource() == quickButton) {
 			// Delete panel switch code
@@ -236,7 +237,6 @@ public class tictactoe implements ActionListener, MouseListener {
 			mainFrame.setContentPane(standardPanel);
 			mainFrame.pack();
 			mainFrame.repaint();
-			// End
 		} else if (event.getSource() == themeButton) {
 			mainFrame.setContentPane(themesPanel);
 			mainFrame.pack();
