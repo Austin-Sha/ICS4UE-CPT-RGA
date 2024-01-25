@@ -21,6 +21,8 @@ public class tictactoe implements ActionListener, MouseListener {
 	int intMoves = 0;
 
 	// Panels
+	themepanel winpanel = new themepanel();
+	themepanel losepanel = new themepanel();
 	themepanel mainPanel = new themepanel();
 	themepanel standardPanel = new themepanel();
 	themepanel quickPanel = new themepanel();
@@ -30,7 +32,8 @@ public class tictactoe implements ActionListener, MouseListener {
 
 	// Labels
 	JLabel test = new JLabel("test");
-
+	JLabel winLabel = new JLabel("Win");
+	JLabel loseLabel = new JLabel("Lose");
 	JLabel nameLabel = new JLabel("Name: ");
 	// Buttons
 	JButton standardButton = new JButton("Standard");
@@ -43,6 +46,9 @@ public class tictactoe implements ActionListener, MouseListener {
 	JButton backButton3 = new JButton("Back");
 	JButton backButton4 = new JButton("Back");
 	JButton backButton5 = new JButton("Back");
+	//win/loss continue
+	JButton continueButton = new JButton("Continue");
+	JButton continueButton2 = new JButton("Continue");
 
 	// New
 	JButton confirm1 = new JButton("Confirm Name");
@@ -244,9 +250,15 @@ public class tictactoe implements ActionListener, MouseListener {
 			mainFrame.setContentPane(mainPanel);
 			mainFrame.pack();
 			mainFrame.repaint();
-
-			// End of panel buttons
-		} else if (event.getSource() == LightButton) { // NEW****
+		}else if(event.getSource() == continueButton){
+			mainFrame.setContentPane(standardPanel);
+			mainFrame.pack();
+			mainFrame.repaint();
+		}else if(event.getSource() == continueButton2){
+			mainFrame.setContentPane(standardPanel);
+			mainFrame.pack();
+			mainFrame.repaint();
+		}else if (event.getSource() == LightButton) { // NEW****
 			// Theme buttons
 
 			mainPanel.repaint();
@@ -1055,6 +1067,7 @@ public class tictactoe implements ActionListener, MouseListener {
 								chatArea.append("System:Win\n");
 								intWins++;
 								intMoves = 0;
+								
 								headerLabel.setText(
 										"Wins: " + intWins + " | Losses: " + intLosses + " | Ties: " + intTies);
 								for (int i = 0; i < 3; i++) {
@@ -1143,6 +1156,7 @@ public class tictactoe implements ActionListener, MouseListener {
 		standardPanel.addMouseListener(this);
 		backButton.addActionListener(this);
 
+		
 		quickPanel.setLayout(null);
 		quickPanel.setPreferredSize(new Dimension(1280, 720));
 		backButton2.setSize(100, 50);
@@ -1287,6 +1301,8 @@ public class tictactoe implements ActionListener, MouseListener {
 		mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		mainFrame.setResizable(false);
 		mainFrame.setVisible(true);
+
+
 	}
 
 	// Main Method
